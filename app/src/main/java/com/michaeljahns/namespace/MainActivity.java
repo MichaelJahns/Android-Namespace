@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.michaeljahns.namespace.Pinrose.NavHost;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         startRecycler();
+
     }
 
     @Override
@@ -50,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         UserLayoutAdapter userLayoutAdapter = new UserLayoutAdapter(this, users);
         this.recyclerView.setAdapter(userLayoutAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void onFerryPinrose(View view) {
+        Intent intent = new Intent(this, NavHost.class);
+        startActivity(intent);
     }
 
 }
