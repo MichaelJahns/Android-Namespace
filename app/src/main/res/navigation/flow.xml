@@ -24,6 +24,13 @@
             app:exitAnim="@anim/to_north"
             app:popEnterAnim="@anim/from_north"
             app:popExitAnim="@anim/to_south" />
+        <action
+            android:id="@+id/action_pinrose_to_east"
+            app:destination="@id/east"
+            app:enterAnim="@anim/from_east"
+            app:exitAnim="@anim/to_west"
+            app:popEnterAnim="@anim/from_west"
+            app:popExitAnim="@anim/to_east" />
     </fragment>
     <fragment
         android:id="@+id/north"
@@ -53,5 +60,18 @@
             app:exitAnim="@anim/to_north"
             app:popEnterAnim="@anim/from_north"
             app:popExitAnim="@anim/to_south" />
+    </fragment>
+    <fragment
+        android:id="@+id/east"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.east"
+        android:label="fragment_east"
+        tools:layout="@layout/fragment_east" >
+        <action
+            android:id="@+id/action_east_to_pinrose"
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_west"
+            app:exitAnim="@anim/to_east"
+            app:popEnterAnim="@anim/from_east"
+            app:popExitAnim="@anim/from_west" />
     </fragment>
 </navigation>
