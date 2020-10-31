@@ -36,6 +36,12 @@ public class PinroseActivity extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_pinrose_to_east);
             }
         });
+        view.findViewById(R.id.ferryWest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_pinrose_to_west);
+            }
+        });
 
         return view;
     }
