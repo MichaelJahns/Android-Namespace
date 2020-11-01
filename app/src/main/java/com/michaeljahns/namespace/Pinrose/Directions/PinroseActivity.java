@@ -50,25 +50,25 @@ public class PinroseActivity extends Fragment {
         NorthEast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.);
+                Navigation.findNavController(view).navigate(R.id.action_pinrose_to_northEast);
             }
         });
         SouthEast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.);
+                Navigation.findNavController(view).navigate(R.id.action_pinrose_to_southEast);
             }
         });
         SouthWest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.);
+                Navigation.findNavController(view).navigate(R.id.action_pinrose_to_southWest);
             }
         });
         NorthWest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.);
+                Navigation.findNavController(view).navigate(R.id.action_pinrose_to_northWest);
             }
         });
 

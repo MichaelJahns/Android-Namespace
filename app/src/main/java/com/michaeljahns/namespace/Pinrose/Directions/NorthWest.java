@@ -1,14 +1,14 @@
 package com.michaeljahns.namespace.Pinrose.Directions;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+        import android.os.Bundle;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
+        import androidx.fragment.app.Fragment;
+        import androidx.navigation.Navigation;
 
-import com.michaeljahns.namespace.R;
+        import com.michaeljahns.namespace.R;
 
 public class NorthWest extends Fragment {
 
@@ -24,7 +24,7 @@ public class NorthWest extends Fragment {
         view.findViewById(R.id.textNorthWest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_);
+                Navigation.findNavController(view).navigate(R.id.action_northWest_to_pinrose);
             }
         });
         return view;

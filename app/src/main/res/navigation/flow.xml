@@ -45,6 +45,19 @@
             app:exitAnim="@anim/to_southeast"
             app:popEnterAnim="@anim/from_southeast"
             app:popExitAnim="@anim/to_northwest" />
+        <action
+            android:id="@+id/action_pinrose_to_northEast"
+            app:destination="@id/northEast" />
+        <action
+            android:id="@+id/action_pinrose_to_southEast"
+            app:destination="@id/southEast"
+            app:enterAnim="@anim/from_southeast"
+            app:exitAnim="@anim/to_northwest"
+            app:popEnterAnim="@anim/from_northwest"
+            app:popExitAnim="@anim/to_southeast" />
+        <action
+            android:id="@+id/action_pinrose_to_southWest"
+            app:destination="@id/southWest" />
     </fragment>
     <fragment
         android:id="@+id/north"
@@ -113,5 +126,32 @@
             app:exitAnim="@anim/to_northwest"
             app:popEnterAnim="@anim/from_northwest"
             app:popExitAnim="@anim/to_southeast" />
+    </fragment>
+    <fragment
+        android:id="@+id/northEast"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.NorthEast"
+        android:label="fragment_north_east"
+        tools:layout="@layout/fragment_north_east" >
+        <action
+            android:id="@+id/action_northEast_to_pinrose"
+            app:destination="@id/pinrose" />
+    </fragment>
+    <fragment
+        android:id="@+id/southEast"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.SouthEast"
+        android:label="fragment_south_east"
+        tools:layout="@layout/fragment_south_east" >
+        <action
+            android:id="@+id/action_southEast_to_pinrose"
+            app:destination="@id/pinrose" />
+    </fragment>
+    <fragment
+        android:id="@+id/southWest"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.SouthWest"
+        android:label="fragment_south_west"
+        tools:layout="@layout/fragment_south_west" >
+        <action
+            android:id="@+id/action_southWest_to_pinrose"
+            app:destination="@id/pinrose" />
     </fragment>
 </navigation>
