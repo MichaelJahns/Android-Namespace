@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Pinrose"
-    tools:context=".PinroseActivity">
+    tools:context=".Pinrose.Directions.PinroseActivity">
 
     <Button
         android:id="@+id/ferrySouthWest"

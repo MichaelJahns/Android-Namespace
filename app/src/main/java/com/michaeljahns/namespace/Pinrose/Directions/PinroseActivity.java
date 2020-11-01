@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace;
+package com.michaeljahns.namespace.Pinrose.Directions;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.michaeljahns.namespace.R;
 
 public class PinroseActivity extends Fragment {
 
