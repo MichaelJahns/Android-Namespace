@@ -69,12 +69,13 @@
         android:id="@+id/ferrySouth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
         android:background="@color/South"
         android:text="@string/south"
         app:layout_constraintEnd_toStartOf="@+id/ferrySouthEast"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/ferrySouthWest"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ferryNorth" />
 
     <Button
         android:id="@+id/ferrySouthEast"
@@ -103,9 +104,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pinroseText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ferrySouthWest" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

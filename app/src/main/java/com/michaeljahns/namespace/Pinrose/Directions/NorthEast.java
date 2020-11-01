@@ -1,3 +1,5 @@
+package com.michaeljahns.namespace.Pinrose.Directions;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
