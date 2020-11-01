@@ -47,7 +47,11 @@
             app:popExitAnim="@anim/to_northwest" />
         <action
             android:id="@+id/action_pinrose_to_northEast"
-            app:destination="@id/northEast" />
+            app:destination="@id/northEast"
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
         <action
             android:id="@+id/action_pinrose_to_southEast"
             app:destination="@id/southEast"
@@ -57,7 +61,11 @@
             app:popExitAnim="@anim/to_southeast" />
         <action
             android:id="@+id/action_pinrose_to_southWest"
-            app:destination="@id/southWest" />
+            app:destination="@id/southWest"
+            app:enterAnim="@anim/from_southwest"
+            app:exitAnim="@anim/to_northeast"
+            app:popEnterAnim="@anim/from_northeast"
+            app:popExitAnim="@anim/from_southwest" />
     </fragment>
     <fragment
         android:id="@+id/north"
@@ -134,7 +142,11 @@
         tools:layout="@layout/fragment_north_east" >
         <action
             android:id="@+id/action_northEast_to_pinrose"
-            app:destination="@id/pinrose" />
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_southwest"
+            app:exitAnim="@anim/to_northeast"
+            app:popEnterAnim="@anim/from_northeast"
+            app:popExitAnim="@anim/to_southwest" />
     </fragment>
     <fragment
         android:id="@+id/southEast"
@@ -152,6 +164,10 @@
         tools:layout="@layout/fragment_south_west" >
         <action
             android:id="@+id/action_southWest_to_pinrose"
-            app:destination="@id/pinrose" />
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
     </fragment>
 </navigation>
