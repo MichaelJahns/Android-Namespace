@@ -9,5 +9,9 @@
     <color name="South">#A3D3FF</color>
     <color name="East">#B1FF70</color>
     <color name="West">#F480FF</color>
+    <color name="NorthEast">#F59374</color>
+    <color name="NorthWest">#F5568D</color>
+    <color name="SouthEast">#54F5C1</color>
+    <color name="SouthWest">#CF49F5</color>
 
 </resources>

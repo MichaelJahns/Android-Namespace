@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/pinrose"
-        android:name="com.michaeljahns.namespace.PinroseActivity"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.PinroseActivity"
         android:label="fragment_navigation_stab"
-        tools:layout="@layout/fragment_pinrose" >
+        tools:layout="@layout/fragment_pinrose">
         <action
             android:id="@+id/action_navigationStab_to_south"
             app:destination="@id/south"
@@ -38,15 +38,40 @@
             app:exitAnim="@anim/to_east"
             app:popEnterAnim="@anim/from_east"
             app:popExitAnim="@anim/to_west" />
+        <action
+            android:id="@+id/action_pinrose_to_northWest"
+            app:destination="@id/northWest"
+            app:enterAnim="@anim/from_northwest"
+            app:exitAnim="@anim/to_southeast"
+            app:popEnterAnim="@anim/from_southeast"
+            app:popExitAnim="@anim/to_northwest" />
+        <action
+            android:id="@+id/action_pinrose_to_northEast"
+            app:destination="@id/northEast"
+            app:enterAnim="@anim/from_southeast"
+            app:exitAnim="@anim/to_northwest"
+            app:popEnterAnim="@anim/from_northwest"
+            app:popExitAnim="@anim/to_southeast"  />
+        <action
+            android:id="@+id/action_pinrose_to_southEast"
+            app:destination="@id/southEast"
+            app:enterAnim="@anim/from_southeast"
+            app:exitAnim="@anim/to_northwest"
+            app:popEnterAnim="@anim/from_northwest"
+            app:popExitAnim="@anim/to_southeast" />
+        <action
+            android:id="@+id/action_pinrose_to_southWest"
+            app:destination="@id/southWest"
+            app:enterAnim="@anim/from_southwest"
+            app:exitAnim="@anim/to_northeast"
+            app:popEnterAnim="@anim/from_northeast"
+            app:popExitAnim="@anim/from_southwest" />
     </fragment>
     <fragment
         android:id="@+id/north"
         android:name="com.michaeljahns.namespace.Pinrose.Directions.north"
         android:label="fragment_north"
-        tools:layout="@layout/fragment_north" >
-        <action
-            android:id="@+id/action_north_to_navigationStab"
-            app:destination="@id/pinrose" />
+        tools:layout="@layout/fragment_north">
         <action
             android:id="@+id/action_north_to_navigationStab"
             app:destination="@id/pinrose"
@@ -59,7 +84,7 @@
         android:id="@+id/south"
         android:name="com.michaeljahns.namespace.Pinrose.Directions.south"
         android:label="fragment_south"
-        tools:layout="@layout/fragment_south" >
+        tools:layout="@layout/fragment_south">
         <action
             android:id="@+id/action_south_to_navigationStab"
             app:destination="@id/pinrose"
@@ -72,7 +97,7 @@
         android:id="@+id/east"
         android:name="com.michaeljahns.namespace.Pinrose.Directions.east"
         android:label="fragment_east"
-        tools:layout="@layout/fragment_east" >
+        tools:layout="@layout/fragment_east">
         <action
             android:id="@+id/action_east_to_pinrose"
             app:destination="@id/pinrose"
@@ -85,7 +110,7 @@
         android:id="@+id/west"
         android:name="com.michaeljahns.namespace.Pinrose.Directions.west"
         android:label="fragment_west"
-        tools:layout="@layout/fragment_west" >
+        tools:layout="@layout/fragment_west">
         <action
             android:id="@+id/action_west_to_pinrose"
             app:destination="@id/pinrose"
@@ -93,5 +118,53 @@
             app:exitAnim="@anim/to_west"
             app:popEnterAnim="@anim/from_west"
             app:popExitAnim="@anim/to_east" />
+    </fragment>
+    <fragment
+        android:id="@+id/northWest"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.NorthWest"
+        android:label="fragment_north_west"
+        tools:layout="@layout/fragment_north_west">
+        <action
+            android:id="@+id/action_northWest_to_pinrose"
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_southeast"
+            app:exitAnim="@anim/to_northwest"
+            app:popEnterAnim="@anim/from_northwest"
+            app:popExitAnim="@anim/to_southeast" />
+    </fragment>
+    <fragment
+        android:id="@+id/northEast"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.NorthEast"
+        android:label="fragment_north_east"
+        tools:layout="@layout/fragment_north_east">
+        <action
+            android:id="@+id/action_northEast_to_pinrose"
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
+    </fragment>
+    <fragment
+        android:id="@+id/southEast"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.SouthEast"
+        android:label="fragment_south_east"
+        tools:layout="@layout/fragment_south_east">
+        <action
+            android:id="@+id/action_southEast_to_pinrose"
+            app:destination="@id/pinrose" />
+    </fragment>
+    <fragment
+        android:id="@+id/southWest"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.SouthWest"
+        android:label="fragment_south_west"
+        tools:layout="@layout/fragment_south_west">
+        <action
+            android:id="@+id/action_southWest_to_pinrose"
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
     </fragment>
 </navigation>
