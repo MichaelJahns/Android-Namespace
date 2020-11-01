@@ -11,38 +11,77 @@ import androidx.navigation.Navigation;
 
 public class PinroseActivity extends Fragment {
 
-    Button North, South;
+    Button North, South, East, West, NorthEast, SouthEast, SouthWest, NorthWest;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_pinrose, container, false);
-        view.findViewById(R.id.ferryNorth).setOnClickListener(new View.OnClickListener() {
+        bindButtons(view);
+
+
+        North.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigationStab_to_north);
             }
         });
-        view.findViewById(R.id.ferrySouth).setOnClickListener(new View.OnClickListener() {
+        South.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigationStab_to_south);
             }
         });
-        view.findViewById(R.id.ferryEast).setOnClickListener(new View.OnClickListener() {
+        East.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_pinrose_to_east);
             }
         });
-        view.findViewById(R.id.ferryWest).setOnClickListener(new View.OnClickListener() {
+        West.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_pinrose_to_west);
             }
         });
+        NorthEast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.);
+            }
+        });
+        SouthEast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.);
+            }
+        });
+        SouthWest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.);
+            }
+        });
+        NorthWest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.);
+            }
+        });
 
         return view;
     }
+
+    public void bindButtons(View view) {
+        North = view.findViewById(R.id.ferryNorth);
+        East = view.findViewById(R.id.ferryEast);
+        South = view.findViewById(R.id.ferrySouth);
+        West = view.findViewById(R.id.ferryWest);
+        NorthEast = view.findViewById(R.id.ferryNorthEast);
+        SouthEast = view.findViewById(R.id.ferrySouthEast);
+        SouthWest = view.findViewById(R.id.ferrySouthWest);
+        NorthWest = view.findViewById(R.id.ferryNorthWest);
+    }
+
 }
