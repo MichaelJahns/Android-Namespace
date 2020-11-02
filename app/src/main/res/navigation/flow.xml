@@ -41,10 +41,10 @@
         <action
             android:id="@+id/action_pinrose_to_northWest"
             app:destination="@id/northWest"
-            app:enterAnim="@anim/from_northwest"
-            app:exitAnim="@anim/to_southeast"
-            app:popEnterAnim="@anim/from_southeast"
-            app:popExitAnim="@anim/to_northwest" />
+            app:enterAnim="@anim/from_southwest"
+            app:exitAnim="@anim/to_northeast"
+            app:popEnterAnim="@anim/from_northeast"
+            app:popExitAnim="@anim/from_southwest" />
         <action
             android:id="@+id/action_pinrose_to_northEast"
             app:destination="@id/northEast"
@@ -55,17 +55,17 @@
         <action
             android:id="@+id/action_pinrose_to_southEast"
             app:destination="@id/southEast"
-            app:enterAnim="@anim/from_southeast"
-            app:exitAnim="@anim/to_northwest"
-            app:popEnterAnim="@anim/from_northwest"
-            app:popExitAnim="@anim/to_southeast" />
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
         <action
             android:id="@+id/action_pinrose_to_southWest"
             app:destination="@id/southWest"
-            app:enterAnim="@anim/from_southwest"
-            app:exitAnim="@anim/to_northeast"
-            app:popEnterAnim="@anim/from_northeast"
-            app:popExitAnim="@anim/from_southwest" />
+            app:enterAnim="@anim/from_northwest"
+            app:exitAnim="@anim/to_southeast"
+            app:popEnterAnim="@anim/from_southeast"
+            app:popExitAnim="@anim/to_northwest" />
     </fragment>
     <fragment
         android:id="@+id/north"
@@ -127,10 +127,10 @@
         <action
             android:id="@+id/action_northWest_to_pinrose"
             app:destination="@id/pinrose"
-            app:enterAnim="@anim/from_southeast"
-            app:exitAnim="@anim/to_northwest"
-            app:popEnterAnim="@anim/from_northwest"
-            app:popExitAnim="@anim/to_southeast" />
+            app:enterAnim="@anim/from_northeast"
+            app:exitAnim="@anim/to_southwest"
+            app:popEnterAnim="@anim/from_southwest"
+            app:popExitAnim="@anim/to_northeast" />
     </fragment>
     <fragment
         android:id="@+id/northEast"
@@ -140,10 +140,11 @@
         <action
             android:id="@+id/action_northEast_to_pinrose"
             app:destination="@id/pinrose"
-            app:enterAnim="@anim/from_northeast"
-            app:exitAnim="@anim/to_southwest"
-            app:popEnterAnim="@anim/from_southwest"
-            app:popExitAnim="@anim/to_northeast" />
+            app:enterAnim="@anim/from_northwest"
+            app:exitAnim="@anim/to_southeast"
+            app:popEnterAnim="@anim/from_southeast"
+            app:popExitAnim="@anim/to_northwest"
+  />
     </fragment>
     <fragment
         android:id="@+id/southEast"
@@ -152,7 +153,11 @@
         tools:layout="@layout/fragment_south_east">
         <action
             android:id="@+id/action_southEast_to_pinrose"
-            app:destination="@id/pinrose" />
+            app:destination="@id/pinrose"
+            app:enterAnim="@anim/from_southwest"
+            app:exitAnim="@anim/to_northeast"
+            app:popEnterAnim="@anim/from_northeast"
+            app:popExitAnim="@anim/to_southwest"/>
     </fragment>
     <fragment
         android:id="@+id/southWest"
@@ -162,9 +167,10 @@
         <action
             android:id="@+id/action_southWest_to_pinrose"
             app:destination="@id/pinrose"
-            app:enterAnim="@anim/from_northeast"
-            app:exitAnim="@anim/to_southwest"
-            app:popEnterAnim="@anim/from_southwest"
-            app:popExitAnim="@anim/to_northeast" />
+            app:enterAnim="@anim/from_southeast"
+            app:exitAnim="@anim/to_northwest"
+            app:popEnterAnim="@anim/from_northwest"
+            app:popExitAnim="@anim/to_southeast"
+             />
     </fragment>
 </navigation>
