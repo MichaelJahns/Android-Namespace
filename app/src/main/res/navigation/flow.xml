@@ -92,6 +92,13 @@
             app:exitAnim="@anim/to_north"
             app:popEnterAnim="@anim/from_north"
             app:popExitAnim="@anim/to_south" />
+        <action
+            android:id="@+id/action_south_to_bounce2"
+            app:destination="@id/bounce"
+            app:enterAnim="@anim/bounce"
+            app:exitAnim="@anim/still"
+            app:popEnterAnim="@anim/from_north"
+            app:popExitAnim="@anim/to_south" />
     </fragment>
     <fragment
         android:id="@+id/east"
@@ -172,5 +179,18 @@
             app:popEnterAnim="@anim/from_northwest"
             app:popExitAnim="@anim/to_southeast"
              />
+    </fragment>
+    <fragment
+        android:id="@+id/bounce"
+        android:name="com.michaeljahns.namespace.Pinrose.Directions.bounce"
+        android:label="fragment_bounce"
+        tools:layout="@layout/fragment_bounce" >
+        <action
+            android:id="@+id/action_bounce2_to_south"
+            app:destination="@id/south"
+            app:enterAnim="@anim/from_north"
+            app:exitAnim="@anim/to_south"
+            app:popEnterAnim="@anim/from_south"
+            app:popExitAnim="@anim/to_north" />
     </fragment>
 </navigation>

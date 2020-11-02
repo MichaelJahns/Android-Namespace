@@ -26,6 +26,12 @@ public class south extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_south_to_navigationStab);
             }
         });
+        view.findViewById(R.id.ferryBounce).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_south_to_bounce2);
+            }
+        });
         return view;
     }
 }
