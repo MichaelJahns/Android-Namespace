@@ -3,7 +3,8 @@
     "{Adj} {location} {postnominalModifiers.optional(33)}"
   ],
   "Adj": [
-    "{descriptiveAdj}"
+    "{descriptiveAdj}",
+    "{possessiveAdj}"
   ],
   "location": [
     "{establishedLoc}",
