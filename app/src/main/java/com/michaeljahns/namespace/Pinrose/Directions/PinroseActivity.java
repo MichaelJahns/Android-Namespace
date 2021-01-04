@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -71,6 +73,13 @@ public class PinroseActivity extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_pinrose_to_northWest);
             }
         });
+        ConstraintLayout layout = (ConstraintLayout) view.findViewById(R.id.d);
+
+        AlphaAnimation animation = new AlphaAnimation(0.0f, 1.0f);
+        animation.setFillAfter(true);
+        animation.setDuration(3600);
+//apply the animation ( fade In ) to your LAyout
+        layout.startAnimation(animation);
 
         return view;
     }
