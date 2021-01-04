@@ -7,35 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsoner;
-import com.github.dozermapper.core.DozerBeanMapperBuilder;
-import com.github.dozermapper.core.Mapper;
 import com.michaeljahns.namespace.GlobalApplication;
 import com.michaeljahns.namespace.R;
-import com.michaeljahns.namespace.grammy.PirateLocation;
+import com.michaeljahns.namespace.grammy.Location;
+import com.michaeljahns.namespace.grammy.LocationLayoutAdapter;
+import com.michaeljahns.namespace.grammy.Tracery;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.Reader;
-import java.nio.MappedByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class north extends Fragment {
-    private Button pirateButton;
-    private TextView priateText;
+    private RecyclerView locationRecycler;
+    private Button locationBtn;
 
     public north() {
         // Required empty public constructor
@@ -49,23 +40,35 @@ public class north extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_north, container, false);
-        pirateButton = view.findViewById(R.id.pirateLocationBtn);
-//        fileWrite();
-        Context context = GlobalApplication.getAppContext();
-        try {
-            fileWrite(context);
-        } catch (Exception e) {
-            e.printStackTrace();
+        bindView(view);
+        final Context context = GlobalApplication.getAppContext();
+        final String JSON = readJsonFromAsset(context);
+        List<Location> locations = getLocations(JSON);
+        startRecycler(locations, context);
+        return view;
+    }
+
+    public List<Location> getLocations(String Json) {
+        List<Location> locations = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            String locationName = Tracery.flattenJSON(Json);
+            Location location = new Location(locationName);
+            locations.add(location);
         }
-        pirateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                readJson();
-            }
-        });
-        priateText = view.findViewById(R.id.pirateLocationText);
+        return locations;
+    }
+
+    public void startRecycler(List<Location> locations, Context context) {
+        LocationLayoutAdapter locationLayoutAdapter = new LocationLayoutAdapter(context, locations);
+        this.locationRecycler.setAdapter(locationLayoutAdapter);
+        this.locationRecycler.setLayoutManager(new LinearLayoutManager(context));
+    }
+
+    public void bindView(View view) {
+        locationBtn = view.findViewById(R.id.pirateLocationBtn);
+        locationRecycler = view.findViewById(R.id.locationRecycler);
+
         view.findViewById(R.id.textNorth).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,41 +76,20 @@ public class north extends Fragment {
             }
         });
 
-        return view;
     }
 
-    public String getDataDir(Context context) throws Exception {
-        return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).applicationInfo.dataDir;
-    }
-
-    public void readJson(){
-        try{
-            Reader reader = Files.newBufferedReader(Paths.get("src\\main\\java\\com\\michaeljahns\\namespace\\json\\pirateLocations.json"));
-            JsonObject jsonObject = (JsonObject) Jsoner.deserialize(reader);
-            Mapper mapper =  DozerBeanMapperBuilder.buildDefault();
-            PirateLocation pirateLocation = mapper.map(jsonObject, PirateLocation.class);
-            System.out.println(pirateLocation);
-            priateText.setText(pirateLocation.getLocation());
-            reader.close();
-        }catch(Exception e) {
-            System.out.println(e);
+    public String readJsonFromAsset(Context context) {
+        String json = null;
+        try {
+            InputStream is = context.getAssets().open("pirateLocations.json");
+            byte[] buffer = new byte[is.available()];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+            return null;
         }
-    }
-
-    public void fileWrite(Context context) throws JSONException {
-        JSONObject object = new JSONObject();
-        object.put("location", "Pirate Bay");
-        String FILE_NAME = "saved.txt";
-        try{
-            String userString = object.toString();
-// Define the File Path and its Name
-            File file = new File(context.getFilesDir(),FILE_NAME);
-            FileWriter fileWriter = new FileWriter(file);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(userString);
-            bufferedWriter.close();
-
-        }catch(Exception e){
-        }
+        return json;
     }
 }
