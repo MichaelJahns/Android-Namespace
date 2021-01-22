@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#bd925a</color>
+    <color name="colorPrimaryDark">#a16928</color>
+    <color name="colorAccent">#2887a1</color>
 
     <color name="Pinrose">#FFCE7D</color>
     <color name="North">#FF9B8A</color>

@@ -1,6 +1,5 @@
 package com.michaeljahns.namespace;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -42,11 +41,6 @@ public class UserActivity extends AppCompatActivity {
         String email = this.email.getText().toString().trim();
         User newUser = new User(displayName, email, createdAt);
         database.userDAO().add(newUser);
-        backToMain(view);
     }
 
-    public void backToMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }
