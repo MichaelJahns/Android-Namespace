@@ -27,9 +27,9 @@
         android:background="@color/North"
         android:text="@string/north"
         app:layout_constraintEnd_toStartOf="@+id/ferryNorthEast"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/ferryNorthWest"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ferryNorthEast"
@@ -107,8 +107,9 @@
         android:text="@string/pinroseText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ferrySouthWest" />
+        app:layout_constraintTop_toBottomOf="@+id/ferrySouthWest"
+        app:layout_constraintVertical_bias="0.345" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

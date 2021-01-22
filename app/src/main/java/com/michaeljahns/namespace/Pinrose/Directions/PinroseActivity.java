@@ -78,7 +78,6 @@ public class PinroseActivity extends Fragment {
         AlphaAnimation animation = new AlphaAnimation(0.0f, 1.0f);
         animation.setFillAfter(true);
         animation.setDuration(3600);
-//apply the animation ( fade In ) to your LAyout
         layout.startAnimation(animation);
 
         return view;
