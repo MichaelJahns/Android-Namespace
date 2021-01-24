@@ -17,10 +17,8 @@ import com.michaeljahns.namespace.GlobalApplication;
 import com.michaeljahns.namespace.R;
 import com.michaeljahns.namespace.grammy.Location;
 import com.michaeljahns.namespace.grammy.LocationLayoutAdapter;
-import com.michaeljahns.namespace.grammy.Tracery;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,20 +42,9 @@ public class north extends Fragment {
         bindView(view);
         final Context context = GlobalApplication.getAppContext();
         final String JSON = readJsonFromAsset(context);
-        List<Location> locations = getLocations(JSON);
-        startRecycler(locations, context);
         return view;
     }
 
-    public List<Location> getLocations(String Json) {
-        List<Location> locations = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            String locationName = Tracery.flattenJSON(Json);
-            Location location = new Location(locationName);
-            locations.add(location);
-        }
-        return locations;
-    }
 
     public void startRecycler(List<Location> locations, Context context) {
         LocationLayoutAdapter locationLayoutAdapter = new LocationLayoutAdapter(context, locations);
