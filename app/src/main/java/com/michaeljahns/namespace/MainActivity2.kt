@@ -13,29 +13,29 @@ import java.util.*
 
 class MainActivity2 : AppCompatActivity() {
 
+    private var locationList = mutableListOf<Location>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main)
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Shuffled", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
         val context = GlobalApplication.getAppContext()
         val JSON = readJsonFromAsset(context)
-        var locations: List<Location> = flattenLocationsFromJson(JSON)
-        startRecycler(locations)
+        flattenLocationsFromJson(JSON)
+        startRecycler(this.locationList)
     }
 
-
-    fun flattenLocationsFromJson(JSON: String?): List<Location> {
-        val locations: MutableList<Location> = ArrayList()
+    
+    fun flattenLocationsFromJson(JSON: String?) {
         for (i in 1..15) {
             var locationName = flattenJSON(JSON)
             val location = Location(locationName)
-            locations.add(location)
+            this.locationList.add(location)
         }
-        return locations
     }
 
     fun flattenJSON(Json: String?): String {
