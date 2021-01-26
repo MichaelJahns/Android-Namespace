@@ -3,13 +3,11 @@ package com.michaeljahns.namespace
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import com.michaeljahns.namespace.grammy.CustomAdapter
 import com.michaeljahns.namespace.grammy.Location
-import java.util.*
+import me.relex.circleindicator.CircleIndicator3
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -26,11 +24,10 @@ class MainActivity2 : AppCompatActivity() {
         val context = GlobalApplication.getAppContext()
         val JSON = readJsonFromAsset(context)
         flattenLocationsFromJson(JSON)
-        startRecycler(this.locationList)
+        startViewPager()
     }
 
-    
-    fun flattenLocationsFromJson(JSON: String?) {
+    private fun flattenLocationsFromJson(JSON: String?) {
         for (i in 1..15) {
             var locationName = flattenJSON(JSON)
             val location = Location(locationName)
@@ -38,12 +35,12 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    fun flattenJSON(Json: String?): String {
+    private fun flattenJSON(Json: String?): String {
         val grammar = com.almasb.grammy.Grammy.createGrammar(Json)
         return grammar.flatten("origin")
     }
 
-    fun readJsonFromAsset(context: Context): String? {
+    private fun readJsonFromAsset(context: Context): String? {
         var json: String? = null
         val inputStream = context.assets.open("pirateLocations.json")
         val buffer = ByteArray(inputStream.available())
@@ -53,11 +50,12 @@ class MainActivity2 : AppCompatActivity() {
         return json
     }
 
+    private fun startViewPager() {
+        val scenario_pager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
+        val indicator = findViewById<CircleIndicator3>(R.id.indicator)
 
-    fun startRecycler(locations: List<Location?>?) {
-        val recyclerView = findViewById(R.id.locationRecycler) as RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        val adapter = CustomAdapter(locations)
-        recyclerView.adapter = adapter
+        scenario_pager2.adapter = ViewPageAdapter(locationList)
+        scenario_pager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        indicator.setViewPager(scenario_pager2)
     }
 }

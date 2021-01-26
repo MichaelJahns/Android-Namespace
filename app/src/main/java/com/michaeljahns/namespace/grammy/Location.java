@@ -11,6 +11,11 @@ public class Location {
         this.name = locationName;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public String getName() {
         return name;
     }

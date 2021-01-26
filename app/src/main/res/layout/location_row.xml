@@ -23,7 +23,6 @@
             android:background="@android:color/transparent"
             android:text="@string/procedurallyGenerated" />
 
-
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.michaeljahns.namespace.grammy.Location
 
-class ViewPageAdapter(private var location: List<String>) : RecyclerView.Adapter<ViewPageAdapter.ViewPager2Holder>() {
+class ViewPageAdapter(private var location: List<Location>) : RecyclerView.Adapter<ViewPageAdapter.ViewPager2Holder>() {
 
     inner class ViewPager2Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val scenarioLocation: TextView = itemView.findViewById(R.id.locationName)
@@ -21,11 +22,13 @@ class ViewPageAdapter(private var location: List<String>) : RecyclerView.Adapter
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPageAdapter.ViewPager2Holder {
-        return ViewPager2Holder(LayoutInflater.from(parent.context).inflate(R.layout.location_row, parent, false))
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.location_row, parent, false)
+        view.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        return ViewPager2Holder(view)
     }
 
     override fun onBindViewHolder(holder: ViewPageAdapter.ViewPager2Holder, position: Int) {
-        holder.scenarioLocation.text = location[position]
+        holder.scenarioLocation.text = location[position].toString()
     }
 
     override fun getItemCount(): Int {
