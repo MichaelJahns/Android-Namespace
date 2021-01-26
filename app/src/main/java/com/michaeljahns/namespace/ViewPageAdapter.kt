@@ -16,7 +16,7 @@ class ViewPageAdapter(private var location: List<Location>, private var pawns: L
         val scenarioPawn: TextView = itemView.findViewById(R.id.pawnName)
 
         init {
-            scenarioLocation.setOnClickListener { v: View ->
+            scenarioLocation.setOnClickListener {
                 val position = adapterPosition
                 Toast.makeText(itemView.context, "$position " + scenarioLocation.text, Toast.LENGTH_SHORT).show()
             }

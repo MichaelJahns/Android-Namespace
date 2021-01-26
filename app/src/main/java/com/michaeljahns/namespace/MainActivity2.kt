@@ -29,7 +29,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun bindViews(context: Context) {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
-            Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT)
+            Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT).show()
             resetLists()
             flattenScenarioFromGrammy(context)
             startViewPager()
@@ -38,29 +38,35 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun flattenScenarioFromGrammy(context: Context) {
         val locationJson = readJsonFromAsset(context, "pirateLocations.json")
-        flattenLocationsFromJson(locationJson)
         val pawnJson = readJsonFromAsset(context, "pirateNames.json")
-        flattenPawnFromJson(pawnJson)
+        for (i in 1..15) {
+            var scenarioLocation = flattenLocationsFromJson(locationJson)
+            var scenarioPawn = flattenPawnFromJson(pawnJson)
+            this.locationList.add(scenarioLocation)
+            this.pawnList.add(scenarioPawn)
+        }
+
     }
 
-    private fun flattenLocationsFromJson(JSON: String?) {
-        for (i in 1..15) {
-            var locationName = flattenJsonOnKey(JSON, "origin")
-            val location = Location(locationName)
-            this.locationList.add(location)
-        }
+    private fun flattenLocationsFromJson(JSON: String?): Location {
+        var locationName = flattenJsonOnKey(JSON, "origin")
+        val location = Location(locationName)
+        this.locationList.add(location)
+        return location
     }
 
-    private fun flattenPawnFromJson(JSON: String?) {
-        for (i in 1..15) {
-            var pawnName = flattenJsonOnKey(JSON, "name")
-            val minAge = 13
-            val maxAge = 69
-            var pawnAge = rand(minAge, maxAge)
-            var pawnProfession = flattenJsonOnKey(JSON, "profession")
-            val pawn = Pawn(pawnName, pawnAge, pawnProfession)
-            this.pawnList.add(pawn)
-        }
+    private fun flattenPawnFromJson(JSON: String?): Pawn {
+        var pawnName = flattenJsonOnKey(JSON, "name")
+        var pawnAge = generateAge()
+        var pawnProfession = flattenJsonOnKey(JSON, "profession")
+        return Pawn(pawnName, pawnAge, pawnProfession)
+    }
+
+
+    private fun generateAge(): Int {
+        val minAge = 13
+        val maxAge = 69
+        return rand(minAge, maxAge)
     }
 
     private fun flattenJsonOnKey(Json: String?, key: String): String {
@@ -79,14 +85,12 @@ class MainActivity2 : AppCompatActivity() {
         return (start..end).random(rand)
     }
 
-    private fun readJsonFromAsset(context: Context, assetName: String): String? {
-        var json: String? = null
+    private fun readJsonFromAsset(context: Context, assetName: String): String {
         val inputStream = context.assets.open(assetName)
         val buffer = ByteArray(inputStream.available())
         inputStream.read(buffer)
         inputStream.close()
-        json = String(buffer)
-        return json
+        return String(buffer)
     }
 
     private fun startViewPager() {
