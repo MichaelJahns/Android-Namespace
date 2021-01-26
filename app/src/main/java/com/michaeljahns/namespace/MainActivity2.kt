@@ -2,10 +2,10 @@ package com.michaeljahns.namespace
 
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.michaeljahns.namespace.grammy.Location
 import com.michaeljahns.namespace.grammy.Pawn
 import me.relex.circleindicator.CircleIndicator3
@@ -28,9 +28,8 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun bindViews(context: Context) {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Shuffled", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        fab.setOnClickListener {
+            Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT)
             resetLists()
             flattenScenarioFromGrammy(context)
             startViewPager()
@@ -74,7 +73,7 @@ class MainActivity2 : AppCompatActivity() {
         this.pawnList.clear()
     }
 
-    fun rand(start: Int, end: Int): Int {
+    private fun rand(start: Int, end: Int): Int {
         require(start <= end) { "Illegal Argument" }
         val rand = Random(System.nanoTime())
         return (start..end).random(rand)
@@ -91,11 +90,11 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun startViewPager() {
-        val scenario_pager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
+        val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
         val indicator = findViewById<CircleIndicator3>(R.id.indicator)
 
-        scenario_pager2.adapter = ViewPageAdapter(locationList, pawnList)
-        scenario_pager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        indicator.setViewPager(scenario_pager2)
+        scenarioPager2.adapter = ViewPageAdapter(locationList, pawnList)
+        scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        indicator.setViewPager(scenarioPager2)
     }
 }

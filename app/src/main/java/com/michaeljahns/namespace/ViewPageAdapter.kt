@@ -24,7 +24,7 @@ class ViewPageAdapter(private var location: List<Location>, private var pawns: L
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPageAdapter.ViewPager2Holder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.location_row, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.scenario_row, parent, false)
         view.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         return ViewPager2Holder(view)
     }

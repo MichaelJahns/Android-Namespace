@@ -10,7 +10,7 @@ import com.michaeljahns.namespace.R
 class CustomAdapter(val locationList: List<Location?>?) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.location_row, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.scenario_row, parent, false)
         return ViewHolder(v)
     }
 
