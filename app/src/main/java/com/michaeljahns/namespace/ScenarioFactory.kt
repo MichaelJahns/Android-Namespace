@@ -5,13 +5,13 @@ import com.michaeljahns.namespace.grammy.Location
 import com.michaeljahns.namespace.grammy.Pawn
 import com.michaeljahns.namespace.grammy.Scenario
 
-class ScenarioFactory {
-    fun getScenarios(count: Int): List<Scenario> {
+object ScenarioFactory {
+    fun getScenarios(count: Int): MutableList<Scenario> {
         val scenarios = mutableListOf<Scenario>()
         repeat(count) {
             val context = GlobalApplication.getAppContext()
             val scenarioLocation = randomLocation(context)
-            val scenarioPawns = randomPawns(context)
+            val scenarioPawns = randomPawns()
             val scenario = Scenario(scenarioLocation, scenarioPawns)
             scenarios.add(scenario)
         }
@@ -23,27 +23,8 @@ class ScenarioFactory {
         return flattenLocationsFromJson(locationJson)
     }
 
-    private fun randomPawns(context: Context): List<Pawn> {
-        val pawnJson = readJsonFromAsset(context, "pirateNames.json")
-        val scenarioPawnList = mutableListOf<Pawn>()
-        for (j in 1..generateCrewSize()) {
-            val scenarioPawn = randomPawn(pawnJson)
-            scenarioPawnList.add(scenarioPawn)
-        }
-        return scenarioPawnList
-    }
-
-    private fun randomPawn(JSON: String?): Pawn {
-        val pawnName = flattenJsonOnKey(JSON, "name")
-        val pawnAge = generatePawnAge()
-        val pawnProfession = flattenJsonOnKey(JSON, "profession")
-        return Pawn(pawnName, pawnAge, pawnProfession)
-    }
-
-    private fun generatePawnAge(): Int {
-        val minAge = 13
-        val maxAge = 69
-        return rand(minAge, maxAge)
+    private fun randomPawns(): MutableList<Pawn> {
+        return PawnFactory.getPawns(generateCrewSize())
     }
 
     private fun generateCrewSize(): Int {

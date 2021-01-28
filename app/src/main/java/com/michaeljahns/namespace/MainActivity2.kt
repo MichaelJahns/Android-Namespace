@@ -19,8 +19,7 @@ class MainActivity2 : AppCompatActivity() {
         val context = GlobalApplication.getAppContext()
 
         bindViews(context)
-        getScenarios(4)
-        flattenScenariosFromGrammy(context)
+        scenarioList = ScenarioFactory.getScenarios(15)
         startViewPager()
     }
 
@@ -29,20 +28,20 @@ class MainActivity2 : AppCompatActivity() {
         fab.setOnClickListener {
             Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT).show()
             resetLists()
-            flattenScenariosFromGrammy(context)
             startViewPager()
         }
     }
 
     private fun resetLists() {
         this.scenarioList.clear()
+        this.scenarioList = ScenarioFactory.getScenarios(20)
     }
 
     private fun startViewPager() {
         val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
         val indicator = findViewById<CircleIndicator3>(R.id.indicator)
 
-        scenarioPager2.adapter = ViewPageAdapter(scenarioList)
+        scenarioPager2.adapter = ScenarioPageAdapter(scenarioList)
         scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         indicator.setViewPager(scenarioPager2)
     }
