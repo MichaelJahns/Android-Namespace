@@ -8,13 +8,13 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.michaeljahns.namespace.grammy.Location
 import com.michaeljahns.namespace.grammy.Pawn
+import com.michaeljahns.namespace.grammy.Scenario
 import me.relex.circleindicator.CircleIndicator3
 import kotlin.random.Random
 
 class MainActivity2 : AppCompatActivity() {
 
-    private var locationList = mutableListOf<Location>()
-    private var pawnList = mutableListOf<Pawn>()
+    private var scenarioList = mutableListOf<Scenario>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,7 @@ class MainActivity2 : AppCompatActivity() {
         val context = GlobalApplication.getAppContext()
 
         bindViews(context)
-        flattenScenarioFromGrammy(context)
+        flattenScenariosFromGrammy(context)
         startViewPager()
     }
 
@@ -31,42 +31,48 @@ class MainActivity2 : AppCompatActivity() {
         fab.setOnClickListener {
             Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT).show()
             resetLists()
-            flattenScenarioFromGrammy(context)
+            flattenScenariosFromGrammy(context)
             startViewPager()
         }
     }
 
-    private fun flattenScenarioFromGrammy(context: Context) {
+    private fun flattenScenariosFromGrammy(context: Context) {
         val locationJson = readJsonFromAsset(context, "pirateLocations.json")
         val pawnJson = readJsonFromAsset(context, "pirateNames.json")
         for (i in 1..15) {
-            var scenarioLocation = flattenLocationsFromJson(locationJson)
-            var scenarioPawn = flattenPawnFromJson(pawnJson)
-            this.locationList.add(scenarioLocation)
-            this.pawnList.add(scenarioPawn)
+            val scenarioLocation = flattenLocationsFromJson(locationJson)
+            val scenarioPawnList = mutableListOf<Pawn>()
+            for (j in 1..generateCrewSize()) {
+                val scenarioPawn = flattenPawnFromJson(pawnJson)
+                scenarioPawnList.add(scenarioPawn)
+            }
+            val scenario = Scenario(scenarioLocation, scenarioPawnList)
+            this.scenarioList.add(scenario)
         }
-
     }
 
     private fun flattenLocationsFromJson(JSON: String?): Location {
-        var locationName = flattenJsonOnKey(JSON, "origin")
-        val location = Location(locationName)
-        this.locationList.add(location)
-        return location
+        val locationName = flattenJsonOnKey(JSON, "origin")
+        return Location(locationName)
     }
 
     private fun flattenPawnFromJson(JSON: String?): Pawn {
-        var pawnName = flattenJsonOnKey(JSON, "name")
-        var pawnAge = generateAge()
-        var pawnProfession = flattenJsonOnKey(JSON, "profession")
+        val pawnName = flattenJsonOnKey(JSON, "name")
+        val pawnAge = generateAge()
+        val pawnProfession = flattenJsonOnKey(JSON, "profession")
         return Pawn(pawnName, pawnAge, pawnProfession)
     }
-
 
     private fun generateAge(): Int {
         val minAge = 13
         val maxAge = 69
         return rand(minAge, maxAge)
+    }
+
+    private fun generateCrewSize(): Int {
+        val minCrewSize = 1
+        val maxCrewSize = 5
+        return rand(minCrewSize, maxCrewSize)
     }
 
     private fun flattenJsonOnKey(Json: String?, key: String): String {
@@ -75,8 +81,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun resetLists() {
-        this.locationList.clear()
-        this.pawnList.clear()
+        this.scenarioList.clear()
     }
 
     private fun rand(start: Int, end: Int): Int {
@@ -97,7 +102,7 @@ class MainActivity2 : AppCompatActivity() {
         val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
         val indicator = findViewById<CircleIndicator3>(R.id.indicator)
 
-        scenarioPager2.adapter = ViewPageAdapter(locationList, pawnList)
+        scenarioPager2.adapter = ViewPageAdapter(scenarioList)
         scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         indicator.setViewPager(scenarioPager2)
     }
