@@ -2,26 +2,8 @@
   "name": [
     "{names} {lastName.optional(33)}"
   ],
-  "lastName": [
-    "Morgan",
-    "Blackbeard",
-    "Rackham",
-    "Bonny",
-    "Read",
-    "Kidd",
-    "Roberts",
-    "Jack",
-    "Vane",
-    "O'Malley",
-    "Every",
-    "Davis",
-    "Tew",
-    "Wynn",
-    "Easton",
-    "Contend",
-    "Myngs",
-    "Drake",
-    "Laffite"
+  "profession": [
+    "{professions}"
   ],
   "names": [
     "Adrie",
@@ -125,8 +107,26 @@
     "Thoreau",
     "Zachary"
   ],
-  "profession": [
-    "{professions}"
+  "lastName": [
+    "Blackbeard",
+    "Bonny",
+    "Contend",
+    "Davis",
+    "Drake",
+    "Easton",
+    "Every",
+    "Jack",
+    "Kidd",
+    "Laffite",
+    "Morgan",
+    "Myngs",
+    "O'Malley",
+    "Rackham",
+    "Read",
+    "Roberts",
+    "Tew",
+    "Vane",
+    "Wynn"
   ],
   "professions": [
     "Boatswain",
