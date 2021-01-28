@@ -6,11 +6,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.michaeljahns.namespace.grammy.Location
-import com.michaeljahns.namespace.grammy.Pawn
 import com.michaeljahns.namespace.grammy.Scenario
 import me.relex.circleindicator.CircleIndicator3
-import kotlin.random.Random
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -22,6 +19,7 @@ class MainActivity2 : AppCompatActivity() {
         val context = GlobalApplication.getAppContext()
 
         bindViews(context)
+        getScenarios(4)
         flattenScenariosFromGrammy(context)
         startViewPager()
     }
@@ -36,66 +34,8 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    private fun flattenScenariosFromGrammy(context: Context) {
-        val locationJson = readJsonFromAsset(context, "pirateLocations.json")
-        val pawnJson = readJsonFromAsset(context, "pirateNames.json")
-        for (i in 1..15) {
-            val scenarioLocation = flattenLocationsFromJson(locationJson)
-            val scenarioPawnList = mutableListOf<Pawn>()
-            for (j in 1..generateCrewSize()) {
-                val scenarioPawn = flattenPawnFromJson(pawnJson)
-                scenarioPawnList.add(scenarioPawn)
-            }
-            val scenario = Scenario(scenarioLocation, scenarioPawnList)
-            this.scenarioList.add(scenario)
-        }
-    }
-
-    private fun flattenLocationsFromJson(JSON: String?): Location {
-        val locationName = flattenJsonOnKey(JSON, "origin")
-        return Location(locationName)
-    }
-
-    private fun flattenPawnFromJson(JSON: String?): Pawn {
-        val pawnName = flattenJsonOnKey(JSON, "name")
-        val pawnAge = generateAge()
-        val pawnProfession = flattenJsonOnKey(JSON, "profession")
-        return Pawn(pawnName, pawnAge, pawnProfession)
-    }
-
-    private fun generateAge(): Int {
-        val minAge = 13
-        val maxAge = 69
-        return rand(minAge, maxAge)
-    }
-
-    private fun generateCrewSize(): Int {
-        val minCrewSize = 1
-        val maxCrewSize = 5
-        return rand(minCrewSize, maxCrewSize)
-    }
-
-    private fun flattenJsonOnKey(Json: String?, key: String): String {
-        val grammar = com.almasb.grammy.Grammy.createGrammar(Json)
-        return grammar.flatten(key)
-    }
-
     private fun resetLists() {
         this.scenarioList.clear()
-    }
-
-    private fun rand(start: Int, end: Int): Int {
-        require(start <= end) { "Illegal Argument" }
-        val rand = Random(System.nanoTime())
-        return (start..end).random(rand)
-    }
-
-    private fun readJsonFromAsset(context: Context, assetName: String): String {
-        val inputStream = context.assets.open(assetName)
-        val buffer = ByteArray(inputStream.available())
-        inputStream.read(buffer)
-        inputStream.close()
-        return String(buffer)
     }
 
     private fun startViewPager() {
