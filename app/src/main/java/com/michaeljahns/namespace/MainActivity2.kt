@@ -17,9 +17,9 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val context = GlobalApplication.getAppContext()
+        scenarioList = ScenarioFactory.getScenarios(15)
 
         bindViews(context)
-        scenarioList = ScenarioFactory.getScenarios(15)
         startViewPager()
     }
 

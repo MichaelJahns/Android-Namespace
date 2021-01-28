@@ -4,22 +4,14 @@ import android.content.Context
 import com.michaeljahns.namespace.grammy.Pawn
 
 object PawnFactory {
-    fun getPawns(count: Int): MutableList<Pawn> {
+    fun getPawns(context: Context, crewSize: Int): MutableList<Pawn> {
+        val pawnJson = readJsonFromAsset(context, "pirateNames.json")
         val pawns = mutableListOf<Pawn>()
-        repeat(count) {
-
+        repeat(crewSize) {
+            val scenarioPawn = randomPawn(pawnJson)
+            pawns.add(scenarioPawn)
         }
         return pawns
-    }
-
-    private fun randomPawns(context: Context, crewSize: Int): MutableList<Pawn> {
-        val pawnJson = readJsonFromAsset(context, "pirateNames.json")
-        val scenarioPawnList = mutableListOf<Pawn>()
-        for (j in 1..crewSize) {
-            val scenarioPawn = randomPawn(pawnJson)
-            scenarioPawnList.add(scenarioPawn)
-        }
-        return scenarioPawnList
     }
 
     private fun randomPawn(JSON: String?): Pawn {

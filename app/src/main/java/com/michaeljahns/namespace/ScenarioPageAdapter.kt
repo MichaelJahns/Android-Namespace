@@ -11,7 +11,6 @@ import com.michaeljahns.namespace.grammy.Scenario
 
 class ScenarioPageAdapter(private var scenarios: MutableList<Scenario>) : RecyclerView.Adapter<ScenarioPageAdapter.ViewPager2Holder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScenarioPageAdapter.ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.scenario_row, parent, false)
 //        Explicating declaring the below resolved some issue, i cant remember now which
@@ -22,9 +21,9 @@ class ScenarioPageAdapter(private var scenarios: MutableList<Scenario>) : Recycl
     override fun onBindViewHolder(holder: ScenarioPageAdapter.ViewPager2Holder, position: Int) {
         val scenario = scenarios[position]
         holder.scenarioLocation.text = scenario.location.toString()
-        val childLayoutManager = LinearLayoutManager(holder.scenarioPawnRecycler.context, RecyclerView.HORIZONTAL, false)
+        val childLayoutManager = LinearLayoutManager(holder.scenarioPawnRecycler.context, RecyclerView.VERTICAL, false)
         holder.scenarioPawnRecycler.layoutManager = childLayoutManager
-        holder.scenarioPawnRecycler.adapter = PawnRecyclerAdapter(scenario.pawnList)
+        holder.scenarioPawnRecycler.adapter = PawnRecyclerAdapter(scenario.pawns)
     }
 
     override fun getItemCount(): Int {

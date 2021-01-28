@@ -11,8 +11,8 @@ object ScenarioFactory {
         repeat(count) {
             val context = GlobalApplication.getAppContext()
             val scenarioLocation = randomLocation(context)
-            val scenarioPawns = randomPawns()
-            val scenario = Scenario(scenarioLocation, scenarioPawns)
+            val scenarioPawns = randomPawns(context)
+            var scenario = Scenario(scenarioLocation, scenarioPawns)
             scenarios.add(scenario)
         }
         return scenarios
@@ -23,8 +23,8 @@ object ScenarioFactory {
         return flattenLocationsFromJson(locationJson)
     }
 
-    private fun randomPawns(): MutableList<Pawn> {
-        return PawnFactory.getPawns(generateCrewSize())
+    private fun randomPawns(context: Context): MutableList<Pawn> {
+        return PawnFactory.getPawns(context, generateCrewSize())
     }
 
     private fun generateCrewSize(): Int {
