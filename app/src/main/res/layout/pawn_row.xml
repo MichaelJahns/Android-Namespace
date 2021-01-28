@@ -8,18 +8,23 @@
         android:id="@+id/tvPawnName"
         android:layout_width="129dp"
         android:layout_height="60dp"
-        android:text="@string/generatedPawnName" />
+        android:layout_marginStart="32sp"
+        android:text="@string/generatedPawnName"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvPawnProfession"
-        android:layout_width="210dp"
+        android:layout_width="157dp"
         android:layout_height="60dp"
-        android:text="@string/generatedPawnProfession" />
+        android:text="@string/generatedPawnProfession"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvPawnAge"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:text="@string/generatedPawnAge" />
+        android:layout_marginEnd="32sp"
+        android:text="@string/generatedPawnAge"
+        android:textSize="24sp" />
 </LinearLayout>
 

@@ -126,33 +126,22 @@
     "Zachary"
   ],
   "profession": [
-    "{prenominal-adj.optional(25)} {professions}"
-  ],
-  "prenominal-adj": [
-    "passionate",
-    "former",
-    "renowned",
-    "controversial",
-    "superior",
-    "focused",
-    "zealous",
-    "confident",
-    "mindful"
+    "{professions}"
   ],
   "professions": [
-    "Captain",
-    "First Mate",
-    "Second Mate",
-    "Navigator",
-    "Quartermaster",
     "Boatswain",
-    "Copper",
+    "Cabin-sitter",
+    "Captain",
     "Carpenter",
-    "Surgeon",
+    "Chef",
+    "Copper",
+    "First Mate",
+    "Fisher",
     "Master Gunner",
     "Musician",
-    "Chef",
-    "Fisher",
-    "Cabin-sitter"
+    "Navigator",
+    "Quartermaster",
+    "Second Mate",
+    "Surgeon"
   ]
 }
