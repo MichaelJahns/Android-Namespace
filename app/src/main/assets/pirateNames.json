@@ -1,4 +1,28 @@
 {
+  "name": [
+    "{names} {lastName.optional(33)}"
+  ],
+  "lastName": [
+    "Morgan",
+    "Blackbeard",
+    "Rackham",
+    "Bonny",
+    "Read",
+    "Kidd",
+    "Roberts",
+    "Jack",
+    "Vane",
+    "O'Malley",
+    "Every",
+    "Davis",
+    "Tew",
+    "Wynn",
+    "Easton",
+    "Contend",
+    "Myngs",
+    "Drake",
+    "Laffite"
+  ],
   "names": [
     "Adrie",
     "Aegea",
@@ -100,5 +124,35 @@
     "Theo",
     "Thoreau",
     "Zachary"
+  ],
+  "profession": [
+    "{prenominal-adj.optional(25)} {professions}"
+  ],
+  "prenominal-adj": [
+    "passionate",
+    "former",
+    "renowned",
+    "controversial",
+    "superior",
+    "focused",
+    "zealous",
+    "confident",
+    "mindful"
+  ],
+  "professions": [
+    "Captain",
+    "First Mate",
+    "Second Mate",
+    "Navigator",
+    "Quartermaster",
+    "Boatswain",
+    "Copper",
+    "Carpenter",
+    "Surgeon",
+    "Master Gunner",
+    "Musician",
+    "Chef",
+    "Fisher",
+    "Cabin-sitter"
   ]
 }
