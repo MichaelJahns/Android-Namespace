@@ -2,26 +2,8 @@
   "name": [
     "{names} {lastName.optional(33)}"
   ],
-  "lastName": [
-    "Morgan",
-    "Blackbeard",
-    "Rackham",
-    "Bonny",
-    "Read",
-    "Kidd",
-    "Roberts",
-    "Jack",
-    "Vane",
-    "O'Malley",
-    "Every",
-    "Davis",
-    "Tew",
-    "Wynn",
-    "Easton",
-    "Contend",
-    "Myngs",
-    "Drake",
-    "Laffite"
+  "profession": [
+    "{professions}"
   ],
   "names": [
     "Adrie",
@@ -125,34 +107,41 @@
     "Thoreau",
     "Zachary"
   ],
-  "profession": [
-    "{prenominal-adj.optional(25)} {professions}"
-  ],
-  "prenominal-adj": [
-    "passionate",
-    "former",
-    "renowned",
-    "controversial",
-    "superior",
-    "focused",
-    "zealous",
-    "confident",
-    "mindful"
+  "lastName": [
+    "Blackbeard",
+    "Bonny",
+    "Contend",
+    "Davis",
+    "Drake",
+    "Easton",
+    "Every",
+    "Jack",
+    "Kidd",
+    "Laffite",
+    "Morgan",
+    "Myngs",
+    "O'Malley",
+    "Rackham",
+    "Read",
+    "Roberts",
+    "Tew",
+    "Vane",
+    "Wynn"
   ],
   "professions": [
-    "Captain",
-    "First Mate",
-    "Second Mate",
-    "Navigator",
-    "Quartermaster",
     "Boatswain",
-    "Copper",
+    "Cabin-sitter",
+    "Captain",
     "Carpenter",
-    "Surgeon",
+    "Chef",
+    "Copper",
+    "First Mate",
+    "Fisher",
     "Master Gunner",
     "Musician",
-    "Chef",
-    "Fisher",
-    "Cabin-sitter"
+    "Navigator",
+    "Quartermaster",
+    "Second Mate",
+    "Surgeon"
   ]
 }

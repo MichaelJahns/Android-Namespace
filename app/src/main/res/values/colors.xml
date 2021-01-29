@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="namespaceBlack">#282c34</color>
+    <color name="namespaceOrange">#ff990f</color>
+
     <color name="colorSecondary">#B88B34</color>
     <color name="colorPrimary">#A16828</color>
     <color name="colorPrimaryDark">#38240E</color>
     <color name="colorAccent">#2887a1</color>
-
-    <color name="Pinrose">#FFCE7D</color>
-    <color name="North">#FF9B8A</color>
-    <color name="South">#A3D3FF</color>
-    <color name="East">#B1FF70</color>
-    <color name="West">#F480FF</color>
-    <color name="Bounce">#2B5780</color>
-    <color name="NorthEast">#F59374</color>
-    <color name="NorthWest">#F5568D</color>
-    <color name="SouthEast">#54F5C1</color>
-    <color name="SouthWest">#CF49F5</color>
 
 </resources>
