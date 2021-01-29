@@ -48,6 +48,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/namespaceOrange"
         android:contentDescription="@string/reRoll"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
         app:layout_anchor="@id/mainAppBar"
         app:srcCompat="@drawable/ic_dice" />
 
