@@ -1,5 +1,6 @@
 package com.michaeljahns.namespace
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,8 +25,10 @@ class PawnRecyclerAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<
     }
 
 
+    //    Whats a better way around this?
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PawnViewHolder, position: Int) {
-        holder.pawnName.text = pawns[position].name
+        holder.pawnName.text = """${pawns[position].name},"""
         holder.pawnProfession.text = pawns[position].profession
         holder.pawnAge.text = pawns[position].age.toString()
     }
