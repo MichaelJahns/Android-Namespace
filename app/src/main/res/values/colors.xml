@@ -3,9 +3,8 @@
     <color name="namespaceBlack">#282c34</color>
     <color name="namespaceOrange">#ff990f</color>
 
-    <color name="colorSecondary">#B88B34</color>
-    <color name="colorPrimary">#A16828</color>
+    <color name="colorSecondary">#F5D76E</color>
+    <color name="colorPrimary">#4b5555</color>
     <color name="colorPrimaryDark">#38240E</color>
     <color name="colorAccent">#2887a1</color>
-
 </resources>

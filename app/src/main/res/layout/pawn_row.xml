@@ -6,25 +6,33 @@
 
     <TextView
         android:id="@+id/tvPawnName"
-        android:layout_width="129dp"
+        android:layout_width="134dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32sp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
         android:text="@string/generatedPawnName"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/tvPawnProfession"
-        android:layout_width="157dp"
-        android:layout_height="60dp"
-        android:text="@string/generatedPawnProfession"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/tvPawnAge"
-        android:layout_width="wrap_content"
+        android:layout_width="72dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="32sp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
         android:text="@string/generatedPawnAge"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvPawnProfession"
+        android:layout_width="202dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
+        android:text="@string/generatedPawnProfession"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp" />
+
 </LinearLayout>
 
