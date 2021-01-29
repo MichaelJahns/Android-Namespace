@@ -10,7 +10,8 @@
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
         android:text="@string/generatedPawnName"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/tvPawnProfession"
@@ -19,6 +20,7 @@
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
         android:text="@string/generatedPawnProfession"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp" />
 
     <TextView
@@ -28,6 +30,7 @@
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
         android:text="@string/generatedPawnAge"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
 </LinearLayout>
 
