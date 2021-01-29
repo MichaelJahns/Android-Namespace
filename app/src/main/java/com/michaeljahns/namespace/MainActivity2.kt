@@ -49,6 +49,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun startViewPager() {
         val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
         val indicator = findViewById<CircleIndicator3>(R.id.indicator)
+        indicator.solidColor
 
         scenarioPager2.adapter = ScenarioPageAdapter(scenarioList)
         scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL

@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, 1500)
 
 //       Splash Leyline Animation
 //        Splash Sound Accompaniment

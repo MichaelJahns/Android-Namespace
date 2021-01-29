@@ -12,7 +12,8 @@
         android:layout_marginTop="72dp"
         android:fontFamily="@font/jim_nightshade"
         android:text="@string/generatedLocationLabel"
-        android:textSize="36sp"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +36,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/jim_nightshade"
         android:text="@string/generatedCrewLabel"
+        android:textColor="@color/namespaceBlack"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
