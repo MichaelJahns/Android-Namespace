@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/scenario_pager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/indicator"
+        android:layout_centerInParent="true"
+        android:background="@color/colorSecondary">
+
+    </androidx.viewpager2.widget.ViewPager2>
 
     <me.relex.circleindicator.CircleIndicator3
         android:id="@+id/indicator"
@@ -13,21 +24,32 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark" />
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/mainAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/namespaceBlack">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/mainNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            app:menu="@menu/main_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
+        android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_card" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/scenario_pager2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/indicator"
-        android:layout_centerInParent="true"
-        android:background="@color/colorSecondary" />
+        android:backgroundTint="@color/namespaceOrange"
+        android:contentDescription="@string/reRoll"
+        app:layout_anchor="@id/mainAppBar"
+        app:srcCompat="@drawable/ic_dice" />
 
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

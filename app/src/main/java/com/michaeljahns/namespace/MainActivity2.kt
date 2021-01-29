@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.michaeljahns.namespace.grammy.Scenario
 import me.relex.circleindicator.CircleIndicator3
@@ -16,17 +17,19 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val context = GlobalApplication.getAppContext()
         scenarioList = ScenarioFactory.getScenarios(15)
 
         bindViews(context)
+        startMainNavigationBar()
         startViewPager()
     }
 
     private fun bindViews(context: Context) {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
-            Toast.makeText(context, "Shuffled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Re-Rolled All Scenarios", Toast.LENGTH_SHORT).show()
             resetLists()
             startViewPager()
         }
@@ -35,6 +38,12 @@ class MainActivity2 : AppCompatActivity() {
     private fun resetLists() {
         this.scenarioList.clear()
         this.scenarioList = ScenarioFactory.getScenarios(20)
+    }
+
+    private fun startMainNavigationBar() {
+        val mainNavigationView = findViewById<BottomNavigationView>(R.id.mainNavigationView)
+        mainNavigationView.background = null
+        mainNavigationView.menu.getItem(2).isEnabled = false
     }
 
     private fun startViewPager() {
