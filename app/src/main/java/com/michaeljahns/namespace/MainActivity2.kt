@@ -26,6 +26,11 @@ class MainActivity2 : AppCompatActivity() {
         startViewPager()
     }
 
+//    override fun onSupportNavigateUp(): Boolean {
+//        val navController = findNavController(R.id.mainNavHost)
+//        return navController.navigateUp() || super.onSupportNavigateUp()
+//    }
+
     private fun bindViews(context: Context) {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
@@ -40,12 +45,6 @@ class MainActivity2 : AppCompatActivity() {
         this.scenarioList = ScenarioFactory.getScenarios(20)
     }
 
-    private fun startMainNavigationBar() {
-        val mainNavigationView = findViewById<BottomNavigationView>(R.id.mainNavigationView)
-        mainNavigationView.background = null
-        mainNavigationView.menu.getItem(2).isEnabled = false
-    }
-
     private fun startViewPager() {
         val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
         val indicator = findViewById<CircleIndicator3>(R.id.indicator)
@@ -53,5 +52,11 @@ class MainActivity2 : AppCompatActivity() {
         scenarioPager2.adapter = ScenarioPageAdapter(scenarioList)
         scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         indicator.setViewPager(scenarioPager2)
+    }
+
+    private fun startMainNavigationBar() {
+        val mainNavigationView = findViewById<BottomNavigationView>(R.id.mainNavigationView)
+        mainNavigationView.background = null
+        mainNavigationView.menu.getItem(2).isEnabled = false
     }
 }

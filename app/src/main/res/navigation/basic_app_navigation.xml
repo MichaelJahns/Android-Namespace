@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/basic_app_navigation"
+    app:startDestination="@id/scenarioFragment">
+
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.michaeljahns.namespace.MainActivity2"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/scenarioFragment"
+        android:name="com.michaeljahns.namespace.ScenarioFragment"
+        android:label="fragment_scenario"
+        tools:layout="@layout/fragment_scenario">
+        <action
+            android:id="@+id/action_scenarioFragment_to_mainActivity2"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/from_east"
+            app:exitAnim="@anim/to_west"
+            app:popEnterAnim="@anim/to_east"
+            app:popExitAnim="@anim/from_west" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.michaeljahns.namespace.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_mainActivity2"
+            app:destination="@id/scenarioFragment"
+            app:enterAnim="@anim/from_west"
+            app:exitAnim="@anim/to_east"
+            app:popEnterAnim="@anim/from_east"
+            app:popExitAnim="@anim/to_west" />
+    </fragment>
+</navigation>

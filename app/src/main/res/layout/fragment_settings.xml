@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsFragment">
 
     <TextView
         android:id="@+id/tvNumberOfScenarios"
@@ -19,7 +19,6 @@
         android:id="@+id/dsNumberOfScenarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="@id/tvNumberOfScenarios"
         android:layout_marginTop="50sp"
         android:stepSize="1.0"
         android:value="15"
@@ -30,7 +29,7 @@
         android:id="@+id/tvAgeRangeOfPawns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150sp"
+        android:layout_marginTop="100sp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:text="@string/settingRangeOfPawnAges"
         android:textColor="@color/namespaceOrange"
@@ -40,8 +39,7 @@
         android:id="@+id/rsAgeRangeOfPawns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="@id/tvAgeRangeOfPawns"
-        android:layout_marginTop="250sp"
+        android:layout_marginTop="150sp"
         android:stepSize="1.0"
         android:valueFrom="1.0"
         android:valueTo="100.0"
@@ -55,4 +53,4 @@
         android:gravity="center"
         android:text="@string/saveSettings" />
 
-</RelativeLayout>
+</FrameLayout>
