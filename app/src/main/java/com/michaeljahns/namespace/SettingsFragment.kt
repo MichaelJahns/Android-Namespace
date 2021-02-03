@@ -2,16 +2,13 @@ package com.michaeljahns.namespace
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 private val NUMBER_OF_SCENARIOS = 15
 private val MINIMUM_PAWN_AGE = 13
 private val MAXIMUM_PAWN_AGE = 71
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private var NUMBER_OF_SCENARIOS: Int? = null
     private var MINIMUM_PAWN_AGE: Int? = null
     private var MAXIMUM_PAWN_AGE: Int? = null
@@ -23,14 +20,6 @@ class SettingsFragment : Fragment() {
             MINIMUM_PAWN_AGE = it.getInt("MINIMUM_PAWN_AGE", 13)
             MAXIMUM_PAWN_AGE = it.getInt("MAXIMUM_PAWN_AGE", 71)
         }
-    }
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        loadData()
-        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
     private fun saveData() {
