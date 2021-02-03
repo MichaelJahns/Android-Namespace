@@ -5,21 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
-    
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/scenario_pager2"
+
+    <FrameLayout
+        android:id="@+id/mainFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/indicator"
-        android:background="@color/colorSecondary" />
-
-    <me.relex.circleindicator.CircleIndicator3
-        android:id="@+id/indicator"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/namespaceBlack"
-        app:ci_drawable="@drawable/circle_indicator_round" />
+        android:background="@color/namespaceOrange" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/mainAppBar"

@@ -4,54 +4,56 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.michaeljahns.namespace.grammy.Scenario
-import me.relex.circleindicator.CircleIndicator3
+import com.michaeljahns.namespace.databinding.ActivityMainBinding
 
 class MainActivity2 : AppCompatActivity() {
-
-    private var scenarioList = mutableListOf<Scenario>()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val context = GlobalApplication.getAppContext()
-        scenarioList = ScenarioFactory.getScenarios(15)
 
+        val scenarioFragment = ScenarioFragment()
+        val settingsFragment = SettingsFragment()
+        setCurrentFragment(scenarioFragment)
         bindViews(context)
         startMainNavigationBar()
-        startViewPager()
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.mainNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.miHome -> setCurrentFragment(scenarioFragment)
+                R.id.miSettings -> setCurrentFragment(settingsFragment)
+            }
+            true
+        }
+
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = findNavController(R.id.mainNavHost)
-//        return navController.navigateUp() || super.onSupportNavigateUp()
-//    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.mainNavigationView)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    private fun setCurrentFragment(fragment: Fragment) =
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.mainFrameLayout, fragment)
+                commit()
+            }
 
     private fun bindViews(context: Context) {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
-            Toast.makeText(context, "Re-Rolled All Scenarios", Toast.LENGTH_SHORT).show()
-            resetLists()
-            startViewPager()
+            Toast.makeText(context, "Fab Disconnected", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun resetLists() {
-        this.scenarioList.clear()
-        this.scenarioList = ScenarioFactory.getScenarios(20)
-    }
-
-    private fun startViewPager() {
-        val scenarioPager2 = findViewById<ViewPager2>(R.id.scenario_pager2);
-        val indicator = findViewById<CircleIndicator3>(R.id.indicator)
-
-        scenarioPager2.adapter = ScenarioPageAdapter(scenarioList)
-        scenarioPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        indicator.setViewPager(scenarioPager2)
     }
 
     private fun startMainNavigationBar() {

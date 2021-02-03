@@ -19,6 +19,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
     configurations { compile.exclude group: "junit", module: "junit" }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

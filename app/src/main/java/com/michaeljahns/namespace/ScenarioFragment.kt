@@ -1,59 +1,35 @@
 package com.michaeljahns.namespace
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
+import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
+import com.michaeljahns.namespace.grammy.Scenario
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ScenarioFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ScenarioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
+    private lateinit var binding: FragmentScenarioBinding
+    private var scenarioList = mutableListOf<Scenario>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-
+        bindView()
+        resetLists()
+        startViewPager()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scenario, container, false)
+    private fun bindView() {
+        binding = FragmentScenarioBinding.inflate(layoutInflater)
+        val view = binding.root
     }
 
+    private fun startViewPager() {
+        binding.vp2Scenario.adapter = ScenarioPageAdapter(scenarioList)
+        binding.vp2Scenario.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.indicatorScenario.setViewPager(binding.vp2Scenario)
+    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScenarioFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                ScenarioFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    private fun resetLists() {
+        this.scenarioList.clear()
+        this.scenarioList = ScenarioFactory.getScenarios(20)
     }
 }
