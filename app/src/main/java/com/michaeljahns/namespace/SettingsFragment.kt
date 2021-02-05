@@ -2,51 +2,67 @@ package com.michaeljahns.namespace
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-
-private val NUMBER_OF_SCENARIOS = 15
-private val MINIMUM_PAWN_AGE = 13
-private val MAXIMUM_PAWN_AGE = 71
+import com.michaeljahns.namespace.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private var NUMBER_OF_SCENARIOS: Int? = null
     private var MINIMUM_PAWN_AGE: Int? = null
     private var MAXIMUM_PAWN_AGE: Int? = null
+    private lateinit var binding: FragmentSettingsBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            NUMBER_OF_SCENARIOS = it.getInt("NUMBER_OF_SCENARIOS", 15)
-            MINIMUM_PAWN_AGE = it.getInt("MINIMUM_PAWN_AGE", 13)
-            MAXIMUM_PAWN_AGE = it.getInt("MAXIMUM_PAWN_AGE", 71)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentSettingsBinding.inflate(layoutInflater, container, false)
+        binding.btnSaveSettings.setOnClickListener {
+            saveData()
         }
+        loadData()
+        initSettings()
+        return binding.root
     }
 
     private fun saveData() {
         val sharedPreferences = this.activity?.getSharedPreferences("persistentSettings", Context.MODE_PRIVATE)
-        val editor = sharedPreferences?.edit()
-        editor.apply {
+        val numberOfScenariosInt = binding.dsNumberOfScenarios.value.toInt()
+        val minimumPawnAgeRangeInt = binding.rsAgeRangeOfPawns.valueFrom.toInt()
+        val maximumPawnAgeRangeInt = binding.rsAgeRangeOfPawns.valueTo.toInt()
 
+        val editor = sharedPreferences?.edit()
+        editor?.apply {
+            putInt("NumberOfScenarios", numberOfScenariosInt)
+            putInt("MinimumPawnAge", minimumPawnAgeRangeInt)
+            putInt("MaximumPawnAge", maximumPawnAgeRangeInt)
         }?.apply()
     }
 
     private fun loadData() {
-        val dsNumberOfScenarios = R.id.dsNumberOfScenarios
-        val rsAgeRangeOfPawns = R.id.rsAgeRangeOfPawns
-        val preferences = this.activity?.getSharedPreferences("persistentSettings", Context.MODE_PRIVATE)
-        val NumberOfScenarios = preferences?.getInt("NumberOfScenarios", 15)
-        val MinimumPawnAge = preferences?.getInt("MinimumPawnAge", 13)
-        val MaximumPawnAge = preferences?.getInt("MaximumPawnAge", 70)
+        val sharedPreferences = this.activity?.getSharedPreferences("persistentSettings", Context.MODE_PRIVATE)
+        NUMBER_OF_SCENARIOS = sharedPreferences?.getInt("NumberOfScenarios", 15)
+        MAXIMUM_PAWN_AGE = sharedPreferences?.getInt("MinimumPawnAge", 13)
+        MINIMUM_PAWN_AGE = sharedPreferences?.getInt("MaximumPawnAge", 70)
+        initSettings()
     }
 
-    companion object {
-        fun newInstance(param1: Int, param2: Int, param3: Int) =
-                SettingsFragment().apply {
-                    arguments = Bundle().apply {
-                        putInt("NUMBER_OF_SCENARIOS", param1)
-                        putInt("MINIMUM_PAWN_AGE", param2)
-                        putInt("MAXIMUM_PAWN_AGE", param3)
-                    }
-                }
+    private fun initSettings() {
+        setupDSNumberOfScenarios()
+        setupRSAgeRangeOfPawns()
+    }
+
+    private fun setupDSNumberOfScenarios() {
+        binding.dsNumberOfScenarios.setLabelFormatter {
+            getString(R.string.label_Scenario, it)
+        }
+        binding.dsNumberOfScenarios.value = NUMBER_OF_SCENARIOS!!.toFloat()
+    }
+
+    private fun setupRSAgeRangeOfPawns() {
+        binding.rsAgeRangeOfPawns.setLabelFormatter {
+            getString(R.string.label_Age, it)
+        }
+        binding.rsAgeRangeOfPawns.valueTo = MINIMUM_PAWN_AGE!!.toFloat()
+        binding.rsAgeRangeOfPawns.valueFrom = MAXIMUM_PAWN_AGE!!.toFloat()
     }
 }

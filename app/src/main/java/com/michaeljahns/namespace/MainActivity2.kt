@@ -21,6 +21,7 @@ class MainActivity2 : AppCompatActivity() {
 
         val scenarioFragment = ScenarioFragment()
         val settingsFragment = SettingsFragment()
+        val collectionFragment = CollectionFragment()
         setCurrentFragment(scenarioFragment)
         bindViews(context)
         startMainNavigationBar()
@@ -31,11 +32,11 @@ class MainActivity2 : AppCompatActivity() {
         binding.mainNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.miHome -> setCurrentFragment(scenarioFragment)
+                R.id.miCollection -> setCurrentFragment(collectionFragment)
                 R.id.miSettings -> setCurrentFragment(settingsFragment)
             }
             true
         }
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,5 +1,6 @@
 package com.michaeljahns.namespace
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +11,14 @@ import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
 import com.michaeljahns.namespace.grammy.Scenario
 
 class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
+    private var numberOfScenarios: Int = 15
     private lateinit var binding: FragmentScenarioBinding
     private var scenarioList = mutableListOf<Scenario>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.scenarioList = ScenarioFactory.getScenarios(20)
+        loadData()
+        this.scenarioList = ScenarioFactory.getScenarios(numberOfScenarios)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,8 +27,12 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
         return binding.root
     }
 
+    private fun loadData() {
+        val sharedPreferences = this.activity?.getSharedPreferences("persistentSettings", Context.MODE_PRIVATE)
+        numberOfScenarios = sharedPreferences?.getInt("NumberOfScenarios", 15)!!
+    }
+
     private fun startViewPager() {
-        binding.tvScenario.text = scenarioList[0].location.toString()
         binding.vp2Scenario.adapter = ScenarioPageAdapter(scenarioList)
         binding.vp2Scenario.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.indicatorScenario.setViewPager(binding.vp2Scenario)
@@ -33,6 +40,6 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
 
     private fun resetLists() {
         this.scenarioList.clear()
-        this.scenarioList = ScenarioFactory.getScenarios(20)
+        this.scenarioList = ScenarioFactory.getScenarios(numberOfScenarios)
     }
 }

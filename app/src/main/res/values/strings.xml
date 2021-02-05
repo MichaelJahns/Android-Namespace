@@ -2,6 +2,14 @@
     <string name="namespace"> <u>Namespace</u> </string>
     <string name="leyline"> Leyline </string>
 
+    <!--    Navigation Items -->
+    <string name="navScenarios"> Scenarios </string>
+    <string name="navCollections"> Collections </string>.
+    <string name="navSettings"> Settings </string>
+
+    <!--    Labels-->
+    <string name="label_Scenario">Scenarios: %1$.0f</string>
+    <string name="label_Age">Age: %1.0f </string>
     <!--    General Use -->
     <string name="reRoll"> Re-Roll </string>
     <string name="saveSettings"> Save Settings </string>
@@ -17,5 +25,7 @@
     <string name="generatedPawnName">Name</string>
     <string name="generatedPawnAge">Age</string>
     <string name="generatedPawnProfession">Profession</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

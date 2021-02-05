@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ScenarioFragment">
 
-    <TextView
-        android:id="@+id/tvScenario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="tesadsf"
-        android:textColor="@color/namespaceBlack"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2Scenario"
         android:layout_width="match_parent"
