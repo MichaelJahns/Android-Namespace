@@ -10,7 +10,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
 import com.michaeljahns.namespace.grammy.Scenario
 
-class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
+class ScenarioFragment : Fragment(R.layout.fragment_scenario), OmniFragment {
+    override val TAG: String = "SCENARIO"
+
     private var numberOfScenarios: Int = 15
     private lateinit var binding: FragmentScenarioBinding
     private var scenarioList = mutableListOf<Scenario>()
@@ -42,4 +44,11 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
         this.scenarioList.clear()
         this.scenarioList = ScenarioFactory.getScenarios(numberOfScenarios)
     }
+
+    override fun onOmniFabClicked(view: View) {
+        super.onOmniFabClicked(view)
+        resetLists()
+    }
+
+
 }
