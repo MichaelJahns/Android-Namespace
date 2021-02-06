@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity2">
 
-    <include
+    <FrameLayout
         android:id="@+id/mainFrameLayout"
-        layout="@layout/fragment_frame_layout" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <include
-        android:id="@+id/mainNavigation"
+        android:id="@+id/fartsmainNavigationView"
         layout="@layout/fragment_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

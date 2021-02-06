@@ -1,6 +1,7 @@
 package com.michaeljahns.namespace.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,10 +17,12 @@ class NavigationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentNavigationBinding.inflate(inflater, container, false)
+        Log.d("TFF", "Echoes But Alone")
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("TFF", "Echoes But Alone")
         super.onViewCreated(view, savedInstanceState)
         val nav = binding.mainNavigationView
         nav.background = null
