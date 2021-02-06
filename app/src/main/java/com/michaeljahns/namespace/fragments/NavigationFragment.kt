@@ -1,17 +1,21 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.michaeljahns.namespace.databinding.FragmentNavbarBinding
+import androidx.fragment.app.activityViewModels
+import com.michaeljahns.namespace.UIViewModel
+import com.michaeljahns.namespace.databinding.FragmentNavigationBinding
 
-class NavbarFragment : Fragment() {
-    private lateinit var binding: FragmentNavbarBinding
+class NavigationFragment : Fragment() {
+    private lateinit var binding: FragmentNavigationBinding
+    private val UIViewModel: UIViewModel by activityViewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = FragmentNavbarBinding.inflate(inflater, container, false)
+        binding = FragmentNavigationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -21,7 +25,7 @@ class NavbarFragment : Fragment() {
         nav.background = null
         nav.menu.getItem(2).isEnabled = false
         nav.setOnNavigationItemSelectedListener {
-            frameLayout.handleBoil(it.itemId)
+            UIViewModel.select(it.itemId)
             true
         }
     }

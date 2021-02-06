@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.michaeljahns.namespace.OmniFragment
+import com.michaeljahns.namespace.R
+import com.michaeljahns.namespace.ScenarioFactory
+import com.michaeljahns.namespace.ScenarioPageAdapter
 import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
 import com.michaeljahns.namespace.grammy.Scenario
 

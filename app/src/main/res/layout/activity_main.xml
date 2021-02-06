@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".activities.MainActivity2">
 
     <include
         android:id="@+id/mainFrameLayout"
         layout="@layout/fragment_frame_layout" />
 
     <include
-        android:id="@+id/mainNavbar"
-        layout="@layout/fragment_navbar" />
+        android:id="@+id/mainNavigation"
+        layout="@layout/fragment_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

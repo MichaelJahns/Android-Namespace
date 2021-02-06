@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/mainActivity2"
-        android:name="com.michaeljahns.namespace.MainActivity2"
+        android:name="com.michaeljahns.namespace.activities.MainActivity2"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/scenarioFragment"
-        android:name="com.michaeljahns.namespace.ScenarioFragment"
+        android:name="com.michaeljahns.namespace.fragments.ScenarioFragment"
         android:label="fragment_scenario"
         tools:layout="@layout/fragment_scenario">
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.michaeljahns.namespace.SettingsFragment"
+        android:name="com.michaeljahns.namespace.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings">
         <action

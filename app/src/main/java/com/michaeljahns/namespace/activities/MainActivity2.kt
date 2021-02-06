@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,9 +1,10 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.michaeljahns.namespace.R
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var handler: Handler
