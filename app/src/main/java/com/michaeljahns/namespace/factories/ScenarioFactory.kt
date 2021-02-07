@@ -1,7 +1,6 @@
 package com.michaeljahns.namespace.factories
 
 import android.content.Context
-import androidx.lifecycle.MutableLiveData
 import com.michaeljahns.namespace.GlobalApplication
 import com.michaeljahns.namespace.flattenLocationsFromJson
 import com.michaeljahns.namespace.grammy.Location
@@ -11,14 +10,14 @@ import com.michaeljahns.namespace.rand
 import com.michaeljahns.namespace.readJsonFromAsset
 
 object ScenarioFactory {
-    fun getScenarios(count: Int): MutableLiveData<List<Scenario>> {
-        val scenarios: MutableLiveData<List<Scenario>> = MutableLiveData()
+    fun getScenarios(count: Int): MutableList<Scenario> {
+        var scenarios = mutableListOf<Scenario>()
         repeat(count) {
             val context = GlobalApplication.getAppContext()
             val scenarioLocation = randomLocation(context)
             val scenarioPawns = randomPawns(context)
-            var scenario = Scenario(scenarioLocation, scenarioPawns)
-            scenarios.postValue(listOf(scenario))
+            val scenario = Scenario(scenarioLocation, scenarioPawns)
+            scenarios.add(scenario)
         }
         return scenarios
     }

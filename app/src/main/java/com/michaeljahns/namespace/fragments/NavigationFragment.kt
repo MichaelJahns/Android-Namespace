@@ -13,7 +13,7 @@ import com.michaeljahns.namespace.models.UIViewModel
 class NavigationFragment : Fragment() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var binding: FragmentNavigationBinding
-    private val uIViewModel: UIViewModel by activityViewModels()
+    private val model: UIViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,7 +27,7 @@ class NavigationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bottomNavigationView.menu.getItem(2).isEnabled = false
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            uIViewModel.select(it.itemId)
+            model.select(it.itemId)
             true
         }
     }

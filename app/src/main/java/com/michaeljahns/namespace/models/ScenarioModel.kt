@@ -6,20 +6,26 @@ import com.michaeljahns.namespace.factories.ScenarioFactory
 import com.michaeljahns.namespace.grammy.Scenario
 
 class ScenarioModel : ViewModel() {
-    private var scenarios: MutableLiveData<List<Scenario>> = MutableLiveData()
-//        get() {
-//            return ScenarioFactory.getScenarios(numberOfScenarios)
-//        }
+    private var numberOfScenarios = MutableLiveData<Int>()
+    private var scenarios: MutableList<Scenario> = ScenarioFactory.getScenarios(getNumberOfScenarios())
 
-
-    fun generateScenarios() {
-        val numberOfScenarios = 13
-        scenarios = ScenarioFactory.getScenarios(numberOfScenarios)
+    private fun getNumberOfScenarios(): Int {
+        return this.numberOfScenarios.value ?: 15
     }
 
-    fun getScenarios(): MutableLiveData<List<Scenario>> {
+    fun setNumberOfScenarios(number: Int) {
+        this.numberOfScenarios.value = number
+    }
+
+    fun regenerateScenarios() {
+        scenarios = ScenarioFactory.getScenarios(getNumberOfScenarios())
+    }
+
+    fun getScenarios(): MutableList<Scenario> {
         return this.scenarios
     }
+
+
 }
 
 
