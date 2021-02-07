@@ -24,11 +24,9 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fartsmainNavigationView, navigationFragment)
+            replace(R.id.mainNavigationView, navigationFragment)
             commit()
         }
 
@@ -40,6 +38,10 @@ class MainActivity2 : AppCompatActivity() {
                 R.id.miSettings -> setCurrentFragment(settingsFragment)
             }
         })
+
+        val view = binding.root
+        setContentView(view)
+
     }
 
     private fun setCurrentFragment(fragment: Fragment) =

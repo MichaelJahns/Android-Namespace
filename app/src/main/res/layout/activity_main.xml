@@ -11,7 +11,7 @@
         android:layout_height="match_parent" />
 
     <include
-        android:id="@+id/fartsmainNavigationView"
+        android:id="@+id/mainNavigationView"
         layout="@layout/fragment_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
