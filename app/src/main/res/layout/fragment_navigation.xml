@@ -21,16 +21,17 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
-            app:menu="@menu/main_nav_menu">
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+            app:menu="@menu/main_nav_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
     </com.google.android.material.bottomappbar.BottomAppBar>
 
-    <include
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/omnifab"
-        layout="@layout/omnifab"
         android:layout_width="97dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/namespaceOrange"
+        android:onClick="onOmniFabClicked"
         app:layout_anchor="@+id/bottomNavigationView"
-        app:layout_anchorGravity="center" />
+        app:layout_anchorGravity="center"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

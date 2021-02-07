@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.michaeljahns.namespace.UIViewModel
 import com.michaeljahns.namespace.databinding.FragmentNavigationBinding
+import com.michaeljahns.namespace.models.UIViewModel
 
 class NavigationFragment : Fragment() {
     private lateinit var bottomNavigationView: BottomNavigationView

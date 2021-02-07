@@ -1,7 +1,10 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.factories
 
 import android.content.Context
+import com.michaeljahns.namespace.flattenJsonOnKey
 import com.michaeljahns.namespace.grammy.Pawn
+import com.michaeljahns.namespace.rand
+import com.michaeljahns.namespace.readJsonFromAsset
 
 object PawnFactory {
     private var minimumAge: Int = 13

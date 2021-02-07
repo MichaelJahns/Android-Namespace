@@ -7,11 +7,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.michaeljahns.namespace.CollectionFragment
 import com.michaeljahns.namespace.R
-import com.michaeljahns.namespace.UIViewModel
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
 import com.michaeljahns.namespace.fragments.NavigationFragment
 import com.michaeljahns.namespace.fragments.ScenarioFragment
 import com.michaeljahns.namespace.fragments.SettingsFragment
+import com.michaeljahns.namespace.models.UIViewModel
 
 class MainActivity2 : AppCompatActivity() {
     private val navigationFragment = NavigationFragment()
