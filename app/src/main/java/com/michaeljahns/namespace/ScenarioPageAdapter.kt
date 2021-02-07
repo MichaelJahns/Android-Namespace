@@ -14,7 +14,7 @@ class ScenarioPageAdapter(private var scenarios: MutableList<Scenario>) : Recycl
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScenarioPageAdapter.ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.scenario_page, parent, false)
 //        Explicating declaring the below resolved some issue, i cant remember now which
-        view.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+//        view.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         return ViewPager2Holder(view)
     }
 

@@ -3,12 +3,12 @@
     <item
         android:id="@+id/miHome"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="@string/navScenarios" />
 
     <item
         android:id="@+id/miCollection"
         android:icon="@drawable/ic_collection"
-        android:title="Collection" />
+        android:title="@string/navCollections" />
 
     <item
         android:id="@+id/textinput_placeholder1"
@@ -21,5 +21,5 @@
     <item
         android:id="@+id/miSettings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings" />
+        android:title="@string/navSettings" />
 </menu>
