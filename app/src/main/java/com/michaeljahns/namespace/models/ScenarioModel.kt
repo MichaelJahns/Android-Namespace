@@ -9,10 +9,9 @@ class ScenarioModel : ViewModel() {
     private var numberOfScenarios = MutableLiveData<Int>()
     private var minPawnAgeRange = MutableLiveData<Int>()
     private var maxPawnAgeRange = MutableLiveData<Int>()
-    private var scenarios: MutableList<Scenario> = ScenarioFactory.getScenarios(getNumberOfScenarios())
-    private lateinit var _scenarios: MutableLiveData<List<Scenario>>
+    var scenarios: MutableLiveData<MutableList<Scenario>> = ScenarioFactory.getScenarios(getNumberOfScenarios())
 
-    fun getNumberOfScenarios(): Int {
+    private fun getNumberOfScenarios(): Int {
         return this.numberOfScenarios.value ?: 15
     }
 
@@ -30,16 +29,12 @@ class ScenarioModel : ViewModel() {
         this.maxPawnAgeRange.value = maximum
     }
 
-    fun regenerateScenarios() {
+    private fun regenerateScenarios() {
         scenarios = ScenarioFactory.getScenarios(getNumberOfScenarios())
     }
 
-    fun getScenarios(): MutableList<Scenario> {
+    fun _getScenarios(): MutableLiveData<MutableList<Scenario>> {
         return this.scenarios
-    }
-
-    fun _getScenarios(): MutableLiveData<List<Scenario>> {
-        return this._scenarios
     }
 
     fun getMinPawnAgeRange(): Float {
