@@ -10,6 +10,8 @@ class ScenarioModel : ViewModel() {
     private var minPawnAgeRange = MutableLiveData<Int>()
     private var maxPawnAgeRange = MutableLiveData<Int>()
     var scenarios: MutableLiveData<MutableList<Scenario>> = ScenarioFactory.getScenarios(getNumberOfScenarios())
+    var isSettingsVisible = MutableLiveData<Boolean>()
+
 
     private fun getNumberOfScenarios(): Int {
         return this.numberOfScenarios.value ?: 15
@@ -33,10 +35,6 @@ class ScenarioModel : ViewModel() {
         scenarios = ScenarioFactory.getScenarios(getNumberOfScenarios())
     }
 
-    fun _getScenarios(): MutableLiveData<MutableList<Scenario>> {
-        return this.scenarios
-    }
-
     fun getMinPawnAgeRange(): Float {
         val minAge = this.minPawnAgeRange.value?.toFloat()
         return minAge ?: 10F
@@ -45,6 +43,14 @@ class ScenarioModel : ViewModel() {
     fun getMaxPawnAgeRange(): Float {
         val maxAge = this.maxPawnAgeRange.value?.toFloat()
         return maxAge ?: 70F
+    }
+
+    fun toggleSettingsVisibility() {
+        isSettingsVisible.value = isSettingsVisible.value!!.not()
+    }
+
+    init {
+        isSettingsVisible.value = false
     }
 
 
