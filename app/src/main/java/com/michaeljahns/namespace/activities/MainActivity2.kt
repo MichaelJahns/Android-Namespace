@@ -5,9 +5,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.michaeljahns.namespace.CollectionFragment
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
+import com.michaeljahns.namespace.fragments.CollectionFragment
 import com.michaeljahns.namespace.fragments.ForageFragment
 import com.michaeljahns.namespace.fragments.NavigationFragment
 import com.michaeljahns.namespace.fragments.ScenarioFragment

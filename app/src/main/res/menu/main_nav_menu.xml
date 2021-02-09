@@ -15,12 +15,12 @@
         android:title="" />
 
     <item
-        android:id="@+id/miCollection"
-        android:icon="@drawable/ic_collection"
-        android:title="@string/navCollections" />
-
-    <item
         android:id="@+id/miSettings"
         android:icon="@drawable/ic_settings"
         android:title="@string/navSettings" />
+
+    <item
+        android:id="@+id/miCollection"
+        android:icon="@drawable/ic_collection"
+        android:title="@string/navCollections" />
 </menu>

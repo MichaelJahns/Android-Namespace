@@ -35,5 +35,4 @@
         app:layout_anchorGravity="center"
         app:tint="@color/namespaceBlack" />
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
