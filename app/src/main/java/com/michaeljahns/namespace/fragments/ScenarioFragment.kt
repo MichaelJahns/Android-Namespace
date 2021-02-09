@@ -19,6 +19,7 @@ import com.michaeljahns.namespace.grammy.Scenario
 import com.michaeljahns.namespace.models.ScenarioModel
 
 class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
+    private val TAG = "SCEN"
     private lateinit var binding: FragmentScenarioBinding
     private lateinit var scenarioList: MutableLiveData<MutableList<Scenario>>
     private lateinit var settingsWindow: PopupWindow
@@ -30,12 +31,12 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
         scenarioList = model.scenarios
         startViewPager()
 
-        var settings = View.inflate(context, R.layout.fragment_scenario_settings, container)
+        val settings = View.inflate(context, R.layout.fragment_scenario_settings, container)
         settingsWindow = PopupWindow(settings, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT)
         settingsWindow.contentView = view
 
         binding.btnScenarioSettings.setOnClickListener {
-            Log.d("SCEN", "Btn Clicked")
+            Log.d(TAG, "Btn Clicked")
             model.toggleSettingsVisibility()
         }
 
@@ -47,7 +48,7 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
         })
 
         model.numberOfScenarios.observe(viewLifecycleOwner, Observer {
-            Log.d("SCEN", "Entered")
+            Log.d(TAG, "Entered")
             regenerateLists()
         })
         return binding.root
@@ -66,7 +67,8 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
     }
 
     private fun showSettingsVisibility() {
-        settingsWindow.showAsDropDown(binding.btnScenarioSettings)
+        Log.d(TAG, "Attempting show of setting Popup.window")
+        settingsWindow.showAsDropDown(binding.indicatorScenario)
     }
 
     private fun hideSettingsVisibility() {
