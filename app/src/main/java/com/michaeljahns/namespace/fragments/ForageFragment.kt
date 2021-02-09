@@ -30,7 +30,6 @@ class ForageFragment : Fragment(R.layout.fragment_forage) {
     private fun startViewPager() {
         binding.vp2Forage.adapter = ForagePageAdapter(forageList)
         binding.vp2Forage.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.indicatorForage.setViewPager(binding.vp2Forage)
     }
-
-
 }

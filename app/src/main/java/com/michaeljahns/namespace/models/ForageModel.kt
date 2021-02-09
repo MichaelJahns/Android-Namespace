@@ -9,7 +9,7 @@ class ForageModel : ViewModel() {
     var numberOfForages = MutableLiveData<Int>()
     var forages: MutableLiveData<MutableList<Forage>> = ForageFactory.getForages(getNumberOfForages())
 
-    fun getNumberOfForages(): Int {
+    private fun getNumberOfForages(): Int {
         return this.numberOfForages.value ?: 6
     }
 }

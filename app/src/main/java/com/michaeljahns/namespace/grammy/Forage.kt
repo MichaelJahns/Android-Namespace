@@ -1,6 +1,7 @@
 package com.michaeljahns.namespace.grammy
 
-class Forage(forageLocation: String, forageDescription: String) {
-    val location = forageLocation
+class Forage(forageLandmark: String, forageDescription: String) {
+    val landmark = forageLandmark
     val description = forageDescription
+    val discoveries: MutableList<Discovery>? = null
 }

@@ -17,7 +17,7 @@ class ForagePageAdapter(private var forageList: MutableLiveData<MutableList<Fora
 
     override fun onBindViewHolder(holder: ForagePageAdapter.ViewPager2Holder, position: Int) {
         val forage: Forage = forageList.value!![position]
-        holder.forageLocation.text = forage.location.toString()
+        holder.forageLandmark.text = forage.landmark.toString()
     }
 
     override fun getItemCount(): Int {
@@ -25,6 +25,7 @@ class ForagePageAdapter(private var forageList: MutableLiveData<MutableList<Fora
     }
 
     inner class ViewPager2Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val forageLocation: TextView = itemView.findViewById(R.id.forageLocation)
+        val forageLandmark: TextView = itemView.findViewById(R.id.tvLandmarkForage)
+        val forageDescription: TextView = itemView.findViewById(R.id.tvDescriptionForage)
     }
 }

@@ -1,19 +1,41 @@
 {
-  "origin": [
-    "{what}"
-  ],
-  "location": [
-    "{abandonedCampsite}"
+  "landmark": [
+    "{Location}"
   ],
   "description": [
     "You dont know enough about foraging to separate garbage from treasure"
   ],
-  "abandonedCampsite": [
-    "Long Abandoned {humanoidSpecies} Campsite"
+  "discoveries": [
+    "{Herb}",
+    "{Reagent}"
   ],
-  "humanoidSpecies": [
+  "Location": [
+    "{AbandonedCampsite}",
+    "{DecayState} {AnimalCarcass}"
+  ],
+  "AbandonedCampsite": [
+    "Long Abandoned {HumanoidSpecies} Campsite"
+  ],
+  "AnimalCarcass": [
+    "pig",
+    "wolf",
+    "boar",
+    "elk",
+    "deer",
+    "rabbit",
+    "{HumanoidSpecies}"
+  ],
+  "DecayState": [
+    "fresh",
+    "rotting",
+    "maggoty",
+    "decomposing",
+    "decomposed",
+    "skeletal"
+  ],
+  "HumanoidSpecies": [
     "Aarakocra",
-    "Changelings disguised as {humanoidSpecies}",
+    "Changelings disguised as {HumanoidSpecies}",
     "Duergar",
     "Dragonborn",
     "Dwarf",
@@ -31,5 +53,14 @@
     "Tabaxi",
     "Tiefling",
     "Troglodyte"
+  ],
+  "Herb": [
+    "Sunflower Lily",
+    "Chokeleaf Cabbage"
+  ],
+  "Reagent": [
+    "Vial of Quicksilver",
+    "Amethyst Powder",
+    "Lich Bane"
   ]
 }

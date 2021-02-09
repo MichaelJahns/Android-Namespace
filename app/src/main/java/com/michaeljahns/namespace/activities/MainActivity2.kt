@@ -37,7 +37,7 @@ class MainActivity2 : AppCompatActivity() {
         setCurrentFragment(scenarioFragment)
         model.intView.observe(this, Observer {
             when (it) {
-                R.id.miHome -> {
+                R.id.miScenario -> {
                     setCurrentFragment(scenarioFragment)
                     binding.mainNavigationView.omnifab.setOnClickListener {
                         scenarioModel.regenerateScenarios()
