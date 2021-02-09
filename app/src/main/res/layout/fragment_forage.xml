@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ScenarioFragment">
+    tools:context=".fragments.ForageFragment">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp2Scenario"
+        android:id="@+id/vp2Forage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/indicatorScenario"
+        android:layout_above="@id/indicatorForage"
         android:background="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,30 +20,16 @@
     </androidx.viewpager2.widget.ViewPager2>
 
     <me.relex.circleindicator.CircleIndicator3
-        android:id="@+id/indicatorScenario"
+        android:id="@+id/indicatorForage"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:background="@color/namespaceBlack"
-        app:ci_drawable="@drawable/circle_indicator_round"
+        app:ci_drawable="@drawable/circle_indicator_round_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </me.relex.circleindicator.CircleIndicator3>
-
-    <Button
-        android:id="@+id/btnScenarioSettings"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/btn_settings"
-        android:textColor="@color/namespaceOrange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

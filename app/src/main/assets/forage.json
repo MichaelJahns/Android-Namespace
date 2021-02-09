@@ -1,0 +1,66 @@
+{
+  "landmark": [
+    "{Location}"
+  ],
+  "description": [
+    "You dont know enough about foraging to separate garbage from treasure"
+  ],
+  "discoveries": [
+    "{Herb}",
+    "{Reagent}"
+  ],
+  "Location": [
+    "{AbandonedCampsite}",
+    "{DecayState} {AnimalCarcass}"
+  ],
+  "AbandonedCampsite": [
+    "Long Abandoned {HumanoidSpecies} Campsite"
+  ],
+  "AnimalCarcass": [
+    "pig",
+    "wolf",
+    "boar",
+    "elk",
+    "deer",
+    "rabbit",
+    "{HumanoidSpecies}"
+  ],
+  "DecayState": [
+    "fresh",
+    "rotting",
+    "maggoty",
+    "decomposing",
+    "decomposed",
+    "skeletal"
+  ],
+  "HumanoidSpecies": [
+    "Aarakocra",
+    "Changelings disguised as {HumanoidSpecies}",
+    "Duergar",
+    "Dragonborn",
+    "Dwarf",
+    "Elf",
+    "Gnoll",
+    "Gnome",
+    "Golbin",
+    "Half-Elf",
+    "Half-Orc",
+    "Halfling",
+    "Hobgoblin",
+    "Kobold",
+    "Merfolk",
+    "Orc",
+    "Tabaxi",
+    "Tiefling",
+    "Troglodyte"
+  ],
+  "Herb": [
+    "Sunflower Lily",
+    "Chokeleaf Cabbage"
+  ],
+  "Reagent": [
+    "Vial of Quicksilver",
+    "Amethyst Powder",
+    "Lich Bane"
+  ]
+}
