@@ -6,7 +6,7 @@ import com.michaeljahns.namespace.factories.ScenarioFactory
 import com.michaeljahns.namespace.grammy.Scenario
 
 class ScenarioModel : ViewModel() {
-    private var numberOfScenarios = MutableLiveData<Int>()
+    var numberOfScenarios = MutableLiveData<Int>()
     private var minPawnAgeRange = MutableLiveData<Int>()
     private var maxPawnAgeRange = MutableLiveData<Int>()
     var scenarios: MutableLiveData<MutableList<Scenario>> = ScenarioFactory.getScenarios(getNumberOfScenarios())
@@ -31,7 +31,8 @@ class ScenarioModel : ViewModel() {
         this.maxPawnAgeRange.value = maximum
     }
 
-    private fun regenerateScenarios() {
+    fun regenerateScenarios() {
+        scenarios.value?.clear()
         scenarios = ScenarioFactory.getScenarios(getNumberOfScenarios())
     }
 

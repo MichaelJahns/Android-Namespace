@@ -47,13 +47,4 @@
         android:valueTo="100.0"
         app:thumbColor="@color/namespaceOrange"
         app:values="@array/initial_age_range_pawns" />
-
-    <Button
-        android:id="@+id/btnSaveSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/saveSettings"
-        android:textColor="@color/namespaceOrange" />
-
 </FrameLayout>

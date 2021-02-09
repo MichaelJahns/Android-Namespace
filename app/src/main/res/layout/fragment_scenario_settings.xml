@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SettingsFragment">
+    android:layout_margin="32sp"
+    android:background="@color/namespaceBlack"
+    android:padding="12sp">
 
     <TextView
         android:id="@+id/tvNumberOfScenarios"
@@ -15,15 +16,15 @@
         android:textColor="@color/namespaceOrange"
         android:textSize="16sp" />
 
-    <com.google.android.material.slider.Slider
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/dsNumberOfScenarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
-        android:stepSize="1.0"
-        android:value="15"
-        android:valueFrom="1.0"
-        android:valueTo="20" />
+        android:max="20"
+        android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:thumb="@drawable/ic_settings_orange"
+/>
 
     <TextView
         android:id="@+id/tvAgeRangeOfPawns"
@@ -43,14 +44,6 @@
         android:stepSize="1.0"
         android:valueFrom="1.0"
         android:valueTo="100.0"
+        app:thumbColor="@color/namespaceOrange"
         app:values="@array/initial_age_range_pawns" />
-
-    <Button
-        android:id="@+id/btnSaveSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350sp"
-        android:gravity="center"
-        android:text="@string/saveSettings" />
-
 </FrameLayout>

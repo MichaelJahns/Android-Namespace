@@ -1,0 +1,35 @@
+{
+  "origin": [
+    "{what}"
+  ],
+  "location": [
+    "{abandonedCampsite}"
+  ],
+  "description": [
+    "You dont know enough about foraging to separate garbage from treasure"
+  ],
+  "abandonedCampsite": [
+    "Long Abandoned {humanoidSpecies} Campsite"
+  ],
+  "humanoidSpecies": [
+    "Aarakocra",
+    "Changelings disguised as {humanoidSpecies}",
+    "Duergar",
+    "Dragonborn",
+    "Dwarf",
+    "Elf",
+    "Gnoll",
+    "Gnome",
+    "Golbin",
+    "Half-Elf",
+    "Half-Orc",
+    "Halfling",
+    "Hobgoblin",
+    "Kobold",
+    "Merfolk",
+    "Orc",
+    "Tabaxi",
+    "Tiefling",
+    "Troglodyte"
+  ]
+}

@@ -8,17 +8,21 @@ import androidx.lifecycle.Observer
 import com.michaeljahns.namespace.CollectionFragment
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
+import com.michaeljahns.namespace.fragments.ForageFragment
 import com.michaeljahns.namespace.fragments.NavigationFragment
 import com.michaeljahns.namespace.fragments.ScenarioFragment
-import com.michaeljahns.namespace.fragments.SettingsFragment
+import com.michaeljahns.namespace.models.ScenarioModel
 import com.michaeljahns.namespace.models.UIViewModel
 
 class MainActivity2 : AppCompatActivity() {
     private val navigationFragment = NavigationFragment()
     private val scenarioFragment = ScenarioFragment()
-    private val settingsFragment = SettingsFragment()
+
+    //    private val settingsFragment = SettingsFragment()
+    private val forageFragment = ForageFragment()
     private val collectionFragment = CollectionFragment()
     private val model: UIViewModel by viewModels()
+    private val scenarioModel: ScenarioModel by viewModels()
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,15 +37,21 @@ class MainActivity2 : AppCompatActivity() {
         setCurrentFragment(scenarioFragment)
         model.intView.observe(this, Observer {
             when (it) {
-                R.id.miHome -> setCurrentFragment(scenarioFragment)
+                R.id.miHome -> {
+                    setCurrentFragment(scenarioFragment)
+                    binding.mainNavigationView.omnifab.setOnClickListener {
+                        scenarioModel.regenerateScenarios()
+                    }
+
+                }
                 R.id.miCollection -> setCurrentFragment(collectionFragment)
-                R.id.miSettings -> setCurrentFragment(settingsFragment)
+//                R.id.miSettings -> setCurrentFragment(settingsFragment)
+                R.id.miForage -> setCurrentFragment(forageFragment)
             }
         })
 
         val view = binding.root
         setContentView(view)
-
     }
 
     private fun setCurrentFragment(fragment: Fragment) =

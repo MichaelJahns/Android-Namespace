@@ -5,6 +5,7 @@
     <!--    Navigation Items -->
     <string name="navScenarios"> Scenarios </string>
     <string name="navCollections"> Collections </string>.
+    <string name="navForage"> Forage </string>.
     <string name="navSettings"> Settings </string>
 
     <!--    Labels-->
@@ -21,11 +22,10 @@
     <string name="generatedLocationLabel"><u>Location</u></string>
     <string name="generatedLocationText"> Location Generated</string>
 
+    <string name="generatedForageLabel"><u>Forage</u></string>
+
     <string name="generatedCrewLabel"> <u>Crew</u> </string>
     <string name="generatedPawnName">Name</string>
     <string name="generatedPawnAge">Age</string>
     <string name="generatedPawnProfession">Profession</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>

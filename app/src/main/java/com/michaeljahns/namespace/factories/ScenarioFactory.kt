@@ -24,7 +24,6 @@ object ScenarioFactory {
         return scenarios
     }
 
-
     private fun randomLocation(context: Context): Location {
         val locationJson = readJsonFromAsset(context, "pirateLocations.json")
         return flattenLocationsFromJson(locationJson)
@@ -36,7 +35,7 @@ object ScenarioFactory {
 
     private fun generateCrewSize(): Int {
         val minCrewSize = 1
-        val maxCrewSize = 5
+        val maxCrewSize = 6
         return rand(minCrewSize, maxCrewSize)
     }
 }

@@ -15,11 +15,12 @@
         android:title="" />
 
     <item
-        android:id="@+id/textinput_placeholder2"
-        android:title="" />
+        android:id="@+id/miForage"
+        android:icon="@drawable/ic_forage"
+        android:title="@string/navForage" />
 
     <item
         android:id="@+id/miSettings"
-        android:icon="@drawable/ic_settings_orange"
+        android:icon="@drawable/ic_settings"
         android:title="@string/navSettings" />
 </menu>
