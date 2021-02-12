@@ -1,9 +1,9 @@
 {
   "forage": [
-    "{AbandonedCabin}"
+    "{[location:{ForestLocation}]description}"
   ],
   "description": [
-    "{ForestLocation.capitalize.a} - {preposition} {ForestLandmark.a}"
+    "{location} - {preposition} {ForestLandmark.a}"
   ],
   "preposition": [
     "with",
@@ -16,93 +16,154 @@
     "after",
     "before",
     "behind",
+    "beside",
     "by",
     "inside",
     "in",
+    "in the shade of",
     "near",
-    "out over"
+    "out over",
+    "within is"
   ],
   "ForestLandmark": [
     "fruit tree",
-    "large, hollowed tree",
+    "large hollowed tree",
     "pair of trees growing from the same root",
-    "tree overgrowing a boulder",
+    "tree overgrowing boulders",
     "clearing with wildflowers",
     "grassing clearing",
-    "moss covered boulder",
+    "moss covered boulders",
     "thick of brambles",
     "babbling brook",
     "brook in a deep ravine",
-    "brook, with gentle rapids",
+    "brook with gentle rapids",
     "dry creek bed",
     "small pool at a creek's bend",
     "patch of mushrooms",
     "enormous mushroom",
-    "large, hollow log",
-    "large, rotting log",
+    "large hollow log",
+    "large rotting log",
     "tree felled by lighting",
     "old Gnarled tree",
     "stump of a once enormous tree"
   ],
   "ForestLocation": [
-    "small cavern behind a waterfall",
-    "small cave in the bank of a creek",
-    "entrance to a rocky cave",
-    "hole under a large tree",
-    "large burrow",
-    "Peculiar Cottage",
-    "Woodsman's Cabin",
-    "{AbandonedCabin}",
-    "{AbandonedCampsite}",
-    "{DecayState} {Animal} carcass",
-    "sacred grove.",
+    "{Cabin}",
+    "{Campsite}",
+    "{Cave}",
+    "{Cottage}",
+    "{decayState.a.capitalize} {animal} carcass",
+    "{size.a.capitalize} hole under a {ForestLandmark}",
+    "{size.a.capitalize} {animal} burrow",
+    "sacred grove",
     "worn grave",
     "Ancient Ruins"
   ],
-  "AbandonedCampsite": [
-    "{Time.capitalize.a} abandoned {HumanoidSpecies} Campsite"
+  "Cabin": [
+    "Abandoned Cabin - once owned by {adjForPeople.a} {cabinResident} this residence has since been taken up by {adjForPeople.a} {abandonedCabinCurrentResident}",
+    "Woodsman's Cabin - A sturdy cabin made of {woodSpecies} logs owned by {adjForPeople.a} {HumanoidSpecies} {cabinResident} "
   ],
-  "AbandonedCabin": [
-    "{Time.capitalize.a}-abandoned Cabin once owned by {adjForPeople.a} {abPastResidents}, the residence has since been taken up by {abCurrentResidents.a}"
+  "Campsite": [
+    "{HumanoidSpecies} Abandoned  Campsite - abandoned {timePassed}",
+    "{structureAdj.capitalize} Campsite - that looks {HumanoidSpecies} is origin"
   ],
-  "abPastResidents": [
+  "Cave": [
+    "Underwater Cave",
+    "{size.a.capitalize} Cavern behind a Waterfall",
+    "{size.a.capitalize} Cave in the bank of a Creek",
+    "Subterranean Cave",
+    "{size.a.capitalize} Ravine revealing caves below"
+  ],
+  "Cottage": [
+    "Peculiar Cottage - its original structure seems to be made of {woodSpecies}; but its been repaired with {woodSpecies}. The door is closed but a dim light shines behind closed curtains",
+    "Peculiar Cottage - a surprising well-made and wealthy cottage in contrast to the surrounding environment",
+    "Enchanted Cottage - home to beloved {positiveAdjForPeople} {cabinResident} the door is open and there is a fire in the hearth",
+    "Secluded Cottage - secreted {preposition} {ForestLandmark.a} and {ForestLandmark.a}; you almost missed it"
+  ],
+  "structureAdj": [
+    "patrolled",
+    "nomadic",
+    "caravan",
+    "burnt",
+    "ruined",
+    "monumental",
+    "historic",
+    "scout"
+  ],
+  "woodSpecies": [
+    "ashe",
+    "birche",
+    "beeche",
+    "cedar",
+    "juniper",
+    "cherry",
+    "plum",
+    "chestnut",
+    "hazel",
+    "cypress",
+    "elm",
+    "fir",
+    "hawthorn",
+    "hemlock",
+    "hicky",
+    "walnut",
+    "linden",
+    "lime",
+    "maple",
+    "oaks",
+    "pine",
+    "poplar",
+    "spruce",
+    "willow",
+    "yew",
+    "holly"
+  ],
+  "cabinResident": [
     "elder",
     "scholar",
     "healer",
     "woodcutter",
     "fur trader",
-    "prospector"
+    "prospector",
+    "outcast",
+    "witch",
+    "shapeshfiter"
   ],
-  "abCurrentResidents": [
+  "abandonedCabinCurrentResident": [
     "Owlbear",
     "Orge",
     "troll",
-    "mad Witch",
-    "paranoid shapeshifter",
+    "Witch",
+    "shapeshifter",
     "restless ghost"
   ],
-  "Time": [
+  "timePassed": [
     "moments ago",
     "recently",
-    "long",
-    "historic"
+    "long ago",
+    "historically"
   ],
-  "Animal": [
+  "animal": [
     "pig",
     "wolf",
     "boar",
     "elk",
     "deer",
-    "rabbit",
-    "{HumanoidSpecies}"
+    "rabbit"
   ],
-  "DecayState": [
-    "a fresh",
-    "a rotting",
-    "a maggoty",
-    "a decomposing",
-    "a decomposed",
-    "a skeletal"
+  "decayState": [
+    "fresh",
+    "rotting",
+    "maggoty",
+    "decomposing",
+    "decomposed",
+    "skeletal"
+  ],
+  "size": [
+    "small",
+    "midsize",
+    "large",
+    "vast"
   ],
   "HumanoidSpecies": [
     "Aarakocra",

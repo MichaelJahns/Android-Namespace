@@ -33,6 +33,6 @@ fun regexIsolateEverythingAfterDash(JSON: String): String {
 }
 
 fun regexIsolateToFirstDash(JSON: String): String {
-    val pattern = "[^.].*(?=-)".toRegex()
+    val pattern = "^[^-]*".toRegex()
     return pattern.find(JSON)!!.value
 }

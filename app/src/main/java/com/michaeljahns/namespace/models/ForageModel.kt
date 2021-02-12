@@ -10,6 +10,6 @@ class ForageModel : ViewModel() {
     var forages: MutableLiveData<MutableList<Forage>> = ForageFactory.getForages(getNumberOfForages())
 
     private fun getNumberOfForages(): Int {
-        return this.numberOfForages.value ?: 6
+        return this.numberOfForages.value ?: 16
     }
 }
