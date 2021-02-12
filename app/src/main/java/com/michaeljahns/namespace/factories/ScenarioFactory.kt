@@ -1,36 +1,39 @@
 package com.michaeljahns.namespace.factories
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import com.michaeljahns.namespace.GlobalApplication
-import com.michaeljahns.namespace.flattenLocationsFromJson
 import com.michaeljahns.namespace.grammy.Location
 import com.michaeljahns.namespace.grammy.Pawn
 import com.michaeljahns.namespace.grammy.Scenario
-import com.michaeljahns.namespace.rand
-import com.michaeljahns.namespace.readJsonFromAsset
+import com.michaeljahns.namespace.util.GlobalApplication
+import com.michaeljahns.namespace.util.flattenJsonOnKey
+import com.michaeljahns.namespace.util.rand
+import com.michaeljahns.namespace.util.readJsonFromAsset
 
 object ScenarioFactory {
     fun getScenarios(count: Int): MutableLiveData<MutableList<Scenario>> {
+        val context = GlobalApplication.getAppContext()
+        val locationJson = readJsonFromAsset(context, assetName = "pirateLocations.json")
         val scenarios = MutableLiveData<MutableList<Scenario>>()
         scenarios.value = mutableListOf()
         repeat(count) {
-            val context = GlobalApplication.getAppContext()
-            val scenarioLocation = randomLocation(context)
-            val scenarioPawns = randomPawns(context)
-            val scenario = Scenario(scenarioLocation, scenarioPawns)
+            val scenario = randomScenario(locationJson)
             scenarios.value!!.add(scenario)
         }
         return scenarios
     }
 
-    private fun randomLocation(context: Context): Location {
-        val locationJson = readJsonFromAsset(context, "pirateLocations.json")
-        return flattenLocationsFromJson(locationJson)
+    private fun randomScenario(JSON: String): Scenario {
+        val flattenedLocation = flattenLocationFromJson(locationJSON = JSON)
+        val scenarioPawns = randomPawns()
+        return Scenario(Location(flattenedLocation), scenarioPawns)
     }
 
-    private fun randomPawns(context: Context): MutableList<Pawn> {
-        return PawnFactory.getPawns(context, generateCrewSize())
+    private fun randomPawns(crewSize: Int = generateCrewSize()): MutableList<Pawn> {
+        return PawnFactory.getPawns(crewSize)
+    }
+
+    private fun flattenLocationFromJson(locationJSON: String, key: String = "origin"): String {
+        return flattenJsonOnKey(locationJSON, key)
     }
 
     private fun generateCrewSize(): Int {

@@ -15,9 +15,8 @@
         android:title="" />
 
     <item
-        android:id="@+id/miSettings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/navSettings" />
+        android:id="@+id/textinput_placeholder2"
+        android:title="" />
 
     <item
         android:id="@+id/miCollection"

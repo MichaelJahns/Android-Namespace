@@ -1,10 +1,9 @@
 package com.michaeljahns.namespace.grammy
 
-import com.michaeljahns.namespace.rand
+import com.michaeljahns.namespace.util.rand
 
-class Discovery(item: String) {
-    var item: String = item
 
+class Discovery(val name: String, val description: String) {
     fun generateRarity(): Int {
         return rand(1, 100)
     }
