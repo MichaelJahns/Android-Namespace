@@ -1,6 +1,5 @@
 package com.michaeljahns.namespace.factories
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.michaeljahns.namespace.grammy.Discovery
 import com.michaeljahns.namespace.util.*
@@ -19,7 +18,6 @@ object DiscoveryFactory {
     }
 
     private fun randomDiscovery(JSON: String): Discovery {
-        Log.d("DISCOVERY FACTORY", JSON)
         val flattenDiscovery = flattenDiscoveryFromJson(discoveryJSON = JSON)
         val discoveryName = regexIsolateFirstCapitalWord(flattenDiscovery)
         val discoveryDescription = regexIsolateEverythingAfterDash(flattenDiscovery)

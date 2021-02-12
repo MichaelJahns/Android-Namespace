@@ -1,6 +1,5 @@
 package com.michaeljahns.namespace.factories
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.michaeljahns.namespace.grammy.Forage
 import com.michaeljahns.namespace.util.*
@@ -19,7 +18,6 @@ object ForageFactory {
     }
 
     private fun randomForage(JSON: String): Forage {
-        Log.d("FORAGE FACTORY", JSON)
         val flattenedForage = flattenForageFromJson(forageJSON = JSON)
         val forageLandmark = regexIsolateToFirstDash(flattenedForage)
         val forageDescription = regexIsolateEverythingAfterDash(flattenedForage)

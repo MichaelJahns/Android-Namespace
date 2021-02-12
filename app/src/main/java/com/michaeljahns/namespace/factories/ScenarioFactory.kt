@@ -1,6 +1,5 @@
 package com.michaeljahns.namespace.factories
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.michaeljahns.namespace.grammy.Location
 import com.michaeljahns.namespace.grammy.Pawn
@@ -24,7 +23,6 @@ object ScenarioFactory {
     }
 
     private fun randomScenario(JSON: String): Scenario {
-        Log.d("SCENARIO FACTORY", JSON)
         val flattenedLocation = flattenLocationFromJson(locationJSON = JSON)
         val scenarioPawns = randomPawns()
         return Scenario(Location(flattenedLocation), scenarioPawns)

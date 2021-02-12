@@ -30,6 +30,7 @@ object PawnFactory {
         //        val pawnName = regexIsolateFirstCapitalWord(flattenedPawn)
         //        val pawnBackstory = regexIsolateEverythingAfterDash(flattenedPawn)
         //        val pawnAge = regexSomeththing(flattenedPawn)
+        //
         //        return Pawn(pawnName, pawnBackstory, pawnProfession
     }
 

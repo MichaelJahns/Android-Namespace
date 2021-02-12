@@ -17,7 +17,8 @@ class ForagePageAdapter(private var forageList: MutableLiveData<MutableList<Fora
 
     override fun onBindViewHolder(holder: ForagePageAdapter.ViewPager2Holder, position: Int) {
         val forage: Forage = forageList.value!![position]
-        holder.forageLandmark.text = forage.landmark.toString()
+        holder.forageLandmark.text = forage.landmark
+        holder.forageDescription.text = forage.description
     }
 
     override fun getItemCount(): Int {

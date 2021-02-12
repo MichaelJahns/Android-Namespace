@@ -1,19 +1,66 @@
 {
   "forage": [
-    "{landmark} - {description}"
-  ],
-  "landmark": [
-    "{Location}"
+    "{description}"
   ],
   "description": [
-    "You dont know enough about foraging to separate garbage from treasure"
+    "{ForestLocation.capitalize} - {preposition} {ForestLandmark}"
   ],
-  "Location": [
+  "preposition": [
+    "with",
+    "up",
+    "under",
+    "toward",
+    "on",
+    "by the way",
+    "against",
+    "after",
+    "before",
+    "behind",
+    "by",
+    "inside",
+    "in",
+    "near",
+    "out over"
+  ],
+  "ForestLandmark": [
+    "a fruit tree",
+    "a large, hollowed tree",
+    "a pair of trees growing from the same root",
+    "a tree overgrowing a boulder",
+    "a clearing with wildflowers",
+    "a grassing clearing",
+    "a moss-covered boulder",
+    "a thick of brambles",
+    "a babbling brook",
+    "a brook in a deep ravine",
+    "a brook, with gentle rapids",
+    "a dry creek bed",
+    "a small pool at a creek's bend",
+    "a patch of mushrooms",
+    "an enormous mushroom",
+    "a large, hollow log",
+    "a large, rotting log",
+    "a tree felled by lighting",
+    "an old Gnarled tree",
+    "the stump of a once enormous tree"
+  ],
+  "ForestLocation": [
+    "a small cavern behind a waterfall",
+    "a small cave in the bank of a creek",
+    "an entrance to a rocky cave",
+    "a hole under a large tree",
+    "a large burrow",
+    "a Peculiar Cottage",
+    "a Woodsman's Cabin",
+    "an AbandonedCabin",
     "{AbandonedCampsite}",
-    "{DecayState} {AnimalCarcass}"
+    "{DecayState} {AnimalCarcass}",
+    "a sacred grove.",
+    "a worn grave",
+    "Ancient Ruins"
   ],
   "AbandonedCampsite": [
-    "{Time.capitalize} abandoned {HumanoidSpecies} Campsite"
+    "a {Time.capitalize} abandoned {HumanoidSpecies} Campsite"
   ],
   "Time": [
     "recently",
@@ -29,12 +76,12 @@
     "{HumanoidSpecies}"
   ],
   "DecayState": [
-    "fresh",
-    "rotting",
-    "maggoty",
-    "decomposing",
-    "decomposed",
-    "skeletal"
+    "a fresh",
+    "a rotting",
+    "a maggoty",
+    "a decomposing",
+    "a decomposed",
+    "a skeletal"
   ],
   "HumanoidSpecies": [
     "Aarakocra",

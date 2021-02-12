@@ -1,7 +1,6 @@
 package com.michaeljahns.namespace.util
 
 import android.content.Context
-import com.michaeljahns.namespace.grammy.Forage
 import kotlin.random.Random
 
 @JvmName("Utils")
@@ -18,30 +17,22 @@ fun readJsonFromAsset(context: Context, assetName: String): String {
     inputStream.close()
     return String(buffer)
 }
-
-//Grammy functions
-fun flattenForageFromJson(JSON: String?): Forage {
-    val forageLocation = flattenJsonOnKey(JSON, "landmark")
-    val forageDescription = flattenJsonOnKey(JSON, "description")
-    return Forage(forageLocation, forageDescription)
-}
-
 fun flattenJsonOnKey(Json: String?, key: String): String {
     val grammar = com.almasb.grammy.Grammy.createGrammar(Json)
     return grammar.flatten(key)
 }
-
 // REGEX
 fun regexIsolateFirstCapitalWord(JSON: String): String {
-//    ^([A-Za-z]+)
-    return "Ivy"
+    var pattern = Regex("^([A-Za-z]+)")
+    return pattern.find(JSON)!!.value
 }
 
 fun regexIsolateEverythingAfterDash(JSON: String): String {
-//    (?<=-).*
-    return " poisonous skin irritant"
+    val pattern = Regex("(?<=-).*")
+    return pattern.find(JSON)!!.value
 }
 
 fun regexIsolateToFirstDash(JSON: String): String {
-    return "A long abandoned Campsite "
+    val pattern = "[A-Za-z].*(?=-)".toRegex()
+    return pattern.find(JSON)!!.value
 }
