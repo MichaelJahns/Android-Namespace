@@ -1,20 +1,23 @@
 {
+  "forage": [
+    "{landmark} - {description}"
+  ],
   "landmark": [
     "{Location}"
   ],
   "description": [
     "You dont know enough about foraging to separate garbage from treasure"
   ],
-  "discoveries": [
-    "{Herb}",
-    "{Reagent}"
-  ],
   "Location": [
     "{AbandonedCampsite}",
     "{DecayState} {AnimalCarcass}"
   ],
   "AbandonedCampsite": [
-    "Long Abandoned {HumanoidSpecies} Campsite"
+    "{Time.capitalize} abandoned {HumanoidSpecies} Campsite"
+  ],
+  "Time": [
+    "recently",
+    "long"
   ],
   "AnimalCarcass": [
     "pig",
@@ -53,14 +56,5 @@
     "Tabaxi",
     "Tiefling",
     "Troglodyte"
-  ],
-  "Herb": [
-    "Sunflower Lily",
-    "Chokeleaf Cabbage"
-  ],
-  "Reagent": [
-    "Vial of Quicksilver",
-    "Amethyst Powder",
-    "Lich Bane"
   ]
 }

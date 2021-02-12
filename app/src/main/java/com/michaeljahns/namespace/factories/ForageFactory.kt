@@ -1,46 +1,32 @@
 package com.michaeljahns.namespace.factories
 
-import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.michaeljahns.namespace.GlobalApplication
-import com.michaeljahns.namespace.flattenDiscoveriesFromJson
-import com.michaeljahns.namespace.flattenForageFromJson
-import com.michaeljahns.namespace.grammy.Discovery
 import com.michaeljahns.namespace.grammy.Forage
-import com.michaeljahns.namespace.readJsonFromAsset
+import com.michaeljahns.namespace.util.*
 
 object ForageFactory {
     fun getForages(count: Int): MutableLiveData<MutableList<Forage>> {
+        val context = GlobalApplication.getAppContext()
+        val forageJson = readJsonFromAsset(context, assetName = "forage.json")
         val forages = MutableLiveData<MutableList<Forage>>()
         forages.value = mutableListOf()
         repeat(count) {
-            val context = GlobalApplication.getAppContext()
-            val forage = randomForage(context)
+            val forage = randomForage(forageJson)
             forages.value!!.add(forage)
         }
         return forages
     }
 
-    fun getDiscoveries(count: Int): MutableLiveData<MutableList<Discovery>> {
-        val discoveries = MutableLiveData<MutableList<Discovery>>()
-        discoveries.value = mutableListOf()
-        repeat(count) {
-            val context = GlobalApplication.getAppContext()
-            val discovery = randomDiscovery(context)
-            discoveries.value!!.add(discovery)
-        }
-        return discoveries
+    private fun randomForage(JSON: String): Forage {
+        Log.d("FORAGE FACTORY", JSON)
+        val flattenedForage = flattenForageFromJson(forageJSON = JSON)
+        val forageLandmark = regexIsolateToFirstDash(flattenedForage)
+        val forageDescription = regexIsolateEverythingAfterDash(flattenedForage)
+        return Forage(forageLandmark, forageDescription)
     }
 
-    private fun randomForage(context: Context): Forage {
-        val forageJson = readJsonFromAsset(context, "forage.json")
-        return flattenForageFromJson(forageJson)
+    private fun flattenForageFromJson(forageJSON: String, key: String = "forage"): String {
+        return flattenJsonOnKey(forageJSON, key)
     }
-
-    private fun randomDiscovery(context: Context): Discovery {
-        val forageJson = readJsonFromAsset(context, "forage.json")
-        return flattenDiscoveriesFromJson(forageJson)
-    }
-
-
 }
