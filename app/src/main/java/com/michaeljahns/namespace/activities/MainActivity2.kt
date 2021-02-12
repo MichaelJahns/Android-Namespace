@@ -1,6 +1,7 @@
 package com.michaeljahns.namespace.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -28,10 +29,15 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
+        
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
             commit()
+        }
+
+        binding.mainNavigationView.omnifab.setOnClickListener {
+            val customToad = Toast.makeText(this, "Re-roll! Someday", Toast.LENGTH_SHORT)
+            customToad.show()
         }
 
         setCurrentFragment(scenarioFragment)
@@ -39,10 +45,6 @@ class MainActivity2 : AppCompatActivity() {
             when (it) {
                 R.id.miScenario -> {
                     setCurrentFragment(scenarioFragment)
-                    binding.mainNavigationView.omnifab.setOnClickListener {
-                        scenarioModel.regenerateScenarios()
-                    }
-
                 }
                 R.id.miCollection -> setCurrentFragment(collectionFragment)
 //                R.id.miSettings -> setCurrentFragment(settingsFragment)
