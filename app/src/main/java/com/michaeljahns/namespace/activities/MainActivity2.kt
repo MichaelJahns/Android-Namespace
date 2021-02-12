@@ -29,7 +29,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        
+
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
             commit()
@@ -37,6 +37,7 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.mainNavigationView.omnifab.setOnClickListener {
             val customToad = Toast.makeText(this, "Re-roll! Someday", Toast.LENGTH_SHORT)
+            scenarioModel.regenerateScenarios()
             customToad.show()
         }
 

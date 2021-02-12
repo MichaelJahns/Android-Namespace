@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.PopupWindow
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
@@ -55,7 +56,6 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
     }
 
     private fun regenerateLists() {
-        model.regenerateScenarios()
         scenarioList = model.scenarios
         startViewPager()
     }
@@ -68,6 +68,7 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
 
     private fun showSettingsVisibility() {
         Log.d(TAG, "Attempting show of setting Popup.window")
+        val customToad = Toast.makeText(context, "Attempting ton show PopupWindow", Toast.LENGTH_SHORT).show()
         settingsWindow.showAsDropDown(binding.indicatorScenario)
     }
 
