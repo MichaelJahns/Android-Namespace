@@ -1,7 +1,6 @@
 package com.michaeljahns.namespace.activities
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -30,20 +29,16 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val factory = InjectorUtils.provideScenarioModelFactory()
+        val viewModel = ViewModelProvider(this, factory)
+                .get(ScenarioModel::class.java)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
             commit()
         }
-
         binding.mainNavigationView.omnifab.setOnClickListener {
-            Toast.makeText(this, "Re-roll! Someday..", Toast.LENGTH_SHORT).show()
-            val factory = InjectorUtils.provideScenarioModelFactory()
-
-            val viewModel = ViewModelProvider(this, factory)
-                    .get(ScenarioModel::class.java)
             viewModel.regenerateScenarios()
         }
 

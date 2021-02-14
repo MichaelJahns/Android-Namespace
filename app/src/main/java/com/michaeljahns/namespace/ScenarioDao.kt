@@ -10,6 +10,7 @@ class ScenarioDao {
     private val scenarios = MutableLiveData<List<Scenario>>()
 
     init {
+        regenerateScenarios()
         scenarios.value = scenarioList
     }
 
@@ -19,13 +20,13 @@ class ScenarioDao {
         scenarioList.clear()
     }
 
-    fun updateDataLiveData() {
+    private fun updateDataLiveData() {
         scenarios.value = scenarioList
     }
 
     fun regenerateScenarios() {
         clearScenarios()
-        scenarioList = ScenarioFactory.getScenarios(5)
+        scenarioList = ScenarioFactory.getScenarios(7)
         updateDataLiveData()
     }
 }

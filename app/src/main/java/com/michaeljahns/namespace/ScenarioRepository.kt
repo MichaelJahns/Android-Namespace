@@ -2,12 +2,9 @@ package com.michaeljahns.namespace
 
 class ScenarioRepository private constructor(private val scenarioDao: ScenarioDao) {
 
-    fun clearScenarios() {
-        scenarioDao.clearScenarios()
-    }
-
     fun getScenarios() = scenarioDao.getScenarios()
     fun regenerateScenarios() = scenarioDao.regenerateScenarios()
+    fun clearScenarios() = scenarioDao.clearScenarios()
 
     companion object {
         @Volatile
