@@ -5,12 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.michaeljahns.namespace.grammy.Scenario
 
-class ScenarioPageAdapter(private var scenarios: MutableLiveData<MutableList<Scenario>>) : RecyclerView.Adapter<ScenarioPageAdapter.ViewPager2Holder>() {
+class ScenarioPageAdapter(private var scenarios: List<Scenario>) : RecyclerView.Adapter<ScenarioPageAdapter.ViewPager2Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScenarioPageAdapter.ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.scenario_page, parent, false)
@@ -20,7 +19,7 @@ class ScenarioPageAdapter(private var scenarios: MutableLiveData<MutableList<Sce
     }
 
     override fun onBindViewHolder(holder: ScenarioPageAdapter.ViewPager2Holder, position: Int) {
-        val scenario = scenarios.value!![position]
+        val scenario = scenarios[position]
         holder.scenarioLocation.text = scenario.location.toString()
         val childLayoutManager = LinearLayoutManager(holder.scenarioPawnRecycler.context, RecyclerView.VERTICAL, false)
         holder.scenarioPawnRecycler.layoutManager = childLayoutManager
@@ -28,7 +27,7 @@ class ScenarioPageAdapter(private var scenarios: MutableLiveData<MutableList<Sce
     }
 
     override fun getItemCount(): Int {
-        return scenarios.value?.size ?: 5
+        return scenarios.size
     }
 
     inner class ViewPager2Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {

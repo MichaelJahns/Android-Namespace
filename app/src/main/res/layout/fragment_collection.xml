@@ -45,7 +45,7 @@
         android:layout_marginHorizontal="24sp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/cinzel_decorative_bold"
+        android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
         android:text="@string/collectionDescription"
         android:textColor="@color/namespaceBlack"

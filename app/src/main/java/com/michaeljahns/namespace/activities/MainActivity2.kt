@@ -28,6 +28,7 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         supportFragmentManager.beginTransaction().apply {
@@ -36,9 +37,8 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         binding.mainNavigationView.omnifab.setOnClickListener {
-            val customToad = Toast.makeText(this, "Re-roll! Someday", Toast.LENGTH_SHORT)
-            scenarioModel.regenerateScenarios()
-            customToad.show()
+            Toast.makeText(this, "Re-roll! Someday..", Toast.LENGTH_SHORT).show()
+            scenarioModel.clearScenarios()
         }
 
         setCurrentFragment(scenarioFragment)
@@ -52,7 +52,6 @@ class MainActivity2 : AppCompatActivity() {
                 R.id.miForage -> setCurrentFragment(forageFragment)
             }
         })
-
         val view = binding.root
         setContentView(view)
     }

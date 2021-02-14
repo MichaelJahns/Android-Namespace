@@ -12,12 +12,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.ScenarioPageAdapter
 import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
 import com.michaeljahns.namespace.grammy.Scenario
 import com.michaeljahns.namespace.models.ScenarioModel
+import com.michaeljahns.namespace.util.InjectorUtils
 
 class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
     private val TAG = "SCEN"
@@ -29,12 +31,12 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentScenarioBinding.inflate(layoutInflater, container, false)
-        scenarioList = model.scenarios
-        startViewPager()
+        initUI()
 
         val settings = View.inflate(context, R.layout.fragment_scenario_settings, container)
         settingsWindow = PopupWindow(settings, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT)
         settingsWindow.contentView = view
+        showSettingsVisibility()
 
         binding.btnScenarioSettings.setOnClickListener {
             Log.d(TAG, "Btn Clicked")
@@ -47,20 +49,36 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
                 false -> hideSettingsVisibility()
             }
         })
-
-        model.numberOfScenarios.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "Entered")
-            regenerateLists()
-        })
         return binding.root
     }
 
-    private fun regenerateLists() {
-        scenarioList = model.scenarios
-        startViewPager()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        model.numberOfScenarios.observe(viewLifecycleOwner, Observer {
+            Log.d(TAG, "Entered")
+            val customToad = Toast.makeText(context, "Observed a Re-roll", Toast.LENGTH_SHORT).show()
+            regenerateLists()
+        })
     }
 
-    private fun startViewPager() {
+    private fun regenerateLists() {
+        scenarioList.value?.clear()
+        scenarioList = model.scenarios
+        Toast.makeText(context, "Experience Reroll", Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun initUI() {
+        val factory = InjectorUtils.provideScenarioModelFactory()
+        val viewModel = ViewModelProvider(this, factory)
+                .get(ScenarioModel::class.java)
+        viewModel.getScenarios().observe(viewLifecycleOwner, Observer { scenarios ->
+            startViewPager(scenarios)
+        })
+    }
+
+    private fun startViewPager(scenarioList: List<Scenario>) {
         binding.vp2Scenario.adapter = ScenarioPageAdapter(scenarioList)
         binding.vp2Scenario.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.indicatorScenario.setViewPager(binding.vp2Scenario)
@@ -68,8 +86,8 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
 
     private fun showSettingsVisibility() {
         Log.d(TAG, "Attempting show of setting Popup.window")
-        val customToad = Toast.makeText(context, "Attempting ton show PopupWindow", Toast.LENGTH_SHORT).show()
-        settingsWindow.showAsDropDown(binding.indicatorScenario)
+        Toast.makeText(context, "Attempting ton show PopupWindow", Toast.LENGTH_SHORT).show()
+        settingsWindow.showAsDropDown(binding.btnScenarioSettings)
     }
 
     private fun hideSettingsVisibility() {
