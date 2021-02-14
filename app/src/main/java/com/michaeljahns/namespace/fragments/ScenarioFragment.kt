@@ -52,27 +52,11 @@ class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        model.numberOfScenarios.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "Entered")
-            val customToad = Toast.makeText(context, "Observed a Re-roll", Toast.LENGTH_SHORT).show()
-            regenerateLists()
-        })
-    }
-
-    private fun regenerateLists() {
-        scenarioList.value?.clear()
-        scenarioList = model.scenarios
-        Toast.makeText(context, "Experience Reroll", Toast.LENGTH_SHORT).show()
-    }
-
-
     private fun initUI() {
         val factory = InjectorUtils.provideScenarioModelFactory()
         val viewModel = ViewModelProvider(this, factory)
                 .get(ScenarioModel::class.java)
+        viewModel.regenerateScenarios()
         viewModel.getScenarios().observe(viewLifecycleOwner, Observer { scenarios ->
             startViewPager(scenarios)
         })

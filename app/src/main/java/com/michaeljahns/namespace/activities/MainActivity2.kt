@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
 import com.michaeljahns.namespace.fragments.CollectionFragment
@@ -14,6 +15,7 @@ import com.michaeljahns.namespace.fragments.NavigationFragment
 import com.michaeljahns.namespace.fragments.ScenarioFragment
 import com.michaeljahns.namespace.models.ScenarioModel
 import com.michaeljahns.namespace.models.UIViewModel
+import com.michaeljahns.namespace.util.InjectorUtils
 
 class MainActivity2 : AppCompatActivity() {
     private val navigationFragment = NavigationFragment()
@@ -38,7 +40,11 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.mainNavigationView.omnifab.setOnClickListener {
             Toast.makeText(this, "Re-roll! Someday..", Toast.LENGTH_SHORT).show()
-            scenarioModel.clearScenarios()
+            val factory = InjectorUtils.provideScenarioModelFactory()
+
+            val viewModel = ViewModelProvider(this, factory)
+                    .get(ScenarioModel::class.java)
+            viewModel.regenerateScenarios()
         }
 
         setCurrentFragment(scenarioFragment)

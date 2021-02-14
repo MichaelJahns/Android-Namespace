@@ -7,6 +7,7 @@ class ScenarioRepository private constructor(private val scenarioDao: ScenarioDa
     }
 
     fun getScenarios() = scenarioDao.getScenarios()
+    fun regenerateScenarios() = scenarioDao.regenerateScenarios()
 
     companion object {
         @Volatile
