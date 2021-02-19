@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.databinding.FragmentNavigationBinding
 import com.michaeljahns.namespace.models.UIViewModel
 
-class NavigationFragment : Fragment() {
+class NavigationFragment : Fragment(R.layout.fragment_navigation) {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var binding: FragmentNavigationBinding
     private val model: UIViewModel by activityViewModels()
@@ -22,6 +23,7 @@ class NavigationFragment : Fragment() {
         bottomNavigationView.background = null
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

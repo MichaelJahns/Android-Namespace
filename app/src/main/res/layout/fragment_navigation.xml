@@ -28,9 +28,10 @@
         android:id="@+id/omnifab"
         android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/namespaceOrange"
-        android:onClick="onOmniFabClicked"
+        android:backgroundTint="@color/colorPrimary"
+        android:contentDescription="@string/fab_content_desc"
         android:src="@drawable/ic_dice"
+        app:borderWidth="0dp"
         app:layout_anchor="@+id/bottomNavigationView"
         app:layout_anchorGravity="center"
         app:tint="@color/namespaceBlack" />

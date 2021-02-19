@@ -1,6 +1,7 @@
 package com.michaeljahns.namespace.grammy
 
-class Scenario(scenarioLocation: Location, scenarioPawns: MutableList<Pawn>) {
-    val location = scenarioLocation
-    val pawns = scenarioPawns
+data class Scenario(val location: Location, val pawns: MutableList<Pawn>) {
+    override fun toString(): String {
+        return "$location - ${pawns[1]}"
+    }
 }

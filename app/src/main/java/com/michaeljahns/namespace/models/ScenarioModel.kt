@@ -2,14 +2,18 @@ package com.michaeljahns.namespace.models
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.michaeljahns.namespace.factories.ScenarioFactory
-import com.michaeljahns.namespace.grammy.Scenario
+import com.michaeljahns.namespace.ScenarioRepository
 
-class ScenarioModel : ViewModel() {
+class ScenarioModel(private val scenarioRepository: ScenarioRepository)
+    : ViewModel() {
+
+    fun getScenarios() = scenarioRepository.getScenarios()
+    fun clearScenarios() = scenarioRepository.clearScenarios()
+    fun regenerateScenarios() = scenarioRepository.regenerateScenarios()
+
     var numberOfScenarios = MutableLiveData<Int>()
     private var minPawnAgeRange = MutableLiveData<Int>()
     private var maxPawnAgeRange = MutableLiveData<Int>()
-    var scenarios: MutableLiveData<MutableList<Scenario>> = ScenarioFactory.getScenarios(getNumberOfScenarios())
     var isSettingsVisible = MutableLiveData<Boolean>()
 
 
@@ -31,10 +35,6 @@ class ScenarioModel : ViewModel() {
         this.maxPawnAgeRange.value = maximum
     }
 
-    fun regenerateScenarios() {
-        scenarios.value?.clear()
-        scenarios = ScenarioFactory.getScenarios(getNumberOfScenarios())
-    }
 
     fun getMinPawnAgeRange(): Float {
         val minAge = this.minPawnAgeRange.value?.toFloat()
