@@ -2,7 +2,7 @@ package com.michaeljahns.namespace.models
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.michaeljahns.namespace.ScenarioRepository
+import com.michaeljahns.namespace.scenario.ScenarioRepository
 
 class ScenarioModel(private val scenarioRepository: ScenarioRepository)
     : ViewModel() {

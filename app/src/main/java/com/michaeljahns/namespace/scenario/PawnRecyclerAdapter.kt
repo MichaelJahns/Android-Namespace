@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.scenario
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.michaeljahns.namespace.grammy.Pawn
+import com.michaeljahns.namespace.R
 
 class PawnRecyclerAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<PawnRecyclerAdapter.PawnViewHolder>() {
 
@@ -16,7 +16,7 @@ class PawnRecyclerAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<
         val pawnAge: TextView = itemView.findViewById(R.id.tvPawnAge)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PawnRecyclerAdapter.PawnViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PawnViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.pawn_row, parent, false)
         return PawnViewHolder(view)
     }

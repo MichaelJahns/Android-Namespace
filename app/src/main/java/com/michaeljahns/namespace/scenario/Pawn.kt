@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.grammy
+package com.michaeljahns.namespace.scenario
 
 class Pawn(pawnName: String?, pawnAge: Int?, pawnProfession: String?) {
     var name: String? = pawnName

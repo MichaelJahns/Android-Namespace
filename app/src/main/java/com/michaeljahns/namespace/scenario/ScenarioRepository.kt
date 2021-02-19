@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.scenario
 
 class ScenarioRepository private constructor(private val scenarioDao: ScenarioDao) {
 
