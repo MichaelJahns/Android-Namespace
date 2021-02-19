@@ -2,7 +2,6 @@ package com.michaeljahns.namespace.scenario
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.michaeljahns.namespace.factories.ScenarioFactory
 
 class ScenarioDao {
     private var scenarioList = mutableListOf<Scenario>()

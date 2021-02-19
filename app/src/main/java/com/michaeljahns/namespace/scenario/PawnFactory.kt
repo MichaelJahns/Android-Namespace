@@ -1,6 +1,5 @@
-package com.michaeljahns.namespace.factories
+package com.michaeljahns.namespace.scenario
 
-import com.michaeljahns.namespace.scenario.Pawn
 import com.michaeljahns.namespace.util.GlobalApplication
 import com.michaeljahns.namespace.util.flattenJsonOnKey
 import com.michaeljahns.namespace.util.rand

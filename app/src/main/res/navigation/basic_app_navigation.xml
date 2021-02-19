@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/scenarioFragment"
-        android:name="com.michaeljahns.namespace.fragments.ScenarioFragment"
+        android:name="com.michaeljahns.namespace.scenario.ScenarioFragment"
         android:label="fragment_scenario"
         tools:layout="@layout/fragment_scenario">
         <action
