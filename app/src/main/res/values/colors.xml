@@ -6,6 +6,6 @@
     <color name="colorSecondary">#F5D76E</color>
     <color name="colorPrimary">#4b5555</color>
     <color name="colorPrimaryDark">#38240E</color>
-    <color name="colorAccent">#29C51D</color>
+    <color name="colorAccent">#4b5555</color>
     <color name="forageGreen">#29C51D</color>
 </resources>

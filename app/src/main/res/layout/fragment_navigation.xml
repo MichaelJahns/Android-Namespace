@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/namespaceOrange"
         android:src="@drawable/ic_dice"
+        app:borderWidth="0dp"
         app:layout_anchor="@+id/bottomNavigationView"
         app:layout_anchorGravity="center"
         app:tint="@color/namespaceBlack" />
