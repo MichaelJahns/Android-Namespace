@@ -1,13 +1,11 @@
 package com.michaeljahns.namespace.forage
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ForageModel : ViewModel() {
-    var numberOfForages = MutableLiveData<Int>()
-    var forages: MutableLiveData<MutableList<Forage>> = ForageFactory.getForages(getNumberOfForages())
+class ForageModel(private val forageRepository: ForageRepository)
+    : ViewModel() {
 
-    private fun getNumberOfForages(): Int {
-        return this.numberOfForages.value ?: 16
-    }
+    fun getForages() = forageRepository.getForages()
+    fun regenerateForages() = forageRepository.regenerateForages()
+    fun clearForages() = forageRepository.clearForages()
 }
