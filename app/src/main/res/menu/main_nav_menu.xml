@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/miScenario"
+        android:icon="@drawable/ic_scenario"
+        android:title="@string/navScenarios" />
+
+    <item
+        android:id="@+id/miForage"
+        android:icon="@drawable/ic_forage"
+        android:title="@string/navForage" />
+
+    <item
+        android:id="@+id/textinput_placeholder1"
+        android:title="" />
+
+    <item
+        android:id="@+id/textinput_placeholder2"
+        android:title="" />
+
+    <item
+        android:id="@+id/miCollection"
+        android:icon="@drawable/ic_collection"
+        android:title="@string/navCollections" />
+</menu>
