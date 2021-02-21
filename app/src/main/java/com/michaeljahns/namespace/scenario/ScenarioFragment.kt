@@ -15,17 +15,18 @@ import com.michaeljahns.namespace.util.InjectorUtils
 class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
     private lateinit var binding: FragmentScenarioBinding
     private val factory: ScenarioModelFactory = InjectorUtils.provideScenarioModelFactory()
-    private lateinit var viewModel: ScenarioModel
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private lateinit var scenarioModel: ScenarioModel
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         binding = FragmentScenarioBinding.inflate(layoutInflater, container, false)
         initUI()
         return binding.root
     }
 
     private fun initUI() {
-        viewModel = ViewModelProvider(this, factory)
+        scenarioModel = ViewModelProvider(this, factory)
                 .get(ScenarioModel::class.java)
-        viewModel.getScenarios().observe(viewLifecycleOwner, Observer { scenarios ->
+        scenarioModel.getScenarios().observe(viewLifecycleOwner, Observer { scenarios ->
             startViewPager(scenarios)
         })
     }

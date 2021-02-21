@@ -11,7 +11,9 @@ class ScenarioDatabase private constructor() {
 
         fun getInstance() =
                 instance ?: synchronized(this) {
-                    instance ?: ScenarioDatabase().also { instance = it }
+                    instance ?: ScenarioDatabase().also {
+                        instance = it
+                    }
                 }
     }
 }
