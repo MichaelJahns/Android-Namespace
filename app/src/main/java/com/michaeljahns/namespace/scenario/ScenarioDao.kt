@@ -9,7 +9,6 @@ class ScenarioDao {
 
     init {
         regenerateScenarios()
-        scenarios.value = scenarioList
     }
 
     fun getScenarios() = scenarios as LiveData<List<Scenario>>
@@ -18,13 +17,13 @@ class ScenarioDao {
         scenarioList.clear()
     }
 
-    private fun updateDataLiveData() {
+    private fun updateLiveData() {
         scenarios.value = scenarioList
     }
 
     fun regenerateScenarios() {
         clearScenarios()
         scenarioList = ScenarioFactory.getScenarios(7)
-        updateDataLiveData()
+        updateLiveData()
     }
 }

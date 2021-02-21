@@ -15,73 +15,88 @@ import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.collection.CollectionFragment
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
 import com.michaeljahns.namespace.forage.ForageFragment
+import com.michaeljahns.namespace.forage.ForageModel
+import com.michaeljahns.namespace.forage.ForageModelFactory
 import com.michaeljahns.namespace.models.UIViewModel
 import com.michaeljahns.namespace.scenario.ScenarioFragment
 import com.michaeljahns.namespace.scenario.ScenarioModel
+import com.michaeljahns.namespace.scenario.ScenarioModelFactory
 import com.michaeljahns.namespace.util.InjectorUtils
 import com.michaeljahns.namespace.util.NavigationFragment
 
 class MainActivity2 : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
+
+    private val scenarioFactory: ScenarioModelFactory = InjectorUtils.provideScenarioModelFactory()
+    private val forageFactory: ForageModelFactory = InjectorUtils.provideForageModelFactory()
+
     private val navigationFragment = NavigationFragment()
 
     private val scenarioFragment = ScenarioFragment()
     private val forageFragment = ForageFragment()
     private val collectionFragment = CollectionFragment()
 
-    private val model: UIViewModel by viewModels()
+    private val uiModel: UIViewModel by viewModels()
     private lateinit var scenarioModel: ScenarioModel
+    private lateinit var forageModel: ForageModel
 
-    lateinit var binding: ActivityMainBinding
     private lateinit var Fab: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val factory = InjectorUtils.provideScenarioModelFactory()
-        scenarioModel = ViewModelProvider(this, factory)
-                .get(ScenarioModel::class.java)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        initUI()
+        setContentView(binding.root)
+    }
+
+    private fun initUI() {
+        scenarioModel = ViewModelProvider(this, scenarioFactory)
+                .get(ScenarioModel::class.java)
+        forageModel = ViewModelProvider(this, forageFactory)
+                .get(ForageModel::class.java)
+
+        Fab = binding.mainNavigationView.omnifab
+
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
             commit()
         }
-        Fab = binding.mainNavigationView.omnifab
+
         setCurrentFragment(scenarioFragment)
-        model.setActiveViewString("Scenario")
+        uiModel.setActiveViewString("Scenario")
         bindOmniFab()
-        model.intView.observe(this, Observer {
+
+        uiModel.intView.observe(this, Observer {
             when (it) {
                 R.id.miScenario -> {
                     setCurrentFragment(scenarioFragment)
-                    model.setActiveViewString("Scenario")
+                    uiModel.setActiveViewString("Scenario")
                     Fab.imageTintList = ColorStateList.valueOf(Color.rgb(255, 153, 15))
                 }
                 R.id.miForage -> {
                     setCurrentFragment(forageFragment)
-                    model.setActiveViewString("Forage")
+                    uiModel.setActiveViewString("Forage")
                     Fab.imageTintList = ColorStateList.valueOf(Color.rgb(41, 197, 29))
                 }
                 R.id.miCollection -> {
                     setCurrentFragment(collectionFragment)
-                    model.setActiveViewString("Collection")
+                    uiModel.setActiveViewString("Collection")
                     Fab.imageTintList = ColorStateList.valueOf(Color.rgb(40, 44, 52))
                 }
             }
             bindOmniFab()
         })
-        val view = binding.root
-        setContentView(view)
     }
 
     private fun bindOmniFab() {
         Fab.setOnClickListener {
-            when (model.activeViewString.value) {
+            when (uiModel.activeViewString.value) {
                 "Scenario" -> {
                     scenarioModel.regenerateScenarios()
                     Log.d("MAIN", "Omnifab onclick to reset generated scenarios")
                 }
                 "Forage" -> {
-                    Toast.makeText(this, "Future Feature, Regenerate Forages!", Toast.LENGTH_LONG).show()
-//                    forageModel.regenerateScenarios()
+                    forageModel.regenerateForages()
                     Log.d("MAIN", "Omnifab onclick to reset generated Forages")
                 }
                 "Collection" -> {

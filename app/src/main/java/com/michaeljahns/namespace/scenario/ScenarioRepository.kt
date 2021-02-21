@@ -1,7 +1,6 @@
 package com.michaeljahns.namespace.scenario
 
 class ScenarioRepository private constructor(private val scenarioDao: ScenarioDao) {
-
     fun getScenarios() = scenarioDao.getScenarios()
     fun regenerateScenarios() = scenarioDao.regenerateScenarios()
     fun clearScenarios() = scenarioDao.clearScenarios()
@@ -12,7 +11,9 @@ class ScenarioRepository private constructor(private val scenarioDao: ScenarioDa
 
         fun getInstance(scenarioDao: ScenarioDao) =
                 instance ?: synchronized(this) {
-                    instance ?: ScenarioRepository(scenarioDao).also { instance = it }
+                    instance ?: ScenarioRepository(scenarioDao).also {
+                        instance = it
+                    }
                 }
     }
 }

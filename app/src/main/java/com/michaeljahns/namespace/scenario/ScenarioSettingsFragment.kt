@@ -26,7 +26,6 @@ class ScenarioSettingsFragment : Fragment(){
         seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
                 override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                     Log.d("SCENSETT", "Progress Changed $progress")
-                    onDSChange(progress)
                 }
                 override fun onStartTrackingTouch(seekBar: SeekBar) {
                 }
@@ -36,12 +35,4 @@ class ScenarioSettingsFragment : Fragment(){
 
         return binding.root
     }
-
-    private fun onDSChange(number: Int){
-        Log.d("SCENSETT", "Atttempted to update models DS $Int")
-        model.setNumberOfScenarios(number)
-    }
-
-
-
 }

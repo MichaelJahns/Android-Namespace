@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.michaeljahns.namespace.R
 
-class ForagePageAdapter(private var forageList: MutableLiveData<MutableList<Forage>>) : RecyclerView.Adapter<ForagePageAdapter.ViewPager2Holder>() {
+class ForagePageAdapter(private var forages: List<Forage>) : RecyclerView.Adapter<ForagePageAdapter.ViewPager2Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.forage_page, parent, false)
@@ -16,13 +15,13 @@ class ForagePageAdapter(private var forageList: MutableLiveData<MutableList<Fora
     }
 
     override fun onBindViewHolder(holder: ViewPager2Holder, position: Int) {
-        val forage: Forage = forageList.value!![position]
+        val forage: Forage = forages[position]
         holder.forageLandmark.text = forage.landmark
         holder.forageDescription.text = forage.description
     }
 
     override fun getItemCount(): Int {
-        return forageList.value?.size ?: 1
+        return forages.size
     }
 
     inner class ViewPager2Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
