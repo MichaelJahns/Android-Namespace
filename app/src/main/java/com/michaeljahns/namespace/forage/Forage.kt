@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.grammy
+package com.michaeljahns.namespace.forage
 
 class Forage(forageLandmark: String, forageDescription: String) {
     val landmark = forageLandmark

@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.grammy
+package com.michaeljahns.namespace.forage
 
 import com.michaeljahns.namespace.util.rand
 

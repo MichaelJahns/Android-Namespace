@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.fragments
+package com.michaeljahns.namespace.scenario
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,6 @@ import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.michaeljahns.namespace.databinding.FragmentScenarioSettingsBinding
-import com.michaeljahns.namespace.models.ScenarioModel
 
 
 class ScenarioSettingsFragment : Fragment(){

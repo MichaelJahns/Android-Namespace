@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.fragments
+package com.michaeljahns.namespace.forage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.viewpager2.widget.ViewPager2
-import com.michaeljahns.namespace.ForagePageAdapter
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.databinding.FragmentForageBinding
-import com.michaeljahns.namespace.grammy.Forage
-import com.michaeljahns.namespace.models.ForageModel
 
 
 class ForageFragment : Fragment(R.layout.fragment_forage) {

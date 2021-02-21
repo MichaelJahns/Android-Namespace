@@ -1,8 +1,5 @@
-package com.michaeljahns.namespace.factories
+package com.michaeljahns.namespace.scenario
 
-import com.michaeljahns.namespace.grammy.Location
-import com.michaeljahns.namespace.grammy.Pawn
-import com.michaeljahns.namespace.grammy.Scenario
 import com.michaeljahns.namespace.util.GlobalApplication
 import com.michaeljahns.namespace.util.flattenJsonOnKey
 import com.michaeljahns.namespace.util.rand

@@ -12,14 +12,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.michaeljahns.namespace.R
+import com.michaeljahns.namespace.collection.CollectionFragment
 import com.michaeljahns.namespace.databinding.ActivityMainBinding
-import com.michaeljahns.namespace.fragments.CollectionFragment
-import com.michaeljahns.namespace.fragments.ForageFragment
-import com.michaeljahns.namespace.fragments.NavigationFragment
-import com.michaeljahns.namespace.fragments.ScenarioFragment
-import com.michaeljahns.namespace.models.ScenarioModel
+import com.michaeljahns.namespace.forage.ForageFragment
 import com.michaeljahns.namespace.models.UIViewModel
+import com.michaeljahns.namespace.scenario.ScenarioFragment
+import com.michaeljahns.namespace.scenario.ScenarioModel
 import com.michaeljahns.namespace.util.InjectorUtils
+import com.michaeljahns.namespace.util.NavigationFragment
 
 class MainActivity2 : AppCompatActivity() {
     private val navigationFragment = NavigationFragment()

@@ -1,8 +1,7 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.scenario
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.michaeljahns.namespace.models.ScenarioModel
 
 class ScenarioModelFactory(private val scenarioRepository: ScenarioRepository)
     : ViewModelProvider.NewInstanceFactory() {

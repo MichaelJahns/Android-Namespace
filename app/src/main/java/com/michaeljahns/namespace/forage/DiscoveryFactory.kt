@@ -1,7 +1,6 @@
-package com.michaeljahns.namespace.factories
+package com.michaeljahns.namespace.forage
 
 import androidx.lifecycle.MutableLiveData
-import com.michaeljahns.namespace.grammy.Discovery
 import com.michaeljahns.namespace.util.*
 
 object DiscoveryFactory {

@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace
+package com.michaeljahns.namespace.scenario
 
 class ScenarioDatabase private constructor() {
 

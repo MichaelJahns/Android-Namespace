@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.grammy
+package com.michaeljahns.namespace.scenario
 
 class Location(locationName: String?) {
     var name: String? = locationName

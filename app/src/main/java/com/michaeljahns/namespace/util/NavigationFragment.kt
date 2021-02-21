@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.fragments
+package com.michaeljahns.namespace.util
 
 import android.os.Bundle
 import android.view.LayoutInflater

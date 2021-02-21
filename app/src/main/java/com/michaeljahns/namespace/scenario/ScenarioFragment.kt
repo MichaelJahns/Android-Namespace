@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.fragments
+package com.michaeljahns.namespace.scenario
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.michaeljahns.namespace.R
-import com.michaeljahns.namespace.ScenarioModelFactory
-import com.michaeljahns.namespace.ScenarioPageAdapter
 import com.michaeljahns.namespace.databinding.FragmentScenarioBinding
-import com.michaeljahns.namespace.grammy.Scenario
-import com.michaeljahns.namespace.models.ScenarioModel
 import com.michaeljahns.namespace.util.InjectorUtils
 
 class ScenarioFragment : Fragment(R.layout.fragment_scenario) {
