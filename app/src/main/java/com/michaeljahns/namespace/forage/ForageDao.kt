@@ -23,6 +23,7 @@ class ForageDao {
 
     fun regenerateForages() {
         clearForages()
+        forageList = ForageFactory.getForages(7)
         updateLiveData()
     }
 }

@@ -1,17 +1,15 @@
 package com.michaeljahns.namespace.forage
 
-import androidx.lifecycle.MutableLiveData
 import com.michaeljahns.namespace.util.*
 
 object ForageFactory {
-    fun getForages(count: Int): MutableLiveData<MutableList<Forage>> {
+    fun getForages(count: Int): MutableList<Forage> {
         val context = GlobalApplication.getAppContext()
         val forageJson = readJsonFromAsset(context, assetName = "forage.json")
-        val forages = MutableLiveData<MutableList<Forage>>()
-        forages.value = mutableListOf()
+        val forages = mutableListOf<Forage>()
         repeat(count) {
             val forage = randomForage(forageJson)
-            forages.value!!.add(forage)
+            forages.add(forage)
         }
         return forages
     }

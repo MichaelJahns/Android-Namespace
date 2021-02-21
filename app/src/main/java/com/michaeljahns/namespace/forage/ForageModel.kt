@@ -6,6 +6,6 @@ class ForageModel(private val forageRepository: ForageRepository)
     : ViewModel() {
 
     fun getForages() = forageRepository.getForages()
-    fun regenerateForages() = forageRepository.regenerateForages()
     fun clearForages() = forageRepository.clearForages()
+    fun regenerateForages() = forageRepository.regenerateForages()
 }
