@@ -10,11 +10,11 @@
     <string name="leylineLabel"> Leyline </string>
     <string name="locationLabel"><u>Location</u></string>
     <string name="landmarkLabel">Landmark</string>
-    <string name="collectionLabel">Collections</string>
+    <string name="collectionLabel">Collection</string>
     <string name="descriptionLabel">Description: </string>
     <string name="crewLabel"> <u>Crew</u> </string>
-    <string name="forageLabel"><u>While Foraging</u></string>
-    <string name="label_Scenario">Scenarios: %1$.0f</string>
+    <string name="forageLabel"> Forage </string>
+    <string name="scenarioLabel">Scenario</string>
     <string name="label_Age">Age: %1.0f </string>
 
     <!--    General Use -->
