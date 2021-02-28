@@ -32,6 +32,7 @@ class MainActivity2 : AppCompatActivity() {
 
     private val navigationFragment = NavigationFragment()
 
+    private val pawnFragment = PawnFragment()
     private val scenarioFragment = ScenarioFragment()
     private val forageFragment = ForageFragment()
     private val collectionFragment = CollectionFragment()
@@ -55,7 +56,7 @@ class MainActivity2 : AppCompatActivity() {
         forageModel = ViewModelProvider(this, forageFactory)
                 .get(ForageModel::class.java)
 
-        Fab = binding.mainNavigationView.omnifab
+        Fab = binding.mainNavigationView.fab
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
@@ -68,6 +69,11 @@ class MainActivity2 : AppCompatActivity() {
 
         uiModel.intView.observe(this, Observer {
             when (it) {
+                R.id.miPawn -> {
+                    setCurrentFragment(pawnFragment)
+                    uiModel.setActiveViewString("Pawn")
+                    Fab.imageTintList = ColorStateList.valueOf(Color.rgb(97, 82, 209))
+                }
                 R.id.miScenario -> {
                     setCurrentFragment(scenarioFragment)
                     uiModel.setActiveViewString("Scenario")
