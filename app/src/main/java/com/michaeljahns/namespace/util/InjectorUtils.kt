@@ -3,6 +3,9 @@ package com.michaeljahns.namespace.util
 import com.michaeljahns.namespace.forage.ForageDatabase
 import com.michaeljahns.namespace.forage.ForageModelFactory
 import com.michaeljahns.namespace.forage.ForageRepository
+import com.michaeljahns.namespace.pawn.PawnDatabase
+import com.michaeljahns.namespace.pawn.PawnModelFactory
+import com.michaeljahns.namespace.pawn.PawnRepository
 import com.michaeljahns.namespace.scenario.ScenarioDatabase
 import com.michaeljahns.namespace.scenario.ScenarioModelFactory
 import com.michaeljahns.namespace.scenario.ScenarioRepository
@@ -20,7 +23,7 @@ object InjectorUtils {
     }
 
     fun providePawnModelFactory(): PawnModelFactory {
-        val pawnRepository = PawnRepository.getInstance(pawnDatabase.getInstance().pawnDao)
+        val pawnRepository = PawnRepository.getInstance(PawnDatabase.getInstance().pawnDao)
         return PawnModelFactory(pawnRepository)
     }
 }

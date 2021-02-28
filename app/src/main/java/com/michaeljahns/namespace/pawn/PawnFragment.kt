@@ -26,7 +26,7 @@ class PawnFragment : Fragment(R.layout.fragment_pawn) {
     private fun initUI() {
         pawnModel = ViewModelProvider(this, factory)
                 .get(PawnModel::class.java)
-        pawnModel.getPawns.observe(viewLifecycleOwner, Observer { pawns ->
+        pawnModel.getPawns().observe(viewLifecycleOwner, Observer { pawns ->
             startViewPager(pawns)
         })
     }

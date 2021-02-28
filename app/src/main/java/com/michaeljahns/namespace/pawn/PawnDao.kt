@@ -12,19 +12,18 @@ class PawnDao {
     }
 
     fun getPawns() = pawns as LiveData<List<Pawn>>
-    
-    fun regeneratePawns() {
-        clearPawns()
-        pawnList = PawnFactory.getPawns(7)
-        updateLiveData()
+    fun clearPawns() {
+        pawnList.clear()
     }
 
     private fun updateLiveData() {
         pawns.value = pawnList
     }
 
-    fun clearPawns() {
-        pawnList.clear()
+    fun regeneratePawns() {
+        clearPawns()
+        pawnList = PawnFactory.getPawns(7)
+        updateLiveData()
     }
 
 
