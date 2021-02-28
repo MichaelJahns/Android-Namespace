@@ -24,8 +24,8 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/pawnRoyal"
-        app:ci_drawable="@drawable/circle_indicator_round"
+        android:background="@color/namespaceBlack"
+        app:ci_drawable="@drawable/circle_indicator_round_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

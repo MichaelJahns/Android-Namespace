@@ -73,7 +73,7 @@ class MainActivity2 : AppCompatActivity() {
                 R.id.miPawn -> {
                     setCurrentFragment(pawnFragment)
                     uiModel.setActiveViewString("Pawn")
-                    Fab.imageTintList = ColorStateList.valueOf(Color.rgb(97, 82, 209))
+                    Fab.imageTintList = ColorStateList.valueOf(Color.rgb(30, 139, 195))
                 }
                 R.id.miScenario -> {
                     setCurrentFragment(scenarioFragment)
@@ -98,6 +98,10 @@ class MainActivity2 : AppCompatActivity() {
     private fun bindOmniFab() {
         Fab.setOnClickListener {
             when (uiModel.activeViewString.value) {
+                "Pawn" -> {
+                    Toast.makeText(this, "Future Pawn Feature, onclick coming soon", Toast.LENGTH_LONG).show()
+                    Log.d("MAIN", "Omnifab onclick to reset generated pawns")
+                }
                 "Scenario" -> {
                     scenarioModel.regenerateScenarios()
                     Log.d("MAIN", "Omnifab onclick to reset generated scenarios")
