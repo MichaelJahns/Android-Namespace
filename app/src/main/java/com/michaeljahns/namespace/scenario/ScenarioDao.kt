@@ -12,7 +12,6 @@ class ScenarioDao {
     }
 
     fun getScenarios() = scenarios as LiveData<List<Scenario>>
-
     fun clearScenarios() {
         scenarioList.clear()
     }

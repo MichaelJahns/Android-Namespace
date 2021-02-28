@@ -1,5 +1,7 @@
 package com.michaeljahns.namespace.scenario
 
+import com.michaeljahns.namespace.pawn.Pawn
+import com.michaeljahns.namespace.pawn.PawnFactory
 import com.michaeljahns.namespace.util.GlobalApplication
 import com.michaeljahns.namespace.util.flattenJsonOnKey
 import com.michaeljahns.namespace.util.rand
@@ -20,7 +22,7 @@ object ScenarioFactory {
     private fun randomScenario(JSON: String): Scenario {
         val flattenedLocation = flattenLocationFromJson(locationJSON = JSON)
         val scenarioPawns = randomPawns()
-        return Scenario(Location(flattenedLocation), scenarioPawns)
+        return Scenario(flattenedLocation, scenarioPawns)
     }
 
     private fun randomPawns(crewSize: Int = generateCrewSize()): MutableList<Pawn> {

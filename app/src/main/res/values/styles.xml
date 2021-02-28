@@ -3,8 +3,13 @@
     <style name="AppTheme" parent="Theme.MaterialComponents">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/forageGreen</item>
         <item name="colorPrimaryDark">@color/namespaceBlack</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="forageTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColor">@color/forageGreen</item>
     </style>
 
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <!--    Navigation Items -->
-    <string name="navScenarios"> Scenarios </string>
-    <string name="navCollections"> Collections </string>.
-    <string name="navForage"> Forage </string>.
-    <string name="navSettings"> Settings </string>
+    <string name="navPawn"> Pawn </string>
+    <string name="navScenario"> Scenario </string>
+    <string name="navForage"> Forage </string>
+    <string name="navCollection"> Collection </string>
 
     <!--    Labels-->
     <string name="namespaceLabel"> <u>Namespace</u> </string>
@@ -42,4 +42,6 @@
     <string name="generatedPawnAge">Age</string>
     <string name="generatedPawnProfession">Profession</string>
     <string name="fab_content_desc">A Button that spans every view, its function changes based on the currently shown view, in most cases the action is regenerate the generated Text</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

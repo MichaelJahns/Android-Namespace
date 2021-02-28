@@ -1,4 +1,4 @@
-package com.michaeljahns.namespace.scenario
+package com.michaeljahns.namespace.pawn
 
 import com.michaeljahns.namespace.util.GlobalApplication
 import com.michaeljahns.namespace.util.flattenJsonOnKey
