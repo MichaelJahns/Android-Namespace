@@ -18,4 +18,9 @@ object InjectorUtils {
         val forageRepository = ForageRepository.getInstance(ForageDatabase.getInstance().forageDao)
         return ForageModelFactory(forageRepository)
     }
+
+    fun providePawnModelFactory(): PawnModelFactory {
+        val pawnRepository = PawnRepository.getInstance(pawnDatabase.getInstance().pawnDao)
+        return PawnModelFactory(pawnRepository)
+    }
 }
