@@ -42,7 +42,7 @@
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/generatedPawnProfession"
-        android:textColor="@color/pawn_selector"
+        android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
