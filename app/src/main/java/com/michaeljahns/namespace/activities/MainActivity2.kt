@@ -18,6 +18,7 @@ import com.michaeljahns.namespace.forage.ForageFragment
 import com.michaeljahns.namespace.forage.ForageModel
 import com.michaeljahns.namespace.forage.ForageModelFactory
 import com.michaeljahns.namespace.models.UIViewModel
+import com.michaeljahns.namespace.pawn.PawnFragment
 import com.michaeljahns.namespace.scenario.ScenarioFragment
 import com.michaeljahns.namespace.scenario.ScenarioModel
 import com.michaeljahns.namespace.scenario.ScenarioModelFactory
