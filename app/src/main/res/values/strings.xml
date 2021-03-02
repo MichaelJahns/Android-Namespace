@@ -13,6 +13,7 @@
     <string name="collectionLabel">Collection</string>
     <string name="descriptionLabel">Description: </string>
     <string name="crewLabel"> <u>Crew</u> </string>
+    <string name="pawnLabel"> Pawn </string>
     <string name="forageLabel"> Forage </string>
     <string name="scenarioLabel">Scenario</string>
     <string name="label_Age">Age: %1.0f </string>

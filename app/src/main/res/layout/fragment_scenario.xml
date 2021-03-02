@@ -39,7 +39,7 @@
     <me.relex.circleindicator.CircleIndicator3
         android:id="@+id/indicatorScenario"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="16dp"
         android:layout_alignParentBottom="true"
         android:background="@color/namespaceBlack"
         app:ci_drawable="@drawable/circle_indicator_round"

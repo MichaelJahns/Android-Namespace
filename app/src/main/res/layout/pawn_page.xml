@@ -9,7 +9,7 @@
         android:id="@+id/tvPawnName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="160dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/generatedPawnName"
