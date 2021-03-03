@@ -18,6 +18,14 @@
     <string name="scenarioLabel">Scenario</string>
     <string name="label_Age">Age: %1.0f </string>
 
+    <!--    Stat labels -->
+    <string name="strLabel">Strength</string>
+    <string name="endLabel">Endurance</string>
+    <string name="dexLabel">Dexterity</string>
+    <string name="intLabel">Intelligence</string>
+    <string name="menLabel">Mentality</string>
+    <string name="chaLabel">Charisma</string>
+
     <!--    General Use -->
     <string name="reRoll"> Re-Roll </string>
     <string name="saveSettings"> Save Settings </string>
@@ -44,5 +52,6 @@
     <string name="generatedPawnProfession">Profession</string>
     <string name="fab_content_desc">A Button that spans every view, its function changes based on the currently shown view, in most cases the action is regenerate the generated Text</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="twenty">20</string>
+    <string name="skill">Skill</string>
 </resources>
