@@ -15,21 +15,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.viewpager2.widget.ViewPager2>
+    <TextView
+        android:id="@+id/forageLabel"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
+        android:layout_marginBottom="106dp"
+        android:background="@color/namespaceBlack"
+        android:fontFamily="@font/cinzel_decorative_bold"
+        android:gravity="center"
+        android:text="@string/forageLabel"
+        android:textColor="@color/forageGreen"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <me.relex.circleindicator.CircleIndicator3
         android:id="@+id/indicatorForage"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="16dp"
         android:layout_alignParentBottom="true"
         android:background="@color/namespaceBlack"
         app:ci_drawable="@drawable/circle_indicator_round_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </me.relex.circleindicator.CircleIndicator3>
+        app:layout_constraintTop_toBottomOf="@id/forageLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
