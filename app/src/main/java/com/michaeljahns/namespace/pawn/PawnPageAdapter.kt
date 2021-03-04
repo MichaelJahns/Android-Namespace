@@ -3,6 +3,7 @@ package com.michaeljahns.namespace.pawn
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.michaeljahns.namespace.R
@@ -19,6 +20,7 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         holder.pawnName.text = pawn.name
         holder.pawnAge.text = pawn.age.toString()
         holder.pawnProfession.text = pawn.profession
+        holder.pawnStrength.text = 14.toString();
     }
 
     override fun getItemCount(): Int {
@@ -29,6 +31,7 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         val pawnName: TextView = itemView.findViewById(R.id.tvPawnName)
         val pawnAge: TextView = itemView.findViewById(R.id.tvPawnAge)
         val pawnProfession: TextView = itemView.findViewById(R.id.tvPawnProfession)
+        val pawnStrength: TextView = itemView.findViewById<FrameLayout>(R.id.frameStrength).findViewById(R.id.etvSkillValue)
     }
 
 

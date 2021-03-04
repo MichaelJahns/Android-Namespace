@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="125dp"
-    android:layout_height="80dp"
-    android:layout_gravity="center">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/tvSkillLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/skill_shape"
-        android:fontFamily="@font/cinzel_decorative_bold"
-        android:gravity="center"
-        android:text="@string/skill"
-        android:textColor="@color/namespaceOrange"
-        android:textSize="24sp" />
+    <data>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:fontFamily="@font/jim_nightshade"
-        android:gravity="center"
-        android:text="@string/twenty"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="32sp" />
-</FrameLayout>
+        <variable
+            name="skillName"
+            type="com.michaeljahns.namespace.pawn.Pawn" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="125dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/tvSkillLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skill_shape"
+            android:fontFamily="@font/cinzel_decorative_bold"
+            android:gravity="center"
+            android:text="@{skillName.name, default=Skill}"
+            android:textColor="@color/namespaceOrange"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/etvSkillValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/jim_nightshade"
+            android:gravity="center"
+            android:text="@string/twenty"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="32sp" />
+    </FrameLayout>
+
+</layout>
