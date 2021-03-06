@@ -19,6 +19,8 @@ import com.michaeljahns.namespace.forage.ForageModel
 import com.michaeljahns.namespace.forage.ForageModelFactory
 import com.michaeljahns.namespace.models.UIViewModel
 import com.michaeljahns.namespace.pawn.PawnFragment
+import com.michaeljahns.namespace.pawn.PawnModel
+import com.michaeljahns.namespace.pawn.PawnModelFactory
 import com.michaeljahns.namespace.scenario.ScenarioFragment
 import com.michaeljahns.namespace.scenario.ScenarioModel
 import com.michaeljahns.namespace.scenario.ScenarioModelFactory
@@ -28,6 +30,7 @@ import com.michaeljahns.namespace.util.NavigationFragment
 class MainActivity2 : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
+    private val pawnFactory: PawnModelFactory = InjectorUtils.providePawnModelFactory()
     private val scenarioFactory: ScenarioModelFactory = InjectorUtils.provideScenarioModelFactory()
     private val forageFactory: ForageModelFactory = InjectorUtils.provideForageModelFactory()
 
@@ -39,6 +42,7 @@ class MainActivity2 : AppCompatActivity() {
     private val collectionFragment = CollectionFragment()
 
     private val uiModel: UIViewModel by viewModels()
+    private lateinit var pawnModel: PawnModel
     private lateinit var scenarioModel: ScenarioModel
     private lateinit var forageModel: ForageModel
 
@@ -56,9 +60,11 @@ class MainActivity2 : AppCompatActivity() {
                 .get(ScenarioModel::class.java)
         forageModel = ViewModelProvider(this, forageFactory)
                 .get(ForageModel::class.java)
+        pawnModel = ViewModelProvider(this, pawnFactory)
+                .get(PawnModel::class.java)
 
         Fab = binding.mainNavigationView.fab
-
+        
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainNavigationView, navigationFragment)
             commit()
@@ -99,7 +105,7 @@ class MainActivity2 : AppCompatActivity() {
         Fab.setOnClickListener {
             when (uiModel.activeViewString.value) {
                 "Pawn" -> {
-                    Toast.makeText(this, "Future Pawn Feature, onclick coming soon", Toast.LENGTH_LONG).show()
+                    pawnModel.regeneratePawns()
                     Log.d("MAIN", "Omnifab onclick to reset generated pawns")
                 }
                 "Scenario" -> {
