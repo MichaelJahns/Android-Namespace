@@ -2,24 +2,25 @@ package com.michaeljahns.namespace.pawn
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Typeface
 import android.util.AttributeSet
+import com.michaeljahns.namespace.util.ColorProvider
+import com.michaeljahns.namespace.util.TypefaceProvider
 
 
 class SkillBannerTextView : androidx.appcompat.widget.AppCompatTextView {
     constructor(context: Context) : super(context) {
-        val face = Typeface.createFromAsset(context.assets, "fonts/CinzelDecorative-Regular.ttf")
-        this.setTypeface(face)
+        TypefaceProvider.setCinzelDecorativeTypeface(context, this)
+        ColorProvider.setNamespaceOrangeColor(context, this)
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        val face = Typeface.createFromAsset(context.assets, "fonts/CinzelDecorative-Regular.ttf")
-        this.setTypeface(face)
+        TypefaceProvider.setCinzelDecorativeTypeface(context, this)
+        ColorProvider.setNamespaceOrangeColor(context, this)
     }
 
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
-        val face = Typeface.createFromAsset(context.assets, "fonts/CinzelDecorative-Regular.ttf")
-        this.setTypeface(face)
+        TypefaceProvider.setCinzelDecorativeTypeface(context, this)
+        ColorProvider.setNamespaceOrangeColor(context, this)
     }
 
     override fun onDraw(canvas: Canvas?) {
