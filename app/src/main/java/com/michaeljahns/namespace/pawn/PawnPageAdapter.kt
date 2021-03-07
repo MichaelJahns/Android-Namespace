@@ -19,6 +19,7 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         holder.pawnName.text = pawn.name
         holder.pawnAge.text = pawn.age.toString()
         holder.pawnProfession.text = pawn.profession
+
     }
 
     override fun getItemCount(): Int {
@@ -29,6 +30,7 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         val pawnName: TextView = itemView.findViewById(R.id.tvPawnName)
         val pawnAge: TextView = itemView.findViewById(R.id.tvPawnAge)
         val pawnProfession: TextView = itemView.findViewById(R.id.tvPawnProfession)
+
     }
 
 

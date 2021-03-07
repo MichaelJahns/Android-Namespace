@@ -19,6 +19,7 @@
     <string name="label_Age">Age: %1.0f </string>
 
     <!--    Stat labels -->
+    <string name="skillLabel">Skill</string>
     <string name="strLabel">Strength</string>
     <string name="endLabel">Endurance</string>
     <string name="dexLabel">Dexterity</string>
@@ -51,7 +52,7 @@
     <string name="generatedPawnAge">Age</string>
     <string name="generatedPawnProfession">Profession</string>
     <string name="fab_content_desc">A Button that spans every view, its function changes based on the currently shown view, in most cases the action is regenerate the generated Text</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="twenty">20</string>
-    <string name="skill">Skill</string>
+    <string name="d">15</string>
 </resources>
