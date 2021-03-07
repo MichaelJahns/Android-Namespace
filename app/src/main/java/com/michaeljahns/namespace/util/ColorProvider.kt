@@ -8,17 +8,25 @@ import com.michaeljahns.namespace.R
 object ColorProvider {
     private var namespaceOrange: Int? = null
     private var namespaceBlack: Int? = null
-    fun setNamespaceOrangeColor(context: Context, tv: TextView) {
+    fun setTextNamespaceOrange(context: Context, tv: TextView) {
         if (namespaceOrange == null) {
             namespaceOrange = ContextCompat.getColor(context, R.color.namespaceOrange)
         }
         tv.setTextColor(namespaceOrange!!)
     }
 
-    fun setNamespaceBlackColor(context: Context, tv: TextView) {
+    fun setTextNamespaceBlack(context: Context, tv: TextView) {
         if (namespaceBlack == null) {
             namespaceBlack = ContextCompat.getColor(context, R.color.namespaceBlack)
         }
         tv.setTextColor(namespaceBlack!!)
+    }
+
+    fun setBackgroundNamespaceBlack(context: Context, tv: TextView) {
+        if (namespaceBlack == null) {
+            namespaceBlack = ContextCompat.getColor(context, R.color.namespaceBlack)
+        }
+//        tv.setBackgroundColor(namespaceBlack!!)
+        tv.setBackgroundResource(R.drawable.skill_shape)
     }
 }

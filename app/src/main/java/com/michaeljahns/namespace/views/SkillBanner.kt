@@ -10,19 +10,22 @@ import com.michaeljahns.namespace.util.TypefaceProvider
 class SkillBanner : androidx.appcompat.widget.AppCompatTextView {
     constructor(context: Context) : super(context) {
         TypefaceProvider.setCinzelDecorativeTypeface(context, this)
-        ColorProvider.setNamespaceOrangeColor(context, this)
+        ColorProvider.setTextNamespaceOrange(context, this)
+        ColorProvider.setBackgroundNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         TypefaceProvider.setCinzelDecorativeTypeface(context, this)
-        ColorProvider.setNamespaceOrangeColor(context, this)
+        ColorProvider.setTextNamespaceOrange(context, this)
+        ColorProvider.setBackgroundNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
         TypefaceProvider.setCinzelDecorativeTypeface(context, this)
-        ColorProvider.setNamespaceOrangeColor(context, this)
+        ColorProvider.setTextNamespaceOrange(context, this)
+        ColorProvider.setBackgroundNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 

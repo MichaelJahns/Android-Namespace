@@ -71,9 +71,10 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameStrength"
-        android:layout_width="140dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnProfession">
 
@@ -92,9 +93,10 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameEndurance"
-        android:layout_width="125dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnProfession">
 
@@ -113,9 +115,10 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameDexterity"
-        android:layout_width="125dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameStrength">
 
@@ -124,7 +127,6 @@
             android:layout_height="wrap_content"
             android:text="@string/dexLabel"
             android:textSize="20sp" />
-
         <com.michaeljahns.namespace.views.SkillDisplay
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -134,12 +136,12 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@id/frameIntelligence"
-        android:layout_width="125dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameEndurance">
-
         <com.michaeljahns.namespace.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -155,9 +157,10 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameMentality"
-        android:layout_width="125dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameDexterity">
 
@@ -176,9 +179,10 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameCharisma"
-        android:layout_width="125dp"
+        android:layout_width="150dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameIntelligence">
 
