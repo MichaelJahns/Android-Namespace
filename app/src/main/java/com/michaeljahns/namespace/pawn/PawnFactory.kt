@@ -16,33 +16,28 @@ object PawnFactory {
         val statJson = readJsonFromAsset(context, assetName = "statDistributions.json")
         val pawns = mutableListOf<Pawn>()
         repeat(crewSize) {
-            val scenarioPawn = randomPawn(pawnJson, statJson, minimumAge, maximumAge)
+            val scenarioPawn = randomPawn(pawnJson, statJson)
             pawns.add(scenarioPawn)
         }
         return pawns
     }
 
-    private fun randomPawn(JSON: String, statJSON: String, minAge: Int, maxAge: Int): Pawn {
+    private fun randomPawn(JSON: String, statJSON: String): Pawn {
         val pawnName = flattenJsonOnKey(JSON, "name")
-        val pawnAge = generatePawnAge(minAge, maxAge)
+        val pawnAge = generatePawnAge()
         val pawnProfession = flattenJsonOnKey(JSON, "profession")
-        val pawnStats = getRandomStatArray(statJSON)
-        return Pawn(pawnName, pawnAge, pawnProfession, StatBlock())
+        val statSpread: List<List<Int>> = jacksonObjectMapper().readValue(statJSON)
+        val pawnStatSpread = getRandomStatSpread(allPossibleStatSpreads = statSpread)
+        return Pawn(pawnName, pawnAge, pawnProfession, StatBlock(pawnStatSpread))
     }
 
-    private fun generatePawnAge(minAge: Int, maxAge: Int): Int {
-        return rand(minAge, maxAge)
+    private fun generatePawnAge(): Int {
+        return rand(minimumAge, maximumAge)
     }
 
-    private fun flattenPawnFromJson(pawnJSON: String, key: String = "pawn"): String {
-        return flattenJsonOnKey(pawnJSON, key)
+    private fun getRandomStatSpread(allPossibleStatSpreads: List<List<Int>>): List<Int> {
+        val length = allPossibleStatSpreads.size
+        val randomIndex = rand(0, length - 1)
+        return allPossibleStatSpreads[randomIndex]
     }
-
-    private fun getRandomStatArray(JSON: String): Int {
-        val mapper = jacksonObjectMapper()
-        val allStats: List<Array<Int>> = mapper.readValue(JSON)
-        val length = allStats.size
-        return 7
-    }
-
 }
