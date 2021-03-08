@@ -20,6 +20,14 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         holder.pawnAge.text = pawn.age.toString()
         holder.pawnProfession.text = pawn.profession
 
+        // Skills
+        holder.pawnStrength.text = pawn.statBlock!!.strength.toString()
+        holder.pawnEndurance.text = pawn.statBlock.endurance.toString()
+        holder.pawnDexterity.text = pawn.statBlock.dexterity.toString()
+        holder.pawnIntelligence.text = pawn.statBlock.intelligence.toString()
+        holder.pawnMentality.text = pawn.statBlock.mentality.toString()
+        holder.pawnCharisma.text = pawn.statBlock.charisma.toString()
+
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +39,13 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         val pawnAge: TextView = itemView.findViewById(R.id.tvPawnAge)
         val pawnProfession: TextView = itemView.findViewById(R.id.tvPawnProfession)
 
+        // Skills
+        val pawnStrength: TextView = itemView.findViewById(R.id.etvPawnStrength)
+        val pawnEndurance: TextView = itemView.findViewById(R.id.etvPawnEndurance)
+        val pawnDexterity: TextView = itemView.findViewById(R.id.etvPawnDexterity)
+        val pawnIntelligence: TextView = itemView.findViewById(R.id.etvPawnIntelligence)
+        val pawnMentality: TextView = itemView.findViewById(R.id.etvPawnMentality)
+        val pawnCharisma: TextView = itemView.findViewById(R.id.etvPawnCharisma)
     }
 
 

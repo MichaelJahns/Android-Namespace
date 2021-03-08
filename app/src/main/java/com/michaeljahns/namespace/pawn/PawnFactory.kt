@@ -23,7 +23,8 @@ object PawnFactory {
         val pawnName = flattenJsonOnKey(JSON, "name")
         val pawnAge = generatePawnAge(minAge, maxAge)
         val pawnProfession = flattenJsonOnKey(JSON, "profession")
-        return Pawn(pawnName, pawnAge, pawnProfession)
+        val pawnStats = StatBlock()
+        return Pawn(pawnName, pawnAge, pawnProfession, pawnStats)
         //        potential different pattern
         //        val flattenedPawn = flattenPawnFromJson(pawnJSON = JSON)
         //        val pawnName = regexIsolateFirstCapitalWord(flattenedPawn)
