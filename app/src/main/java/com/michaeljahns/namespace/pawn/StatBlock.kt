@@ -1,6 +1,6 @@
 package com.michaeljahns.namespace.pawn
 
-class StatBlock {
+class StatBlock() {
     var strength: Int? = 1
     var endurance: Int? = 1
     var dexterity: Int? = 1
