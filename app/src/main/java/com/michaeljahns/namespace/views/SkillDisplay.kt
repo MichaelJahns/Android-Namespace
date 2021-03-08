@@ -10,19 +10,19 @@ import com.michaeljahns.namespace.util.TypefaceProvider
 class SkillDisplay : androidx.appcompat.widget.AppCompatTextView {
     constructor(context: Context) : super(context) {
         TypefaceProvider.setJimNightShadeTypeface(context, this)
-        ColorProvider.setNamespaceBlackColor(context, this)
+        ColorProvider.setTextNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         TypefaceProvider.setJimNightShadeTypeface(context, this)
-        ColorProvider.setNamespaceBlackColor(context, this)
+        ColorProvider.setTextNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
         TypefaceProvider.setJimNightShadeTypeface(context, this)
-        ColorProvider.setNamespaceBlackColor(context, this)
+        ColorProvider.setTextNamespaceBlack(context, this)
         this.gravity = Gravity.CENTER
     }
 

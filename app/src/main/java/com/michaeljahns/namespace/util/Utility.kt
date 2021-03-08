@@ -17,10 +17,12 @@ fun readJsonFromAsset(context: Context, assetName: String): String {
     inputStream.close()
     return String(buffer)
 }
+
 fun flattenJsonOnKey(Json: String?, key: String): String {
     val grammar = com.almasb.grammy.Grammy.createGrammar(Json)
     return grammar.flatten(key)
 }
+
 // REGEX
 fun regexIsolateFirstCapitalWord(JSON: String): String {
     var pattern = Regex("^([A-Za-z]+)")

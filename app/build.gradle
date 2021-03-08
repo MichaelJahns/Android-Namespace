@@ -21,6 +21,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
     configurations { compile.exclude group: "junit", module: "junit" }
     compileOptions {
@@ -29,9 +30,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    dataBinding {
-        enabled = true
     }
 }
 
@@ -62,4 +60,10 @@ dependencies {
 
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'me.relex:circleindicator:2.1.4'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.10.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.0"
+
 }
