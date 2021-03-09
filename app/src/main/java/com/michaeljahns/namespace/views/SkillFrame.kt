@@ -5,10 +5,13 @@ import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.core.view.marginBottom
 
 class SkillFrame : FrameLayout {
+    
     constructor(context: Context) : super(context) {
         this.layoutParams = LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
+        this.marginBottom
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {

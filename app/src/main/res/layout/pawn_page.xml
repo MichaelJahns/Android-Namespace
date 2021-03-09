@@ -5,51 +5,32 @@
     android:layout_height="match_parent"
     android:background="@color/colorSecondary">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="154dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/portrait_shape"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPawnName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/ivPawnPortrait"
-            android:layout_width="91dp"
-            android:layout_height="114dp"
-            app:srcCompat="@drawable/portrait" />
-    </FrameLayout>
-
     <TextView
         android:id="@+id/tvPawnName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/generatedPawnName"
         android:textColor="@color/namespaceBlack"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPawnProfession"
+        android:textSize="42sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPawnAge"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPawnAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/generatedPawnAge"
         android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/tvPawnProfession"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnName" />
@@ -58,23 +39,21 @@
         android:id="@+id/tvPawnProfession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/generatedPawnProfession"
         android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPawnAge"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPawnAge" />
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameStrength"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnProfession">
 
@@ -96,7 +75,7 @@
         android:id="@+id/frameEndurance"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnProfession">
@@ -119,8 +98,8 @@
         android:id="@+id/frameDexterity"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameStrength">
 
@@ -141,7 +120,7 @@
         android:id="@id/frameIntelligence"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameEndurance">
@@ -163,8 +142,8 @@
         android:id="@+id/frameMentality"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameDexterity">
 
@@ -186,8 +165,9 @@
         android:id="@+id/frameCharisma"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameIntelligence">
 
