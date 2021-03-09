@@ -48,7 +48,7 @@
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
-        android:text="@string/collectionDescription"
+        android:text="@string/collection_content_desc"
         android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

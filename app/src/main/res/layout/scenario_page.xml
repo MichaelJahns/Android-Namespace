@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/jim_nightshade"
-        android:text="@string/generatedLocation"
+        android:text="@string/generated_location"
         android:textColor="@color/namespaceBlack"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"

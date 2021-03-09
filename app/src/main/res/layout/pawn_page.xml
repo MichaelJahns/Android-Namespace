@@ -12,7 +12,7 @@
         android:layout_marginTop="120dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
-        android:text="@string/generatedPawnName"
+        android:text="@string/generated_pawn_name"
         android:textColor="@color/namespaceBlack"
         android:textSize="42sp"
         app:layout_constraintBottom_toTopOf="@+id/tvPawnAge"
@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
-        android:text="@string/generatedPawnAge"
+        android:text="@string/generated_pawn_age"
         android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/tvPawnProfession"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
-        android:text="@string/generatedPawnProfession"
+        android:text="@string/generated_pawn_profession"
         android:textColor="@color/namespaceBlack"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameStrength"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="100dp"
@@ -67,13 +67,13 @@
             android:id="@+id/etvPawnStrength"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
+            android:text="@string/generated_stat"
             android:textSize="32sp" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameEndurance"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
@@ -90,13 +90,13 @@
             android:id="@+id/etvPawnEndurance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
+            android:text="@string/generated_stat"
             android:textSize="32sp" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameDexterity"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
@@ -108,17 +108,18 @@
             android:layout_height="wrap_content"
             android:text="@string/dexLabel"
             android:textSize="20sp" />
+
         <com.michaeljahns.namespace.views.SkillDisplay
             android:id="@+id/etvPawnDexterity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@id/frameIntelligence"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
@@ -134,13 +135,13 @@
             android:id="@+id/etvPawnIntelligence"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameMentality"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
@@ -157,13 +158,13 @@
             android:id="@+id/etvPawnMentality"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
         android:id="@+id/frameCharisma"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
@@ -181,8 +182,8 @@
             android:id="@+id/etvPawnCharisma"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/d"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
