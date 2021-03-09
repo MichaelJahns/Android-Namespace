@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSecondary">
+    android:background="@color/colorSecondary"
+    android:theme="@style/AppTheme.NoActionBar">
 
     <TextView
         android:id="@+id/tvPawnName"
@@ -67,8 +68,8 @@
             android:id="@+id/etvPawnStrength"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/generated_stat"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
@@ -90,8 +91,8 @@
             android:id="@+id/etvPawnEndurance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/generated_stat"
-            android:textSize="32sp" />
+            android:layout_marginTop="20dp"
+            android:text="@string/generated_stat" />
     </com.michaeljahns.namespace.views.SkillFrame>
 
     <com.michaeljahns.namespace.views.SkillFrame
