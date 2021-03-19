@@ -17,15 +17,16 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <ImageView
         android:id="@+id/ivSplashAuthor"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="120dp"
         android:src="@drawable/leyline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:fontFamily="@font/cinzel_decorative_bold"
+        android:gravity="center"
         android:text="@string/locationLabel"
         android:textColor="@color/namespaceBlack"
         android:textSize="30sp"
