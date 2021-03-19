@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/cinzel_decorative_bold"
+        android:fontFamily="@font/jim_nightshade"
         android:text="@string/leylineLabel"
         android:textColor="@color/namespaceOrange"
         android:textSize="24sp"
