@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context=".CollectionFragment">
+
+    <TextView
+        android:id="@+id/collectionLabel"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
+        android:layout_marginBottom="106dp"
+        android:background="@color/namespaceBlack"
+        android:fontFamily="@font/cinzel_decorative_bold"
+        android:gravity="center"
+        android:text="@string/collectionLabel"
+        android:textColor="@color/namespaceOrange"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/hailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="start"
+        android:text="@string/hail"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="@+id/tvCollectionDescription"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCollectionDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
+        android:text="@string/collection_content_desc"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hailLabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

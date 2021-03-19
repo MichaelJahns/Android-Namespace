@@ -10,7 +10,7 @@
         android:layout_height="60dp"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
-        android:text="@string/generatedPawnName"
+        android:text="@string/generated_pawn_name"
         android:textColor="@color/colorPrimary"
         android:textSize="36sp" />
 
@@ -20,7 +20,7 @@
         android:layout_height="60dp"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
-        android:text="@string/generatedPawnAge"
+        android:text="@string/generated_pawn_age"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp" />
 
@@ -30,7 +30,7 @@
         android:layout_height="60dp"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
-        android:text="@string/generatedPawnProfession"
+        android:text="@string/generated_pawn_profession"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp" />
 
