@@ -33,6 +33,6 @@ class PawnFragment : Fragment(R.layout.fragment_pawn) {
     private fun startViewPager (pawnList: List<Pawn>){
         binding.vp2Pawn.adapter = PawnPageAdapter(pawnList)
         binding.vp2Pawn.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        binding.indicatorPawn.setViewPager(binding.vp2Pawn)
+        binding.indicatorPawn?.setViewPager(binding.vp2Pawn)
     }
 }
