@@ -20,11 +20,11 @@
 
     <!--    Stat labels -->
     <string name="skillLabel">Skill</string>
-    <string name="strLabel">Strength</string>
-    <string name="endLabel">Endurance</string>
-    <string name="dexLabel">Dexterity</string>
-    <string name="intLabel">Intelligence</string>
-    <string name="menLabel">Mentality</string>
+    <string name="strLabel"> Strength  </string>
+    <string name="endLabel"> Endurance  </string>
+    <string name="dexLabel"> Dexterity  </string>
+    <string name="intLabel"> Intelligence   </string>
+    <string name="menLabel"> Mentality  </string>
     <string name="chaLabel">Charisma</string>
 
     <!--    General Use -->

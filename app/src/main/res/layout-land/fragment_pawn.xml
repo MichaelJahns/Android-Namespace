@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pawn.PawnFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2Pawn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/indicatorPawn"
+        android:background="@color/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <TextView
+        android:id="@+id/pawnLabel"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
+        android:background="@color/namespaceBlack"
+        android:fontFamily="@font/cinzel_decorative_bold"
+        android:gravity="center"
+        android:text="@string/pawnLabel"
+        android:textColor="@color/namespaceBlue"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicatorPawn"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/namespaceBlack"
+        android:visibility="invisible"
+        app:ci_drawable="@drawable/circle_indicator_round_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pawnLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
