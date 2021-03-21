@@ -19,6 +19,7 @@
 
     </androidx.viewpager2.widget.ViewPager2>
     <!--    IN all similar views the VIewPager2 has to be first or it messes up the UI, y, idunno-->
+
     <TextView
         android:id="@+id/scenarioLabel"
         android:layout_width="0dp"
