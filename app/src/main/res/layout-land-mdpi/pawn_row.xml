@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvPawnName"
+        android:layout_width="322dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
+        android:text="@string/generated_pawn_name"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvPawnAge"
+        android:layout_width="49dp"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
+        android:text="@string/generated_pawn_age"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvPawnProfession"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/jim_nightshade"
+        android:gravity="center"
+        android:text="@string/generated_pawn_profession"
+        android:textColor="@color/namespaceBlack"
+        android:textSize="30sp" />
+
+</LinearLayout>
+
