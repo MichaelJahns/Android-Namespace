@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/tvPawnName"
-        android:layout_width="138dp"
+        android:layout_width="146dp"
         android:layout_height="match_parent"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
@@ -16,7 +16,7 @@
 
     <TextView
         android:id="@+id/tvPawnAge"
-        android:layout_width="wrap_content"
+        android:layout_width="38dp"
         android:layout_height="61dp"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/tvPawnProfession"
-        android:layout_width="197dp"
+        android:layout_width="155dp"
         android:layout_height="match_parent"
         android:fontFamily="@font/jim_nightshade"
         android:gravity="center"
