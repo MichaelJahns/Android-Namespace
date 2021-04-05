@@ -1,6 +1,7 @@
 # Namespace-Android
 Procedural Text Generation 
 Published on the Playstore: https://play.google.com/store/apps/details?id=com.michaeljahns.namespace
+https://www.michaeljahns.com/projects/namespace
 
 ## Project Info & Problem Domain
 High fantasy procedural text Android App, works by flattening grammars shaped like roll tables with Grammy; procedural tools for interesting and diverse player character inspiration, scenarios with enough information for you to continue telling the story in your own context, and forages to define a scene and ground it in its surroundings.
