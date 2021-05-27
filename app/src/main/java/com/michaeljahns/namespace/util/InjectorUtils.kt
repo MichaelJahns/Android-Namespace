@@ -1,29 +1,29 @@
 package com.michaeljahns.namespace.util
 
-import com.michaeljahns.namespace.forage.ForageDatabase
-import com.michaeljahns.namespace.forage.ForageModelFactory
-import com.michaeljahns.namespace.forage.ForageRepository
-import com.michaeljahns.namespace.pawn.PawnDatabase
-import com.michaeljahns.namespace.pawn.PawnModelFactory
-import com.michaeljahns.namespace.pawn.PawnRepository
-import com.michaeljahns.namespace.scenario.ScenarioDatabase
-import com.michaeljahns.namespace.scenario.ScenarioModelFactory
-import com.michaeljahns.namespace.scenario.ScenarioRepository
+import com.michaeljahns.namespace.database.ForageDatabase
+import com.michaeljahns.namespace.database.PawnDatabase
+import com.michaeljahns.namespace.database.ScenarioDatabase
+import com.michaeljahns.namespace.repository.forage.ForageRepository
+import com.michaeljahns.namespace.repository.pawn.PawnRepository
+import com.michaeljahns.namespace.repository.scenario.ScenarioRepository
+import com.michaeljahns.namespace.viewmodel.forage.ForageViewModelFactory
+import com.michaeljahns.namespace.viewmodel.pawn.PawnViewModelFactory
+import com.michaeljahns.namespace.viewmodel.scenario.ScenarioViewModelFactory
 
 object InjectorUtils {
 
-    fun provideScenarioModelFactory(): ScenarioModelFactory {
+    fun provideScenarioModelFactory(): ScenarioViewModelFactory {
         val scenarioRepository = ScenarioRepository.getInstance(ScenarioDatabase.getInstance().scenarioDao)
-        return ScenarioModelFactory(scenarioRepository)
+        return ScenarioViewModelFactory(scenarioRepository)
     }
 
-    fun provideForageModelFactory(): ForageModelFactory {
+    fun provideForageModelFactory(): ForageViewModelFactory {
         val forageRepository = ForageRepository.getInstance(ForageDatabase.getInstance().forageDao)
-        return ForageModelFactory(forageRepository)
+        return ForageViewModelFactory(forageRepository)
     }
 
-    fun providePawnModelFactory(): PawnModelFactory {
+    fun providePawnModelFactory(): PawnViewModelFactory {
         val pawnRepository = PawnRepository.getInstance(PawnDatabase.getInstance().pawnDao)
-        return PawnModelFactory(pawnRepository)
+        return PawnViewModelFactory(pawnRepository)
     }
 }
