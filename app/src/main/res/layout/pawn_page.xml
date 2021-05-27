@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnName" />
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@+id/frameStrength"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -57,21 +57,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnAge">
 
-        <com.michaeljahns.namespace.views.SkillBanner
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/strLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnStrength"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@+id/frameEndurance"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -80,21 +80,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPawnAge">
 
-        <com.michaeljahns.namespace.views.SkillBanner
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/endLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnEndurance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@+id/frameDexterity"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -103,21 +103,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameStrength">
 
-        <com.michaeljahns.namespace.views.SkillBanner
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dexLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnDexterity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@id/frameIntelligence"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -125,21 +125,22 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameEndurance">
-        <com.michaeljahns.namespace.views.SkillBanner
+
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/intLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnIntelligence"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@+id/frameMentality"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -148,21 +149,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameDexterity">
 
-        <com.michaeljahns.namespace.views.SkillBanner
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/menLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnMentality"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
-    <com.michaeljahns.namespace.views.SkillFrame
+    <com.michaeljahns.namespace.ui.views.SkillFrame
         android:id="@+id/frameCharisma"
         android:layout_width="160dp"
         android:layout_height="80dp"
@@ -172,18 +173,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameIntelligence">
 
-        <com.michaeljahns.namespace.views.SkillBanner
+        <com.michaeljahns.namespace.ui.views.SkillBanner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/chaLabel"
             android:textSize="20sp" />
 
-        <com.michaeljahns.namespace.views.SkillDisplay
+        <com.michaeljahns.namespace.ui.views.SkillDisplay
             android:id="@+id/etvPawnCharisma"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="@string/generated_stat" />
-    </com.michaeljahns.namespace.views.SkillFrame>
+    </com.michaeljahns.namespace.ui.views.SkillFrame>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
