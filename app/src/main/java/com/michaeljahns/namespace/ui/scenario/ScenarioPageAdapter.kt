@@ -8,9 +8,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.michaeljahns.namespace.R
+import com.michaeljahns.namespace.repository.pawn.Pawn
 import com.michaeljahns.namespace.repository.scenario.Scenario
 
-class ScenarioPageAdapter(private var scenarios: List<Scenario>) : RecyclerView.Adapter<ScenarioPageAdapter.ViewPager2Holder>() {
+class ScenarioPageAdapter(private var scenarios: List<Scenario>) : RecyclerView.Adapter<ScenarioPageAdapter.ViewPager2Holder>(), PawnRecyclerAdapter.OnPawnSaveListener {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.scenario_page, parent, false)
@@ -24,7 +25,7 @@ class ScenarioPageAdapter(private var scenarios: List<Scenario>) : RecyclerView.
         holder.scenarioLocation.text = scenario.location.toString()
         val childLayoutManager = LinearLayoutManager(holder.scenarioPawnRecycler.context, RecyclerView.VERTICAL, false)
         holder.scenarioPawnRecycler.layoutManager = childLayoutManager
-        holder.scenarioPawnRecycler.adapter = PawnRecyclerAdapter(scenario.pawns)
+        holder.scenarioPawnRecycler.adapter = PawnRecyclerAdapter(this, scenario.pawns)
     }
 
     override fun getItemCount(): Int {
@@ -41,5 +42,9 @@ class ScenarioPageAdapter(private var scenarios: List<Scenario>) : RecyclerView.
                 Toast.makeText(itemView.context, "$position " + scenarioLocation.text, Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onPawnSaved(pawn: Pawn) {
+        TODO("Not yet implemented")
     }
 }

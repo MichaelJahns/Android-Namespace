@@ -3,12 +3,16 @@ package com.michaeljahns.namespace.ui.pawn
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.michaeljahns.namespace.R
 import com.michaeljahns.namespace.repository.pawn.Pawn
 
-class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<PawnPageAdapter.ViewPager2Holder>() {
+class PawnPageAdapter(
+        private var pawns: List<Pawn>,
+        private var pawnClickedListener: OnPawnClickedListener
+) : RecyclerView.Adapter<PawnPageAdapter.ViewPager2Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPager2Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.pawn_page, parent, false)
@@ -17,6 +21,7 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
 
     override fun onBindViewHolder(holder: ViewPager2Holder, position: Int) {
         val pawn = pawns[position]
+        // Demographics
         holder.pawnName.text = pawn.name
         holder.pawnAge.text = pawn.age.toString()
         holder.pawnProfession.text = pawn.profession
@@ -29,13 +34,16 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         holder.pawnMentality.text = pawn.statBlock.mentality.toString()
         holder.pawnCharisma.text = pawn.statBlock.charisma.toString()
 
+        holder.initialize(pawns.get(position), pawnClickedListener)
     }
 
     override fun getItemCount(): Int {
         return pawns.size
     }
 
-    inner class ViewPager2Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewPager2Holder(itemView: View)
+        : RecyclerView.ViewHolder(itemView) {
+        // Demographics
         val pawnName: TextView = itemView.findViewById(R.id.tvPawnName)
         val pawnAge: TextView = itemView.findViewById(R.id.tvPawnAge)
         val pawnProfession: TextView = itemView.findViewById(R.id.tvPawnProfession)
@@ -47,7 +55,18 @@ class PawnPageAdapter(private var pawns: List<Pawn>) : RecyclerView.Adapter<Pawn
         val pawnIntelligence: TextView = itemView.findViewById(R.id.etvPawnIntelligence)
         val pawnMentality: TextView = itemView.findViewById(R.id.etvPawnMentality)
         val pawnCharisma: TextView = itemView.findViewById(R.id.etvPawnCharisma)
+
+        var saveBtn: Button = itemView.findViewById(R.id.btnSavePawn)
+
+        fun initialize(pawn: Pawn, action: OnPawnClickedListener) {
+            saveBtn.setOnClickListener {
+                action.onPawnClicked(pawn, adapterPosition)
+            }
+        }
     }
 
+    interface OnPawnClickedListener {
+        fun onPawnClicked(pawn: Pawn, position: Int)
+    }
 
 }

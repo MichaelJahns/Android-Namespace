@@ -6,6 +6,10 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.michaeljahns.namespace.R
 
+//this is the main entry point into the app, this is the launch activity, there is a brief, scripted
+//delay here which will someday be replaced with loading screen that fetches from whatever API we
+//end up using
+
 class SplashActivity : AppCompatActivity() {
     private lateinit var handler: Handler
 

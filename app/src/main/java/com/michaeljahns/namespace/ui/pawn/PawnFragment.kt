@@ -1,9 +1,11 @@
 package com.michaeljahns.namespace.ui.pawn
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,7 +17,9 @@ import com.michaeljahns.namespace.util.InjectorUtils
 import com.michaeljahns.namespace.viewmodel.pawn.PawnViewModel
 import com.michaeljahns.namespace.viewmodel.pawn.PawnViewModelFactory
 
-class PawnFragment : Fragment(R.layout.fragment_pawn) {
+class PawnFragment
+    : Fragment(R.layout.fragment_pawn),
+        PawnPageAdapter.OnPawnClickedListener {
     private lateinit var binding: FragmentPawnBinding
     private val factoryView: PawnViewModelFactory = InjectorUtils.providePawnModelFactory()
     private lateinit var pawnViewModel: PawnViewModel
@@ -33,9 +37,15 @@ class PawnFragment : Fragment(R.layout.fragment_pawn) {
             startViewPager(pawns)
         })
     }
-    private fun startViewPager (pawnList: List<Pawn>){
-        binding.vp2Pawn.adapter = PawnPageAdapter(pawnList)
+
+    private fun startViewPager(pawnList: List<Pawn>) {
+        binding.vp2Pawn.adapter = PawnPageAdapter(pawnList, this)
         binding.vp2Pawn.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.indicatorPawn?.setViewPager(binding.vp2Pawn)
+    }
+    
+    override fun onPawnClicked(pawn: Pawn, position: Int) {
+        Log.d("Pawn Fragment", "A pawn was clicked")
+        Toast.makeText(context, pawn.name + " , " + pawn.profession, Toast.LENGTH_LONG).show()
     }
 }
