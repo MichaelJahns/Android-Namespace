@@ -23,8 +23,7 @@ class NavigationFragment : Fragment(R.layout.fragment_navigation) {
         bottomNavigationView.background = null
         return binding.root
     }
-
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bottomNavigationView.menu.getItem(2).isEnabled = false

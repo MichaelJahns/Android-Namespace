@@ -6,6 +6,15 @@
     android:background="@color/colorSecondary"
     android:theme="@style/AppTheme.NoActionBar">
 
+    <Button
+        android:id="@+id/btnSavePawn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/tvPawnName"
+        app:layout_constraintStart_toStartOf="@+id/tvPawnName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPawnAge" />
+
     <TextView
         android:id="@+id/tvPawnName"
         android:layout_width="wrap_content"

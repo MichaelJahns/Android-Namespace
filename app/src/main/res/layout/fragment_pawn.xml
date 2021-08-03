@@ -22,14 +22,14 @@
     <TextView
         android:id="@+id/pawnLabel"
         android:layout_width="0dp"
-        android:layout_height="48sp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="106dp"
         android:background="@color/namespaceBlack"
         android:fontFamily="@font/cinzel_decorative_bold"
         android:gravity="center"
         android:text="@string/pawnLabel"
         android:textColor="@color/namespaceBlue"
-        android:textSize="36sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

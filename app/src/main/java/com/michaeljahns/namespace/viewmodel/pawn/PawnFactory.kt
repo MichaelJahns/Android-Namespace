@@ -31,7 +31,7 @@ object PawnFactory {
         val pawnProfession = flattenJsonOnKey(JSON, "profession")
         val statSpread: List<List<Int>> = jacksonObjectMapper().readValue(statJSON)
         val pawnStatSpread = getRandomStatSpread(allPossibleStatSpreads = statSpread)
-        return Pawn(pawnName, pawnAge, pawnProfession, StatBlock(pawnStatSpread))
+        return Pawn(pawnName, pawnAge, pawnProfession, StatBlock(pawnStatSpread), null)
     }
 
     private fun generatePawnAge(): Int {
