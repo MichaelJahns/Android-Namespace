@@ -1,21 +1,36 @@
 package com.michaeljahns.namespace.database
 
-import com.michaeljahns.namespace.repository.pawn.PawnDao
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.michaeljahns.namespace.repository.pawn.IPawnDatabase
+import com.michaeljahns.namespace.repository.pawn.Pawn
 
-class PawnDatabase private constructor() {
+@Database(entities = [(Pawn::class)], version = 1)
+abstract class PawnDatabase : RoomDatabase() {
 
-    var pawnDao = PawnDao()
-        private set
+    abstract fun pawnDao(): IPawnDatabase
 
     companion object {
         @Volatile
-        private var instance: PawnDatabase? = null
+        private var INSTANCE: PawnDatabase? = null
 
-        fun getInstance() =
-                instance ?: synchronized(this) {
-                    instance ?: PawnDatabase().also {
-                        instance = it
-                    }
+        fun getInstance(context: Context): PawnDatabase {
+            synchronized(this) {
+                var instance = INSTANCE
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                            context,
+                            PawnDatabase::class.java,
+                            "pawn_database"
+                    )
+                            .fallbackToDestructiveMigration()
+                            .build()
+                    INSTANCE = instance
                 }
+                return instance
+            }
+        }
     }
 }

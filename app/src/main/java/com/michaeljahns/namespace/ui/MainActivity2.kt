@@ -28,29 +28,38 @@ import com.michaeljahns.namespace.viewmodel.scenario.ScenarioViewModelFactory
 class MainActivity2 : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
-    private val pawnViewFactory: PawnViewModelFactory = InjectorUtils.providePawnModelFactory()
+
     private val scenarioViewFactory: ScenarioViewModelFactory = InjectorUtils.provideScenarioModelFactory()
     private val forageViewFactory: ForageViewModelFactory = InjectorUtils.provideForageModelFactory()
 
     private val navigationFragment = NavigationFragment()
 
-    private val pawnFragment = PawnFragment()
     private val scenarioFragment = ScenarioFragment()
     private val forageFragment = ForageFragment()
     private val collectionFragment = CollectionFragment()
 
     private val uiModel: UIViewModel by viewModels()
-    private lateinit var pawnViewModel: PawnViewModel
     private lateinit var scenarioViewModel: ScenarioViewModel
     private lateinit var forageViewModel: ForageViewModel
 
     private lateinit var Fab: FloatingActionButton
+
+    //    Pawn
+    private lateinit var pawnFragment: PawnFragment
+    private lateinit var pawnViewModel: PawnViewModel
+    private lateinit var pawnViewFactory: PawnViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         initUI()
         setContentView(binding.root)
+
+        pawnViewFactory = PawnViewModelFactory(
+                this.application
+        )
+        pawnViewModel = ViewModelProvider(this, pawnViewFactory).get(PawnViewModel::class.java)
+        pawnFragment = PawnFragment(pawnViewModel)
     }
 
     private fun initUI() {
@@ -58,8 +67,6 @@ class MainActivity2 : AppCompatActivity() {
                 .get(ScenarioViewModel::class.java)
         forageViewModel = ViewModelProvider(this, forageViewFactory)
                 .get(ForageViewModel::class.java)
-        pawnViewModel = ViewModelProvider(this, pawnViewFactory)
-                .get(PawnViewModel::class.java)
 
         Fab = binding.mainNavigationView.fab
 
@@ -103,7 +110,7 @@ class MainActivity2 : AppCompatActivity() {
         Fab.setOnClickListener {
             when (uiModel.activeViewString.value) {
                 "Pawn" -> {
-                    pawnViewModel.regeneratePawns()
+                    pawnViewModel.generatePawns()
                     Log.d("MAIN", "Omnifab onclick to reset generated pawns")
                 }
                 "Scenario" -> {

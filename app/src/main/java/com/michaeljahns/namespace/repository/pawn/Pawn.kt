@@ -1,15 +1,14 @@
 package com.michaeljahns.namespace.repository.pawn
 
-class Pawn(pawnName: String?,
-           pawnAge: Int?,
-           pawnProfession: String?,
-           pawnStats: StatBlock?) {
-    var name: String? = pawnName
-    var age: Int? = pawnAge
-    var profession: String? = pawnProfession
-    val statBlock: StatBlock? = pawnStats
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    override fun toString(): String {
-        return "$name, $profession, age: $age"
-    }
-}
+@Entity(tableName = "pawn_table")
+data class Pawn(
+        var name: String,
+        var age: Int,
+        var profession: String,
+        val statBlock: StatBlock?,
+        @PrimaryKey(autoGenerate = true)
+        var pawnId: Int?,
+)
